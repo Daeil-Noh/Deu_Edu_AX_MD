@@ -6,9 +6,8 @@
 <title>1주 1차시 · AI와 데이터 분석이란? | AI와 데이터 분석</title>
 <meta name="description" content="AX 마이크로디그리 「AI와 데이터 분석」 1주 1차시 교안: 데이터 분석과 AI의 개념, 둘의 관계, 강의 로드맵">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="../../assets/css/course.css">
+<link rel="stylesheet" href="../../assets/css/slides.css">
 <style>
-  /* 이 차시 그림 전용 */
   .s-box { fill: var(--surface-2); stroke: var(--line); stroke-width: 1.5; }
   .s-acc { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.5; }
   .s-acc2 { fill: var(--accent-2-soft); stroke: var(--accent-2); stroke-width: 1.5; }
@@ -16,228 +15,243 @@
   .s-arrow { fill: var(--muted); }
   .t-main { fill: var(--text); font-size: 15px; font-weight: 700; }
   .t-sub { fill: var(--muted); font-size: 12.5px; }
-  .t-acc { fill: var(--accent); font-size: 13px; font-weight: 700; }
-  .t-acc2 { fill: var(--accent-2); font-size: 13px; font-weight: 700; }
+  .t-acc { fill: var(--accent); font-size: 14px; font-weight: 700; }
+  .t-acc2 { fill: var(--accent-2); font-size: 14px; font-weight: 700; }
   .nest-1 { fill: var(--surface-2); stroke: var(--line); stroke-width: 1.5; }
   .nest-2 { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.5; }
-  .nest-3 { fill: var(--surface); stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 0; }
+  .nest-3 { fill: var(--surface); stroke: var(--accent); stroke-width: 1.5; }
   .nest-4 { fill: var(--accent-2-soft); stroke: var(--accent-2); stroke-width: 1.5; }
 </style>
 </head>
 <body>
 
-<header class="topbar">
-  <div class="topbar-inner">
-    <a href="../../">AX 마이크로디그리</a><span class="sep">/</span>
-    <a href="../">AI와 데이터 분석</a><span class="sep">/</span>
-    <span>1주 1차시</span>
-  </div>
-  <div class="progress"></div>
-</header>
+<div class="viewport">
+<div class="deck">
 
-<main>
+<!-- 1. 표지 -->
+<section class="slide cover">
+  <p class="eyebrow">AI와 데이터 분석 · 1주차 1차시</p>
+  <h1>AI와 데이터 분석이란?</h1>
+  <p class="lead">“감”으로 하던 판단을 “데이터”로 바꾸는 일.<br>이번 학기에 배울 두 단어부터 정확히 정리합니다.</p>
+  <div class="meta"><span>강의 영상 25분</span><span>이론 차시</span><span>이공계열 2학년</span></div>
+  <div class="s-foot"><span>동의대학교 AX 마이크로디그리</span><span class="no"></span></div>
+</section>
 
-  <section class="hero">
-    <p class="eyebrow">1주차 · AX와 AI 데이터 분석 — 1차시</p>
-    <h1>AI와 데이터 분석이란?</h1>
-    <p class="lead">“감”으로 하던 판단을 “데이터”로 바꾸는 일. 이번 학기에 배울 두 개의 단어부터 정확히 정리합니다.</p>
-    <ul class="meta">
-      <li>강의 영상 25분</li>
-      <li>이론 차시 (실습 없음)</li>
-      <li>대상: 이공계열 2학년</li>
-    </ul>
-  </section>
-
-  <div class="box goal">
-    <p class="box-title">학습 목표</p>
+<!-- 2. 학습 목표 -->
+<section class="slide">
+  <div class="s-head"><span class="sec">학습 목표</span></div>
+  <h2>오늘 수업이 끝나면</h2>
+  <div class="body">
     <ol>
-      <li><strong>데이터 분석</strong>이 무엇인지, 데이터가 어떻게 의사결정으로 이어지는지 설명할 수 있다.</li>
-      <li><strong>인공지능(AI)·머신러닝·딥러닝·생성형AI</strong>의 관계를 구분할 수 있다.</li>
+      <li><strong>데이터 분석</strong>이 무엇이고, 데이터가 어떻게 <strong>의사결정</strong>으로 이어지는지 설명할 수 있다.</li>
+      <li><strong>AI · 머신러닝 · 딥러닝 · 생성형AI</strong>의 관계를 구분할 수 있다.</li>
       <li>데이터 분석과 AI가 서로 어떻게 연결되는지 말할 수 있다.</li>
-      <li>이 강의 15주의 흐름을 이해하고, 내 전공에서 생기는 데이터를 떠올릴 수 있다.</li>
+      <li>이 강의 15주의 흐름을 이해하고, <strong>내 전공의 데이터</strong>를 떠올릴 수 있다.</li>
     </ol>
   </div>
+  <div class="s-foot"><span>AI와 데이터 분석 · 1주 1차시</span><span class="no"></span></div>
+</section>
 
-  <nav class="toc" aria-label="차시 목차">
-    <strong>오늘의 흐름</strong>
-    <ol>
-      <li><a href="#s1">도입: 왜 데이터인가</a><span class="t">약 2분</span></li>
-      <li><a href="#s2">데이터 분석이란?</a><span class="t">약 7분</span></li>
-      <li><a href="#s3">AI란?</a><span class="t">약 7분</span></li>
-      <li><a href="#s4">데이터 분석과 AI의 관계</a><span class="t">약 4분</span></li>
-      <li><a href="#s5">이 강의에서 배울 것</a><span class="t">약 3분</span></li>
-      <li><a href="#s6">정리와 확인 문제</a><span class="t">약 2분</span></li>
-    </ol>
-  </nav>
-
-  <!-- ───────────── 1. 도입 ───────────── -->
-  <h2 id="s1"><span class="num">1</span>도입: 왜 데이터인가<span class="time">약 2분</span></h2>
-
-  <p>어느 공장에서 오후만 되면 불량품이 늘어난다고 해 봅시다. 경험 많은 작업자는 “오후엔 기계가 좀 뜨거워지니까 그래”라고 말합니다. 맞을 수도 있고, 틀릴 수도 있습니다.</p>
-  <p>그런데 설비에는 이미 <strong>온도 센서</strong>가 달려 있고, 1분마다 값이 기록되고 있습니다. 이 기록을 불량 기록과 나란히 놓고 보면, “오후엔 뜨거워서 그렇다”는 <span class="mark">감을 숫자로 확인</span>할 수 있습니다. 더 나아가 “온도가 몇 도를 넘으면 불량이 늘어난다”는 기준까지 찾을 수 있습니다.</p>
-
-  <div class="box think">
-    <p class="box-title">생각해 보기</p>
-    <p>여러분 전공에서 <strong>매일 쌓이지만 잘 들여다보지 않는 데이터</strong>는 무엇이 있을까요? 실험 측정값, 센서 기록, 시뮬레이션 결과, 장비 로그… 하나만 떠올려 두세요. 9주차에 쓸 <strong>전공 분석 보고서</strong>의 출발점이 됩니다.</p>
+<!-- 3. 오늘의 흐름 -->
+<section class="slide">
+  <div class="s-head"><span class="sec">오늘의 흐름</span><span class="time">총 25분</span></div>
+  <h2>오늘의 흐름</h2>
+  <div class="body">
+    <ul class="agenda">
+      <li><span class="n">1</span>도입: 왜 데이터인가<span class="t">2분</span></li>
+      <li><span class="n">2</span>데이터 분석이란?<span class="t">7분</span></li>
+      <li><span class="n">3</span>AI란?<span class="t">7분</span></li>
+      <li><span class="n">4</span>데이터 분석과 AI의 관계<span class="t">4분</span></li>
+      <li><span class="n">5</span>이 강의에서 배울 것<span class="t">3분</span></li>
+      <li><span class="n">6</span>정리와 확인 문제<span class="t">2분</span></li>
+    </ul>
   </div>
+  <div class="s-foot"><span>AI와 데이터 분석 · 1주 1차시</span><span class="no"></span></div>
+</section>
 
-  <!-- ───────────── 2. 데이터 분석 ───────────── -->
-  <h2 id="s2"><span class="num">2</span>데이터 분석이란?<span class="time">약 7분</span></h2>
-
-  <div class="box key">
-    <p class="box-title"><span class="tag">정의</span> 데이터 분석</p>
-    <p>데이터를 <strong>모으고, 정리하고, 살펴보고, 해석</strong>해서 <strong>의사결정에 쓸 수 있는 정보</strong>를 얻는 과정.</p>
+<!-- 4. 도입 -->
+<section class="slide">
+  <div class="s-head"><span class="sec">1. 도입: 왜 데이터인가</span><span class="time">약 2분</span></div>
+  <h2>“오후만 되면 불량이 늘어요”</h2>
+  <div class="body">
+    <div class="grid g2">
+      <div class="box">
+        <p class="box-title">경험 많은 작업자</p>
+        <p>“오후엔 기계가 좀 뜨거워지니까 그래.”</p>
+        <p class="muted small">맞을 수도, 틀릴 수도 있는 <strong>감</strong></p>
+      </div>
+      <div class="box key">
+        <p class="box-title">데이터가 있다면</p>
+        <p>설비의 온도 센서 기록 + 불량 기록을 나란히 놓으면</p>
+        <p class="small">→ 감을 <span class="mark"><strong>숫자로 확인</strong></span><br>→ “몇 도를 넘으면 불량이 는다”는 <strong>기준</strong>까지</p>
+      </div>
+    </div>
   </div>
+  <div class="s-foot"><span>AI와 데이터 분석 · 1주 1차시</span><span class="no"></span></div>
+</section>
 
-  <p>여기서 중요한 단어는 마지막의 <strong>의사결정</strong>입니다. 숫자를 많이 계산하는 것 자체가 목적이 아닙니다. 분석의 끝에는 늘 “그래서 무엇을 할 것인가?”라는 질문이 있어야 합니다.</p>
+<!-- 5. 생각해 보기 -->
+<section class="slide">
+  <div class="s-head"><span class="sec">1. 도입: 왜 데이터인가</span><span class="time">약 2분</span></div>
+  <h2>생각해 보기</h2>
+  <div class="body">
+    <div class="box think">
+      <p class="quote">내 전공에서 매일 쌓이지만<br>잘 들여다보지 않는 데이터는?</p>
+      <p>실험 측정값 · 센서 기록 · 시뮬레이션 결과 · 장비 로그 …</p>
+    </div>
+    <p class="muted">하나만 떠올려 두세요. <strong>9주차 전공 분석 보고서</strong>의 출발점이 됩니다.</p>
+  </div>
+  <div class="s-foot"><span>AI와 데이터 분석 · 1주 1차시</span><span class="no"></span></div>
+</section>
 
-  <h3>데이터가 결정이 되기까지: 4단계</h3>
-  <p>데이터 분석을 설명할 때 자주 쓰는 틀이 <strong>데이터 → 정보 → 지식 → 지혜</strong>의 4단계(영문 머리글자를 따서 DIKW)입니다. 도입의 공장 예시로 따라가 보겠습니다.</p>
+<!-- 6. 데이터 분석 정의 -->
+<section class="slide">
+  <div class="s-head"><span class="sec">2. 데이터 분석이란?</span><span class="time">약 7분</span></div>
+  <h2>데이터 분석이란?</h2>
+  <div class="body">
+    <div class="box key">
+      <p class="box-title"><span class="tag">정의</span></p>
+      <p class="def">데이터를 <strong>모으고, 정리하고, 살펴보고, 해석</strong>해서<br><strong class="mark">의사결정에 쓸 수 있는 정보</strong>를 얻는 과정</p>
+    </div>
+    <p>숫자를 많이 계산하는 것 자체가 목적이 아닙니다.</p>
+    <p>분석의 끝에는 늘 <strong>“그래서 무엇을 할 것인가?”</strong>라는 질문이 있어야 합니다.</p>
+  </div>
+  <div class="s-foot"><span>AI와 데이터 분석 · 1주 1차시</span><span class="no"></span></div>
+</section>
 
+<!-- 7. DIKW -->
+<section class="slide">
+  <div class="s-head"><span class="sec">2. 데이터 분석이란?</span><span class="time">약 7분</span></div>
+  <h2>데이터가 결정이 되기까지: 4단계</h2>
   <figure>
     <div class="canvas">
-      <svg viewBox="0 0 720 300" role="img" aria-labelledby="dikw-t">
+      <svg viewBox="0 0 720 300" style="max-height:400px" role="img" aria-labelledby="dikw-t">
         <title id="dikw-t">데이터, 정보, 지식, 지혜의 4단계를 계단 모양으로 나타낸 그림</title>
-        <!-- 계단 -->
-        <rect class="s-box" x="10"  y="220" width="165" height="70" rx="10"/>
-        <rect class="s-box" x="190" y="155" width="165" height="135" rx="10"/>
-        <rect class="s-acc" x="370" y="90"  width="165" height="200" rx="10"/>
-        <rect class="s-acc2" x="550" y="25"  width="165" height="265" rx="10"/>
-        <!-- 라벨 -->
-        <text class="t-main" x="92"  y="245" text-anchor="middle">데이터</text>
-        <text class="t-sub"  x="92"  y="265" text-anchor="middle">기록된 값 그대로</text>
-        <text class="t-main" x="272" y="180" text-anchor="middle">정보</text>
-        <text class="t-sub"  x="272" y="200" text-anchor="middle">정리·요약한 사실</text>
-        <text class="t-main" x="452" y="115" text-anchor="middle">지식</text>
-        <text class="t-sub"  x="452" y="135" text-anchor="middle">원인·패턴의 이해</text>
-        <text class="t-main" x="632" y="50"  text-anchor="middle">지혜</text>
-        <text class="t-sub"  x="632" y="70"  text-anchor="middle">행동·의사결정</text>
-        <!-- 예시 -->
-        <text class="t-sub" x="92"  y="282" text-anchor="middle">“14:03, 3호기, 78.2℃”</text>
-        <text class="t-sub" x="272" y="235" text-anchor="middle">“3호기는 오후 평균</text>
-        <text class="t-sub" x="272" y="253" text-anchor="middle">온도가 5℃ 높다”</text>
-        <text class="t-sub" x="452" y="190" text-anchor="middle">“80℃를 넘으면</text>
-        <text class="t-sub" x="452" y="208" text-anchor="middle">불량률이 크게 는다”</text>
-        <text class="t-sub" x="632" y="140" text-anchor="middle">“오후에는 3호기</text>
-        <text class="t-sub" x="632" y="158" text-anchor="middle">냉각을 강화하자”</text>
+        <rect class="s-box" x="10"  y="210" width="165" height="80" rx="10"/>
+        <rect class="s-box" x="190" y="150" width="165" height="140" rx="10"/>
+        <rect class="s-acc" x="370" y="85"  width="165" height="205" rx="10"/>
+        <rect class="s-acc2" x="550" y="20"  width="165" height="270" rx="10"/>
+        <text class="t-main" x="92"  y="234" text-anchor="middle">데이터</text>
+        <text class="t-sub"  x="92"  y="253" text-anchor="middle">기록된 값 그대로</text>
+        <text class="t-sub"  x="92"  y="276" text-anchor="middle">“14:03, 3호기, 78.2℃”</text>
+        <text class="t-main" x="272" y="175" text-anchor="middle">정보</text>
+        <text class="t-sub"  x="272" y="194" text-anchor="middle">정리·요약한 사실</text>
+        <text class="t-sub"  x="272" y="232" text-anchor="middle">“3호기는 오후 평균</text>
+        <text class="t-sub"  x="272" y="250" text-anchor="middle">온도가 5℃ 높다”</text>
+        <text class="t-main" x="452" y="110" text-anchor="middle">지식</text>
+        <text class="t-sub"  x="452" y="129" text-anchor="middle">원인·패턴의 이해</text>
+        <text class="t-sub"  x="452" y="185" text-anchor="middle">“80℃를 넘으면</text>
+        <text class="t-sub"  x="452" y="203" text-anchor="middle">불량률이 크게 는다”</text>
+        <text class="t-main" x="632" y="45"  text-anchor="middle">지혜</text>
+        <text class="t-sub"  x="632" y="64"  text-anchor="middle">행동·의사결정</text>
+        <text class="t-sub"  x="632" y="140" text-anchor="middle">“오후에는 3호기</text>
+        <text class="t-sub"  x="632" y="158" text-anchor="middle">냉각을 강화하자”</text>
       </svg>
     </div>
-    <figcaption>그림 1. 데이터가 의사결정으로 이어지는 4단계 (공장 예시)</figcaption>
+    <figcaption>정리하면 <strong>정보</strong>, 원인을 찾으면 <strong>지식</strong>, 행동을 정하면 <strong>지혜</strong> — 영문 머리글자를 따서 DIKW</figcaption>
   </figure>
+  <div class="s-foot"><span>AI와 데이터 분석 · 1주 1차시</span><span class="no"></span></div>
+</section>
 
-  <p>데이터는 그 자체로는 “기록”일 뿐입니다. <strong>정리하면 정보</strong>가 되고, <strong>패턴과 원인을 찾으면 지식</strong>이 되고, <strong>그 지식으로 행동을 정하면 지혜</strong>가 됩니다. 데이터 분석은 이 계단을 한 칸씩 올라가는 일입니다.</p>
-
-  <h3>분석이 답하는 네 가지 질문</h3>
-  <p>데이터 분석은 어떤 질문에 답하느냐에 따라 네 가지로 나눌 수 있습니다. 뒤로 갈수록 어렵지만, 그만큼 쓸모도 커집니다.</p>
-
-  <div class="grid">
-    <div class="card">
-      <div class="k">기술 분석</div>
-      <div class="h">무슨 일이 있었나?</div>
-      <div class="d">현황을 요약하고 보여 준다.</div>
-      <div class="ex">지난달 라인별 불량률 그래프<br><a href="../">→ 5~7주</a></div>
+<!-- 8. 네 가지 질문 -->
+<section class="slide">
+  <div class="s-head"><span class="sec">2. 데이터 분석이란?</span><span class="time">약 7분</span></div>
+  <h2>분석이 답하는 네 가지 질문</h2>
+  <div class="body">
+    <div class="grid g4">
+      <div class="card"><div class="k">기술 분석</div><div class="h">무슨 일이 있었나?</div><div class="d">현황을 요약해 보여 준다</div><div class="ex">라인별 불량률 그래프<br><b>→ 5~7주</b></div></div>
+      <div class="card"><div class="k">진단 분석</div><div class="h">왜 일어났나?</div><div class="d">원인이 될 관계를 찾는다</div><div class="ex">온도와 불량률의 상관관계<br><b>→ 6~7주</b></div></div>
+      <div class="card"><div class="k">예측 분석</div><div class="h">앞으로 어떻게 될까?</div><div class="d">과거로 미래 값을 예측</div><div class="ex">공정 조건으로 품질 예측<br><b>→ 10~12주</b></div></div>
+      <div class="card"><div class="k">처방 분석</div><div class="h">무엇을 해야 하나?</div><div class="d">가장 좋은 행동을 제안</div><div class="ex">불량을 줄이는 최적 온도<br><b class="muted">→ 전공 심화</b></div></div>
     </div>
-    <div class="card">
-      <div class="k">진단 분석</div>
-      <div class="h">왜 일어났나?</div>
-      <div class="d">원인이 될 만한 관계를 찾는다.</div>
-      <div class="ex">온도와 불량률의 상관관계<br><a href="../">→ 6~7주</a></div>
-    </div>
-    <div class="card">
-      <div class="k">예측 분석</div>
-      <div class="h">앞으로 어떻게 될까?</div>
-      <div class="d">과거 데이터로 미래 값을 예측한다.</div>
-      <div class="ex">공정 조건으로 품질 예측<br><a href="../">→ 10~12주</a></div>
-    </div>
-    <div class="card">
-      <div class="k">처방 분석</div>
-      <div class="h">무엇을 해야 하나?</div>
-      <div class="d">가장 좋은 행동을 제안한다.</div>
-      <div class="ex">불량을 줄이는 최적 온도 설정<br><span style="color:var(--muted)">→ 전공 심화</span></div>
-    </div>
+    <p class="small muted" style="margin-top:22px">뒤로 갈수록 어렵지만 쓸모도 커집니다. 이 강의는 <strong>기술 분석부터 예측 분석까지</strong> 직접 해 봅니다.</p>
   </div>
+  <div class="s-foot"><span>AI와 데이터 분석 · 1주 1차시</span><span class="no"></span></div>
+</section>
 
-  <p>이 강의는 <strong>기술 분석부터 예측 분석까지</strong>를 직접 해 봅니다. 처방 분석은 최적화 등 더 깊은 내용이 필요하므로, 각 전공의 심화 과목에서 이어 가게 됩니다.</p>
-
-  <!-- ───────────── 3. AI ───────────── -->
-  <h2 id="s3"><span class="num">3</span>AI란?<span class="time">약 7분</span></h2>
-
-  <div class="box key">
-    <p class="box-title"><span class="tag">정의</span> 인공지능(AI, Artificial Intelligence)</p>
-    <p>인식·판단·예측처럼 <strong>사람의 지적 능력이 필요한 일</strong>을 컴퓨터가 수행하도록 만드는 기술.</p>
+<!-- 9. AI 정의 -->
+<section class="slide">
+  <div class="s-head"><span class="sec">3. AI란?</span><span class="time">약 7분</span></div>
+  <h2>AI(인공지능)란?</h2>
+  <div class="body">
+    <div class="box key">
+      <p class="box-title"><span class="tag">정의</span> Artificial Intelligence</p>
+      <p class="def">인식·판단·예측처럼 <strong>사람의 지적 능력이 필요한 일</strong>을<br>컴퓨터가 수행하도록 만드는 기술</p>
+    </div>
+    <p>AI를 처음 배울 때 가장 중요한 감각은 하나입니다.</p>
+    <p class="quote" style="color:var(--accent)">“규칙을 누가 만드는가?”</p>
   </div>
+  <div class="s-foot"><span>AI와 데이터 분석 · 1주 1차시</span><span class="no"></span></div>
+</section>
 
-  <p>AI를 처음 배울 때 가장 중요한 감각은 <strong>“규칙을 누가 만드는가?”</strong>입니다. 불량품을 골라내는 프로그램을 두 가지 방법으로 만든다고 해 봅시다. 아래 버튼을 눌러 비교해 보세요.</p>
-
-  <div data-switch>
+<!-- 10. 전통 vs 머신러닝 -->
+<section class="slide">
+  <div class="s-head"><span class="sec">3. AI란?</span><span class="time">약 7분</span></div>
+  <h2>불량품 판정 프로그램, 두 가지 방법</h2>
+  <div class="body" data-switch style="justify-content:flex-start">
     <div class="switch" role="group" aria-label="방식 선택">
-      <button type="button" data-target="rule">전통적인 프로그래밍</button>
-      <button type="button" data-target="ml">머신러닝</button>
+      <button type="button" data-target="rule">① 전통적인 프로그래밍</button>
+      <button type="button" data-target="ml">② 머신러닝</button>
     </div>
-
     <div data-panel="rule">
-      <figure>
-        <div class="canvas">
-          <svg viewBox="0 0 720 170" role="img" aria-labelledby="rule-t">
-            <title id="rule-t">전통적인 프로그래밍: 사람이 만든 규칙과 데이터를 넣으면 답이 나온다</title>
-            <defs><marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path class="s-arrow" d="M0,0 L10,5 L0,10 z"/></marker></defs>
-            <rect class="s-acc2" x="10" y="15" width="190" height="62" rx="10"/>
-            <text class="t-acc2" x="105" y="40" text-anchor="middle">규칙 (사람이 작성)</text>
-            <text class="t-sub" x="105" y="61" text-anchor="middle">“두께 &lt; 1.8mm이면 불량”</text>
-            <rect class="s-box" x="10" y="93" width="190" height="62" rx="10"/>
-            <text class="t-main" x="105" y="118" text-anchor="middle">데이터</text>
-            <text class="t-sub" x="105" y="139" text-anchor="middle">새 제품의 두께 측정값</text>
-            <path class="s-line" d="M200,46 C250,46 250,85 290,85" marker-end="url(#ar1)"/>
-            <path class="s-line" d="M200,124 C250,124 250,85 290,85" marker-end="url(#ar1)"/>
-            <rect class="s-box" x="295" y="50" width="150" height="70" rx="10"/>
-            <text class="t-main" x="370" y="82" text-anchor="middle">프로그램</text>
-            <text class="t-sub" x="370" y="102" text-anchor="middle">규칙대로 계산</text>
-            <path class="s-line" d="M445,85 L520,85" marker-end="url(#ar1)"/>
-            <rect class="s-acc" x="525" y="50" width="185" height="70" rx="10"/>
-            <text class="t-acc" x="617" y="82" text-anchor="middle">답</text>
-            <text class="t-sub" x="617" y="102" text-anchor="middle">“이 제품은 불량”</text>
-          </svg>
-        </div>
-        <figcaption>규칙을 <strong>사람</strong>이 정해서 프로그램에 넣는다.</figcaption>
-      </figure>
-      <p>문제는 현실의 불량 원인이 하나가 아니라는 점입니다. 두께, 온도, 압력, 재료 로트, 작업 시간… 변수가 수십 개가 되면 사람이 규칙을 빠짐없이 쓰기가 사실상 불가능해집니다.</p>
+      <figure><div class="canvas">
+        <svg viewBox="0 0 720 170" role="img" aria-labelledby="rule-t">
+          <title id="rule-t">전통적인 프로그래밍: 사람이 만든 규칙과 데이터를 넣으면 답이 나온다</title>
+          <defs><marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path class="s-arrow" d="M0,0 L10,5 L0,10 z"/></marker></defs>
+          <rect class="s-acc2" x="10" y="15" width="190" height="62" rx="10"/>
+          <text class="t-acc2" x="105" y="40" text-anchor="middle">규칙 (사람이 작성)</text>
+          <text class="t-sub" x="105" y="61" text-anchor="middle">“두께 &lt; 1.8mm이면 불량”</text>
+          <rect class="s-box" x="10" y="93" width="190" height="62" rx="10"/>
+          <text class="t-main" x="105" y="118" text-anchor="middle">데이터</text>
+          <text class="t-sub" x="105" y="139" text-anchor="middle">새 제품의 두께 측정값</text>
+          <path class="s-line" d="M200,46 C250,46 250,85 290,85" marker-end="url(#ar1)"/>
+          <path class="s-line" d="M200,124 C250,124 250,85 290,85" marker-end="url(#ar1)"/>
+          <rect class="s-box" x="295" y="50" width="150" height="70" rx="10"/>
+          <text class="t-main" x="370" y="82" text-anchor="middle">프로그램</text>
+          <text class="t-sub" x="370" y="102" text-anchor="middle">규칙대로 계산</text>
+          <path class="s-line" d="M445,85 L520,85" marker-end="url(#ar1)"/>
+          <rect class="s-acc" x="525" y="50" width="185" height="70" rx="10"/>
+          <text class="t-acc" x="617" y="82" text-anchor="middle">답</text>
+          <text class="t-sub" x="617" y="102" text-anchor="middle">“이 제품은 불량”</text>
+        </svg>
+      </div></figure>
+      <p class="small" style="margin-top:16px">규칙을 <strong>사람</strong>이 정한다. 하지만 두께·온도·압력·재료·작업 시간… 변수가 수십 개면 규칙을 빠짐없이 쓰기 어렵다.</p>
     </div>
-
     <div data-panel="ml" hidden>
-      <figure>
-        <div class="canvas">
-          <svg viewBox="0 0 720 170" role="img" aria-labelledby="ml-t">
-            <title id="ml-t">머신러닝: 데이터와 정답을 넣으면 컴퓨터가 규칙을 찾아낸다</title>
-            <defs><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path class="s-arrow" d="M0,0 L10,5 L0,10 z"/></marker></defs>
-            <rect class="s-box" x="10" y="15" width="190" height="62" rx="10"/>
-            <text class="t-main" x="105" y="40" text-anchor="middle">데이터</text>
-            <text class="t-sub" x="105" y="61" text-anchor="middle">과거 제품 1만 개의 측정값</text>
-            <rect class="s-box" x="10" y="93" width="190" height="62" rx="10"/>
-            <text class="t-main" x="105" y="118" text-anchor="middle">정답</text>
-            <text class="t-sub" x="105" y="139" text-anchor="middle">각 제품의 양품/불량 기록</text>
-            <path class="s-line" d="M200,46 C250,46 250,85 290,85" marker-end="url(#ar2)"/>
-            <path class="s-line" d="M200,124 C250,124 250,85 290,85" marker-end="url(#ar2)"/>
-            <rect class="s-acc" x="295" y="50" width="150" height="70" rx="10"/>
-            <text class="t-acc" x="370" y="82" text-anchor="middle">학습</text>
-            <text class="t-sub" x="370" y="102" text-anchor="middle">패턴을 스스로 찾음</text>
-            <path class="s-line" d="M445,85 L520,85" marker-end="url(#ar2)"/>
-            <rect class="s-acc2" x="525" y="50" width="185" height="70" rx="10"/>
-            <text class="t-acc2" x="617" y="82" text-anchor="middle">규칙 (모델)</text>
-            <text class="t-sub" x="617" y="102" text-anchor="middle">새 제품의 불량 여부 판정</text>
-          </svg>
-        </div>
-        <figcaption>규칙을 <strong>데이터에서 컴퓨터가</strong> 찾아낸다. 이렇게 찾은 규칙을 <strong>모델</strong>이라고 부른다.</figcaption>
-      </figure>
-      <p>사람은 규칙 대신 <strong>“과거의 데이터와 정답”</strong>을 준비합니다. 컴퓨터는 그 안에서 “어떤 조건일 때 불량이 나는가”를 스스로 찾아냅니다. 이것이 <strong>머신러닝</strong>이고, 10~11주차에 직접 해 볼 내용입니다.</p>
+      <figure><div class="canvas">
+        <svg viewBox="0 0 720 170" role="img" aria-labelledby="ml-t">
+          <title id="ml-t">머신러닝: 데이터와 정답을 넣으면 컴퓨터가 규칙을 찾아낸다</title>
+          <defs><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path class="s-arrow" d="M0,0 L10,5 L0,10 z"/></marker></defs>
+          <rect class="s-box" x="10" y="15" width="190" height="62" rx="10"/>
+          <text class="t-main" x="105" y="40" text-anchor="middle">데이터</text>
+          <text class="t-sub" x="105" y="61" text-anchor="middle">과거 제품 1만 개의 측정값</text>
+          <rect class="s-box" x="10" y="93" width="190" height="62" rx="10"/>
+          <text class="t-main" x="105" y="118" text-anchor="middle">정답</text>
+          <text class="t-sub" x="105" y="139" text-anchor="middle">각 제품의 양품/불량 기록</text>
+          <path class="s-line" d="M200,46 C250,46 250,85 290,85" marker-end="url(#ar2)"/>
+          <path class="s-line" d="M200,124 C250,124 250,85 290,85" marker-end="url(#ar2)"/>
+          <rect class="s-acc" x="295" y="50" width="150" height="70" rx="10"/>
+          <text class="t-acc" x="370" y="82" text-anchor="middle">학습</text>
+          <text class="t-sub" x="370" y="102" text-anchor="middle">패턴을 스스로 찾음</text>
+          <path class="s-line" d="M445,85 L520,85" marker-end="url(#ar2)"/>
+          <rect class="s-acc2" x="525" y="50" width="185" height="70" rx="10"/>
+          <text class="t-acc2" x="617" y="82" text-anchor="middle">규칙 (모델)</text>
+          <text class="t-sub" x="617" y="102" text-anchor="middle">새 제품의 불량 여부 판정</text>
+        </svg>
+      </div></figure>
+      <p class="small" style="margin-top:16px">규칙을 <strong>데이터에서 컴퓨터가</strong> 찾는다. 이렇게 찾은 규칙을 <strong>모델</strong>이라 부른다. → 10~11주에 직접 실습</p>
     </div>
   </div>
+  <div class="s-foot"><span>AI와 데이터 분석 · 1주 1차시</span><span class="no"></span></div>
+</section>
 
-  <h3>AI · 머신러닝 · 딥러닝 · 생성형AI의 관계</h3>
-  <p>뉴스에서는 이 네 단어가 섞여서 쓰이지만, 실제로는 <strong>큰 범위 안에 작은 범위가 들어 있는</strong> 관계입니다.</p>
-
+<!-- 11. 포함관계 -->
+<section class="slide">
+  <div class="s-head"><span class="sec">3. AI란?</span><span class="time">약 7분</span></div>
+  <h2>AI · 머신러닝 · 딥러닝 · 생성형AI</h2>
   <figure>
     <div class="canvas">
-      <svg viewBox="0 0 720 330" role="img" aria-labelledby="nest-t">
+      <svg viewBox="0 0 720 330" style="max-height:410px" role="img" aria-labelledby="nest-t">
         <title id="nest-t">AI 안에 머신러닝, 그 안에 딥러닝, 그 안에 생성형AI가 포함되는 관계</title>
         <rect class="nest-1" x="10"  y="10"  width="700" height="310" rx="22"/>
         <rect class="nest-2" x="150" y="62"  width="550" height="248" rx="20"/>
@@ -265,112 +279,144 @@
         <text class="t-sub" x="450" y="284">Claude</text>
       </svg>
     </div>
-    <figcaption>그림 2. AI ⊃ 머신러닝 ⊃ 딥러닝 ⊃ 생성형AI</figcaption>
+    <figcaption>큰 범위 안에 작은 범위가 들어 있다: AI ⊃ 머신러닝 ⊃ 딥러닝 ⊃ 생성형AI</figcaption>
   </figure>
+  <div class="s-foot"><span>AI와 데이터 분석 · 1주 1차시</span><span class="no"></span></div>
+</section>
 
-  <div class="table-wrap">
+<!-- 12. 용어 정리 + 오해 -->
+<section class="slide">
+  <div class="s-head"><span class="sec">3. AI란?</span><span class="time">약 7분</span></div>
+  <h2>용어 정리</h2>
+  <div class="body">
     <table>
       <thead><tr><th>용어</th><th>한 줄 설명</th><th>이 강의에서</th></tr></thead>
       <tbody>
         <tr><td><strong>인공지능</strong></td><td>지적인 일을 하는 컴퓨터 기술 전체</td><td>1주</td></tr>
         <tr><td><strong>머신러닝</strong></td><td>데이터에서 규칙을 스스로 학습하는 AI</td><td>9~12주</td></tr>
-        <tr><td><strong>딥러닝</strong></td><td>사람 뇌의 신경망을 본뜬 여러 층의 모델로 학습하는 머신러닝</td><td>13주</td></tr>
-        <tr><td><strong>생성형AI</strong></td><td>새로운 콘텐츠를 만들어 내는 딥러닝</td><td>4주(도구로 활용), 13주(원리)</td></tr>
+        <tr><td><strong>딥러닝</strong></td><td>뇌의 신경망을 본뜬 여러 층의 모델로 학습</td><td>13주</td></tr>
+        <tr><td><strong>생성형AI</strong></td><td>새로운 콘텐츠를 만들어 내는 딥러닝</td><td>4주(도구), 13주(원리)</td></tr>
       </tbody>
     </table>
+    <div class="box warn" style="margin-top:20px">
+      <p class="box-title">흔한 오해: “AI = ChatGPT”</p>
+      <p class="small">생성형AI는 AI의 가장 안쪽 한 분야일 뿐. 불량 판정·고장 예측 같은 현장 AI의 상당수는 <strong>머신러닝</strong>이고, 이 강의의 중심도 여기입니다.</p>
+    </div>
   </div>
+  <div class="s-foot"><span>AI와 데이터 분석 · 1주 1차시</span><span class="no"></span></div>
+</section>
 
-  <div class="box warn">
-    <p class="box-title">흔한 오해</p>
-    <p>“AI = ChatGPT”가 아닙니다. 생성형AI는 AI의 <strong>가장 안쪽에 있는 한 분야</strong>일 뿐입니다. 공장에서 불량을 판정하거나 설비 고장을 미리 알아채는 AI의 상당수는 <strong>머신러닝</strong>이고, 이 강의의 중심도 여기에 있습니다.</p>
-  </div>
-
-  <!-- ───────────── 4. 관계 ───────────── -->
-  <h2 id="s4"><span class="num">4</span>데이터 분석과 AI의 관계<span class="time">약 4분</span></h2>
-
-  <p>데이터 분석과 AI는 별개의 과목처럼 보이지만, 실제로는 <strong>한 흐름의 앞과 뒤</strong>입니다.</p>
-
-  <div class="table-wrap">
+<!-- 13. 관계 비교 -->
+<section class="slide">
+  <div class="s-head"><span class="sec">4. 데이터 분석과 AI의 관계</span><span class="time">약 4분</span></div>
+  <h2>한 흐름의 앞과 뒤</h2>
+  <div class="body">
     <table>
-      <thead><tr><th></th><th>데이터 분석</th><th>AI(머신러닝)</th></tr></thead>
+      <thead><tr><th style="width:18%"></th><th>데이터 분석</th><th>AI (머신러닝)</th></tr></thead>
       <tbody>
-        <tr><td><strong>주된 질문</strong></td><td>지금까지 무슨 일이 있었고, 왜 그런가?</td><td>새로운 데이터가 오면 어떻게 판단·예측할까?</td></tr>
+        <tr><td><strong>주된 질문</strong></td><td>지금까지 무슨 일이 있었고, 왜 그런가?</td><td>새 데이터가 오면 어떻게 판단·예측할까?</td></tr>
         <tr><td><strong>주인공</strong></td><td>사람이 해석</td><td>모델이 자동으로 판단</td></tr>
         <tr><td><strong>결과물</strong></td><td>표, 그래프, 보고서</td><td>예측·판정을 하는 모델</td></tr>
         <tr><td><strong>공장 예시</strong></td><td>“온도가 높을수록 불량이 많았다”</td><td>“이 제품은 불량일 확률이 85%”</td></tr>
       </tbody>
     </table>
   </div>
+  <div class="s-foot"><span>AI와 데이터 분석 · 1주 1차시</span><span class="no"></span></div>
+</section>
 
-  <p>두 가지를 연결하는 핵심 문장은 이것입니다.</p>
-
-  <div class="box key">
-    <p class="box-title">기억할 문장</p>
-    <p><strong>AI의 성능은 데이터의 품질을 넘을 수 없다.</strong></p>
-    <p style="color:var(--muted);font-size:15px">영어로는 “Garbage in, garbage out(쓰레기를 넣으면 쓰레기가 나온다)”이라고 합니다. 측정값이 빠져 있거나, 단위가 섞여 있거나, 잘못 기록된 데이터로 학습한 AI는 엉뚱한 답을 냅니다.</p>
-  </div>
-
-  <p>그래서 이 강의는 AI 모델보다 <strong>데이터를 불러오고, 정리하고, 그래프로 살펴보는 일</strong>을 먼저 배웁니다. 현업에서도 데이터 분석 프로젝트 시간의 상당 부분이 모델을 만드는 일보다 <strong>데이터를 준비하고 이해하는 일</strong>에 쓰입니다.</p>
-
-  <!-- ───────────── 5. 로드맵 ───────────── -->
-  <h2 id="s5"><span class="num">5</span>이 강의에서 배울 것<span class="time">약 3분</span></h2>
-
-  <figure>
-    <div class="canvas">
-      <svg viewBox="0 0 720 170" role="img" aria-labelledby="road-t">
-        <title id="road-t">15주 강의 로드맵: 준비, 데이터 다루기, AI 모델, 전공 적용의 4단계</title>
-        <defs><marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path class="s-arrow" d="M0,0 L10,5 L0,10 z"/></marker></defs>
-        <rect class="s-box" x="10"  y="30" width="155" height="110" rx="12"/>
-        <rect class="s-box" x="190" y="30" width="155" height="110" rx="12"/>
-        <rect class="s-acc" x="370" y="30" width="155" height="110" rx="12"/>
-        <rect class="s-acc2" x="550" y="30" width="160" height="110" rx="12"/>
-        <path class="s-line" d="M165,85 L186,85" marker-end="url(#ar3)"/>
-        <path class="s-line" d="M345,85 L366,85" marker-end="url(#ar3)"/>
-        <path class="s-line" d="M525,85 L546,85" marker-end="url(#ar3)"/>
-        <text class="t-sub"  x="87"  y="58" text-anchor="middle">1~4주</text>
-        <text class="t-main" x="87"  y="82" text-anchor="middle">준비</text>
-        <text class="t-sub"  x="87"  y="104" text-anchor="middle">개념·Colab·파이썬</text>
-        <text class="t-sub"  x="87"  y="122" text-anchor="middle">생성형AI 코딩 도우미</text>
-        <text class="t-sub"  x="267" y="58" text-anchor="middle">5~7주</text>
-        <text class="t-main" x="267" y="82" text-anchor="middle">데이터 다루기</text>
-        <text class="t-sub"  x="267" y="104" text-anchor="middle">정리·통계·시각화</text>
-        <text class="t-sub"  x="267" y="122" text-anchor="middle">→ 8주 중간고사</text>
-        <text class="t-sub"  x="447" y="58" text-anchor="middle">9~13주</text>
-        <text class="t-acc"  x="447" y="82" text-anchor="middle">AI 모델</text>
-        <text class="t-sub"  x="447" y="104" text-anchor="middle">회귀·분류·군집</text>
-        <text class="t-sub"  x="447" y="122" text-anchor="middle">딥러닝·생성형AI</text>
-        <text class="t-sub"  x="630" y="58" text-anchor="middle">14~15주</text>
-        <text class="t-acc2" x="630" y="82" text-anchor="middle">전공 적용</text>
-        <text class="t-sub"  x="630" y="104" text-anchor="middle">전공 분석 보고서</text>
-        <text class="t-sub"  x="630" y="122" text-anchor="middle">→ 15주 기말고사</text>
-      </svg>
+<!-- 14. GIGO -->
+<section class="slide">
+  <div class="s-head"><span class="sec">4. 데이터 분석과 AI의 관계</span><span class="time">약 4분</span></div>
+  <h2>기억할 문장</h2>
+  <div class="body">
+    <div class="box key">
+      <p class="quote">AI의 성능은<br>데이터의 품질을 넘을 수 없다.</p>
+      <p class="muted">Garbage in, garbage out — 쓰레기를 넣으면 쓰레기가 나온다</p>
     </div>
-    <figcaption>그림 3. 15주 강의 로드맵</figcaption>
-  </figure>
-
-  <h3>이 강의를 듣는 방법</h3>
-  <ul>
-    <li><strong>코드를 처음부터 쓰지 않습니다.</strong> 매 실습 차시마다 실행 가능한 Colab 실습 파일을 제공하고, 여러분은 이를 실행하고 일부를 바꿔 보며 익힙니다.</li>
-    <li><strong>생성형AI를 코딩 도우미로 씁니다.</strong> 4주차에 코드를 만들고, 오류를 고치고, AI의 답을 검증하는 방법을 먼저 배웁니다.</li>
-    <li><strong>예제는 제조·공정·실험 데이터입니다.</strong> 이공계 전공에서 실제로 만날 법한 데이터로 실습합니다.</li>
-    <li><strong>마지막에는 내 전공 데이터로 보고서를 씁니다.</strong> 9주차에 주제를 정하고, 15주차에 제출합니다.</li>
-  </ul>
-
-  <!-- ───────────── 6. 정리 ───────────── -->
-  <h2 id="s6"><span class="num">6</span>정리와 확인 문제<span class="time">약 2분</span></h2>
-
-  <div class="box">
-    <p class="box-title">오늘의 핵심 세 줄</p>
-    <ol>
-      <li><strong>데이터 분석</strong>은 데이터를 정보·지식으로 바꿔 <strong>의사결정</strong>에 쓰는 과정이다.</li>
-      <li><strong>AI ⊃ 머신러닝 ⊃ 딥러닝 ⊃ 생성형AI</strong>. 머신러닝은 규칙을 사람이 아니라 <strong>데이터에서</strong> 찾는다.</li>
-      <li>AI의 성능은 데이터 품질을 넘을 수 없다. 그래서 <strong>데이터 분석이 AI의 출발점</strong>이다.</li>
-    </ol>
+    <ul class="small">
+      <li>측정값이 빠지거나, 단위가 섞이거나, 잘못 기록된 데이터로 학습한 AI는 엉뚱한 답을 낸다.</li>
+      <li>그래서 이 강의는 AI 모델보다 <strong>데이터를 불러오고·정리하고·그래프로 살펴보는 일</strong>을 먼저 배운다.</li>
+    </ul>
   </div>
+  <div class="s-foot"><span>AI와 데이터 분석 · 1주 1차시</span><span class="no"></span></div>
+</section>
 
-  <div class="quiz">
-    <div class="q" data-answer="b" data-explain="“3호기는 오후 평균 온도가 5℃ 높다”는 원본 기록을 정리·요약한 사실이므로 ‘정보’입니다. 원인(온도 → 불량)까지 밝혀야 ‘지식’이 됩니다.">
-      <p class="q-title">“3호기는 오후 평균 온도가 오전보다 5℃ 높다.” 이 문장은 4단계 중 어디에 해당할까요?</p>
+<!-- 15. 로드맵 -->
+<section class="slide">
+  <div class="s-head"><span class="sec">5. 이 강의에서 배울 것</span><span class="time">약 3분</span></div>
+  <h2>15주 로드맵</h2>
+  <div class="body">
+    <figure>
+      <div class="canvas">
+        <svg viewBox="0 0 720 170" role="img" aria-labelledby="road-t">
+          <title id="road-t">15주 강의 로드맵: 준비, 데이터 다루기, AI 모델, 전공 적용의 4단계</title>
+          <defs><marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path class="s-arrow" d="M0,0 L10,5 L0,10 z"/></marker></defs>
+          <rect class="s-box" x="10"  y="30" width="155" height="110" rx="12"/>
+          <rect class="s-box" x="190" y="30" width="155" height="110" rx="12"/>
+          <rect class="s-acc" x="370" y="30" width="155" height="110" rx="12"/>
+          <rect class="s-acc2" x="550" y="30" width="160" height="110" rx="12"/>
+          <path class="s-line" d="M165,85 L186,85" marker-end="url(#ar3)"/>
+          <path class="s-line" d="M345,85 L366,85" marker-end="url(#ar3)"/>
+          <path class="s-line" d="M525,85 L546,85" marker-end="url(#ar3)"/>
+          <text class="t-sub"  x="87"  y="58" text-anchor="middle">1~4주</text>
+          <text class="t-main" x="87"  y="82" text-anchor="middle">준비</text>
+          <text class="t-sub"  x="87"  y="104" text-anchor="middle">개념·Colab·파이썬</text>
+          <text class="t-sub"  x="87"  y="122" text-anchor="middle">생성형AI 코딩 도우미</text>
+          <text class="t-sub"  x="267" y="58" text-anchor="middle">5~7주</text>
+          <text class="t-main" x="267" y="82" text-anchor="middle">데이터 다루기</text>
+          <text class="t-sub"  x="267" y="104" text-anchor="middle">정리·통계·시각화</text>
+          <text class="t-sub"  x="267" y="122" text-anchor="middle">→ 8주 중간고사</text>
+          <text class="t-sub"  x="447" y="58" text-anchor="middle">9~13주</text>
+          <text class="t-acc"  x="447" y="82" text-anchor="middle">AI 모델</text>
+          <text class="t-sub"  x="447" y="104" text-anchor="middle">회귀·분류·군집</text>
+          <text class="t-sub"  x="447" y="122" text-anchor="middle">딥러닝·생성형AI</text>
+          <text class="t-sub"  x="630" y="58" text-anchor="middle">14~15주</text>
+          <text class="t-acc2" x="630" y="82" text-anchor="middle">전공 적용</text>
+          <text class="t-sub"  x="630" y="104" text-anchor="middle">전공 분석 보고서</text>
+          <text class="t-sub"  x="630" y="122" text-anchor="middle">→ 15주 기말고사</text>
+        </svg>
+      </div>
+    </figure>
+  </div>
+  <div class="s-foot"><span>AI와 데이터 분석 · 1주 1차시</span><span class="no"></span></div>
+</section>
+
+<!-- 16. 듣는 방법 -->
+<section class="slide">
+  <div class="s-head"><span class="sec">5. 이 강의에서 배울 것</span><span class="time">약 3분</span></div>
+  <h2>이 강의를 듣는 방법</h2>
+  <div class="body">
+    <div class="grid g2">
+      <div class="card"><div class="h">코드를 처음부터 쓰지 않습니다</div><div class="d">실행 가능한 Colab 실습 파일을 제공합니다. 실행하고, 일부를 바꿔 보며 익힙니다.</div></div>
+      <div class="card"><div class="h">생성형AI를 코딩 도우미로</div><div class="d">4주차에 코드 만들기, 오류 고치기, AI 답 검증하기를 먼저 배웁니다.</div></div>
+      <div class="card"><div class="h">예제는 제조·공정·실험 데이터</div><div class="d">이공계 전공에서 실제로 만날 법한 데이터로 실습합니다.</div></div>
+      <div class="card"><div class="h">마지막엔 내 전공 데이터로</div><div class="d">9주차에 보고서 주제를 정하고, 15주차에 제출합니다.</div></div>
+    </div>
+  </div>
+  <div class="s-foot"><span>AI와 데이터 분석 · 1주 1차시</span><span class="no"></span></div>
+</section>
+
+<!-- 17. 핵심 정리 -->
+<section class="slide">
+  <div class="s-head"><span class="sec">6. 정리와 확인 문제</span><span class="time">약 2분</span></div>
+  <h2>오늘의 핵심 세 줄</h2>
+  <div class="body">
+    <ul class="agenda">
+      <li><span class="n">1</span><span><strong>데이터 분석</strong>은 데이터를 정보·지식으로 바꿔 <strong>의사결정</strong>에 쓰는 과정</span></li>
+      <li><span class="n">2</span><span><strong>AI ⊃ 머신러닝 ⊃ 딥러닝 ⊃ 생성형AI</strong> — 머신러닝은 규칙을 <strong>데이터에서</strong> 찾는다</span></li>
+      <li><span class="n">3</span><span>AI의 성능은 데이터 품질을 넘을 수 없다 → <strong>데이터 분석이 AI의 출발점</strong></span></li>
+    </ul>
+  </div>
+  <div class="s-foot"><span>AI와 데이터 분석 · 1주 1차시</span><span class="no"></span></div>
+</section>
+
+<!-- 18. 확인 문제 1·2 -->
+<section class="slide">
+  <div class="s-head"><span class="sec">6. 정리와 확인 문제</span><span class="time">약 2분</span></div>
+  <h2>확인 문제 <span class="muted" style="font-size:22px;font-weight:500">— 보기를 눌러 보세요</span></h2>
+  <div class="grid g2">
+    <div class="q" data-answer="b" data-explain="원본 기록을 정리·요약한 사실이므로 ‘정보’입니다. 원인(온도 → 불량)까지 밝혀야 ‘지식’이 됩니다.">
+      <p class="q-title"><b>Q1.</b> “3호기는 오후 평균 온도가 오전보다 5℃ 높다”는 4단계 중 어디일까요?</p>
       <div class="opts">
         <button type="button" data-v="a">데이터</button>
         <button type="button" data-v="b">정보</button>
@@ -379,20 +425,27 @@
       </div>
       <div class="feedback" aria-live="polite"></div>
     </div>
-
-    <div class="q" data-answer="b" data-explain="머신러닝은 사람이 규칙을 직접 쓰는 대신, 데이터와 정답을 주면 컴퓨터가 규칙(모델)을 찾아냅니다.">
-      <p class="q-title">전통적인 프로그래밍과 비교했을 때 머신러닝의 가장 큰 차이는?</p>
+    <div class="q" data-answer="b" data-explain="머신러닝은 사람이 규칙을 쓰는 대신, 데이터와 정답에서 컴퓨터가 규칙(모델)을 찾습니다.">
+      <p class="q-title"><b>Q2.</b> 전통적인 프로그래밍과 비교한 머신러닝의 가장 큰 차이는?</p>
       <div class="opts">
         <button type="button" data-v="a">계산 속도가 훨씬 빠르다</button>
-        <button type="button" data-v="b">규칙을 사람이 아니라 데이터에서 컴퓨터가 찾는다</button>
-        <button type="button" data-v="c">항상 100% 정확한 답을 낸다</button>
+        <button type="button" data-v="b">규칙을 데이터에서 컴퓨터가 찾는다</button>
+        <button type="button" data-v="c">항상 100% 정확하다</button>
         <button type="button" data-v="d">데이터가 필요 없다</button>
       </div>
       <div class="feedback" aria-live="polite"></div>
     </div>
+  </div>
+  <div class="s-foot"><span>AI와 데이터 분석 · 1주 1차시</span><span class="no"></span></div>
+</section>
 
-    <div class="q" data-answer="d" data-explain="생성형AI는 딥러닝의 한 분야이고, 딥러닝은 머신러닝의, 머신러닝은 AI의 한 분야입니다. 범위가 가장 넓은 것은 AI입니다.">
-      <p class="q-title">다음 중 관계를 바르게 나타낸 것은?</p>
+<!-- 19. 확인 문제 3·4 -->
+<section class="slide">
+  <div class="s-head"><span class="sec">6. 정리와 확인 문제</span><span class="time">약 2분</span></div>
+  <h2>확인 문제</h2>
+  <div class="grid g2">
+    <div class="q" data-answer="d" data-explain="생성형AI ⊂ 딥러닝 ⊂ 머신러닝 ⊂ AI. 범위가 가장 넓은 것은 AI입니다.">
+      <p class="q-title"><b>Q3.</b> 관계를 바르게 나타낸 것은?</p>
       <div class="opts">
         <button type="button" data-v="a">생성형AI ⊃ 딥러닝 ⊃ 머신러닝 ⊃ AI</button>
         <button type="button" data-v="b">머신러닝 ⊃ AI ⊃ 딥러닝 ⊃ 생성형AI</button>
@@ -401,35 +454,44 @@
       </div>
       <div class="feedback" aria-live="polite"></div>
     </div>
-
     <div class="q" data-answer="a" data-explain="AI는 학습한 데이터의 품질을 넘을 수 없습니다(Garbage in, garbage out). 그래서 데이터를 정리하고 이해하는 일이 먼저입니다.">
-      <p class="q-title">이 강의가 AI 모델보다 데이터 정리·시각화를 먼저 배우는 이유로 가장 알맞은 것은?</p>
+      <p class="q-title"><b>Q4.</b> AI 모델보다 데이터 정리·시각화를 먼저 배우는 이유는?</p>
       <div class="opts">
-        <button type="button" data-v="a">AI의 성능은 학습에 쓴 데이터의 품질에 크게 좌우되기 때문에</button>
-        <button type="button" data-v="b">AI 모델은 그래프가 있어야만 작동하기 때문에</button>
-        <button type="button" data-v="c">데이터 분석이 AI보다 최신 기술이기 때문에</button>
-        <button type="button" data-v="d">시험에 많이 나오기 때문에</button>
+        <button type="button" data-v="a">AI 성능이 데이터 품질에 크게 좌우되므로</button>
+        <button type="button" data-v="b">AI는 그래프가 있어야만 작동하므로</button>
+        <button type="button" data-v="c">데이터 분석이 더 최신 기술이므로</button>
+        <button type="button" data-v="d">시험에 많이 나오므로</button>
       </div>
       <div class="feedback" aria-live="polite"></div>
     </div>
   </div>
+  <div class="s-foot"><span>AI와 데이터 분석 · 1주 1차시</span><span class="no"></span></div>
+</section>
 
-  <div class="box think">
-    <p class="box-title">다음 차시 예고 · 1주 2차시</p>
-    <p><strong>제조·연구·로봇 현장의 AX 사례</strong> — 오늘 배운 개념이 실제 공장, 연구실, 로봇 자동화 현장에서 어떻게 쓰이고 있는지 살펴봅니다. 도입에서 떠올린 “내 전공의 데이터”를 가지고 오세요.</p>
-  </div>
+<!-- 20. 다음 차시 -->
+<section class="slide section">
+  <div class="s-head"><span class="sec">다음 차시 예고</span></div>
+  <div class="big">1-2</div>
+  <h2>제조·연구·로봇 현장의 AX 사례</h2>
+  <p>오늘 배운 개념이 실제 공장, 연구실, 로봇 자동화 현장에서 어떻게 쓰이는지 살펴봅니다.<br>도입에서 떠올린 <strong>“내 전공의 데이터”</strong>를 가지고 오세요.</p>
+  <div class="s-foot"><span>AI와 데이터 분석 · 1주 1차시</span><span class="no"></span></div>
+</section>
 
-  <nav class="pager" aria-label="차시 이동">
-    <a href="../"><small>← 강의 목록</small>AI와 데이터 분석</a>
-    <span class="next"><small>다음 차시 (준비 중) →</small>1주 2차시 · AX 사례</span>
-  </nav>
+</div>
+</div>
 
-</main>
+<div class="bar"></div>
+<nav class="controls" aria-label="슬라이드 이동">
+  <a href="../">☰ 목록</a>
+  <span class="title">1주 1차시 · AI와 데이터 분석이란?</span>
+  <span class="spacer"></span>
+  <span class="hint">← → 키 · F 전체화면</span>
+  <button type="button" data-prev aria-label="이전 슬라이드">◀</button>
+  <span class="count">1 / 1</span>
+  <button type="button" data-next aria-label="다음 슬라이드">▶</button>
+  <button type="button" class="fs" data-fs aria-label="전체화면">⛶</button>
+</nav>
 
-<footer>
-  동의대학교 AX 마이크로디그리 · AI와 데이터 분석 (이공계열) · 인공지능학과
-</footer>
-
-<script src="../../assets/js/course.js"></script>
+<script src="../../assets/js/slides.js"></script>
 </body>
 </html>
