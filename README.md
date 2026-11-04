@@ -19,7 +19,7 @@ assets/js/slides.js           # 슬라이드 넘김(← → 키·스와이프·�
 assets/js/icons.js            # 공통 선 아이콘 (<svg class="ic"><use href="#i-이름"/></svg>)
 ai-data-analysis/
   index.html                  # 주차별 강의 목록
-  weekNN/lessonMM.html        # N주 M차시 슬라이드 교안 (차시당 25분 영상 기준)
+  weekNN/lessonMM.html        # N주 M차시 슬라이드 교안
   weekNN/lessonMM.js          # 그 차시의 직접 해 보기(인터랙티브) 화면
 genai-practice/
   index.html
