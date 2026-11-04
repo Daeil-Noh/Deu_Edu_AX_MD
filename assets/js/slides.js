@@ -8,7 +8,7 @@
   const prev = document.querySelector('[data-prev]');
   const next = document.querySelector('[data-next]');
   const count = document.querySelector('.count');
-  const bar = document.querySelector('.bar');
+  const bar = document.querySelector('body > .bar') || document.querySelector('.bar');
   const total = slides.length;
   let cur = 0;
 

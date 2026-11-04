@@ -25,6 +25,16 @@ genai-practice/
   index.html
 ```
 
+## 실습 파일과 데이터
+
+- 코드 실습 차시마다 `weekNN/lessonMM.ipynb` (Colab에서 바로 열림). 원본은 `weekNN/nb_src/lessonMM.py`
+- 과제·양식: `week07/assignment1.ipynb`(과제1), `week09/topic_form.ipynb`(보고서 주제), `week11/assignment2.ipynb`(과제2), `week14/report_template.ipynb`(보고서)
+- 실습 데이터(가상): `ai-data-analysis/data/` — process.csv, process_raw.csv, vibration.csv, lab_yield.csv (`python3 tools/make_data.py`로 재생성)
+
+## 제작·점검 도구 (`tools/`)
+
+- `LESSON_GUIDE.md` 교안 제작 규칙 · `check_lesson.js` 슬라이드 자동 점검 · `nb.py` 실습 파일 빌드·실행 검사 · `update_index.py` 강의 목록 갱신
+
 ## 배포
 
 Settings → Pages → Source: `Deploy from a branch`, Branch: `main` / `(root)`

@@ -270,7 +270,7 @@ pre.out.err::before { content: "오류 메시지"; color: var(--bad); }
 .codecap { font-size: 15px; color: var(--muted); margin: 6px 0 0; }
 /* 노트북 셀처럼 보이는 상자 */
 .cell-ui { border: 1px solid var(--line); border-radius: 16px; background: var(--surface); padding: 10px; display: grid; gap: 8px; }
-.cell-ui .bar { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); }
+.cell-ui .cbar { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); }
 .cell-ui .run { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: var(--surface-2); color: var(--text); border: 1px solid var(--line); }
 
 /* Colab 실습 파일 열기 버튼 */
