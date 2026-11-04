@@ -53,7 +53,9 @@ const path = require('path');
   const g = await b.newPage({ viewport: { width: 1366, height: 1230 } });
   for (let k = 0; k < shots.length; k += 6) {
     const imgs = shots.slice(k, k + 6).map((s) => `<img src="file://${s}" style="width:683px;height:410px;display:block;float:left">`).join('');
-    await g.setContent(`<body style="margin:0;background:#fff">${imgs}</body>`); await g.waitForTimeout(300);
+    const gf = path.join(out, `_grid.html`);
+    require('fs').writeFileSync(gf, `<body style="margin:0;background:#fff">${imgs}</body>`);
+    await g.goto('file://' + gf); await g.waitForTimeout(300);
     await g.screenshot({ path: path.join(out, `grid-${k / 6 + 1}.png`) });
   }
   console.log(`slides: ${n}`);
