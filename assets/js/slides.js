@@ -113,3 +113,24 @@ document.querySelectorAll('.q').forEach((q) => {
     fb.classList.add('show');
   }));
 });
+
+// 코드 블록 색 입히기: <pre class="code"> (파이썬)
+document.querySelectorAll('pre.code').forEach((pre) => {
+  if (pre.dataset.hl === 'off') return;
+  const esc = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const KW = /^(import|from|as|def|return|if|elif|else|for|while|in|not|and|or|is|None|True|False|print|class|with|try|except|lambda|pass|break|continue|range|len)$/;
+  const src = pre.textContent;
+  let out = '', i = 0;
+  const re = /(#[^\n]*)|("""[\s\S]*?"""|'[^'\n]*'|"[^"\n]*"|f'[^'\n]*'|f"[^"\n]*")|(\b\d+(?:\.\d+)?\b)|([A-Za-z_가-힣][A-Za-z0-9_가-힣]*)(?=\s*\()|([A-Za-z_][A-Za-z0-9_]*)/g;
+  let m;
+  while ((m = re.exec(src))) {
+    out += esc(src.slice(i, m.index));
+    if (m[1]) out += '<span class="c">' + esc(m[1]) + '</span>';
+    else if (m[2]) out += '<span class="s">' + esc(m[2]) + '</span>';
+    else if (m[3]) out += '<span class="n">' + m[3] + '</span>';
+    else if (m[4]) out += (KW.test(m[4]) ? '<span class="k">' : '<span class="f">') + esc(m[4]) + '</span>';
+    else out += KW.test(m[5]) ? '<span class="k">' + m[5] + '</span>' : m[5];
+    i = re.lastIndex;
+  }
+  pre.innerHTML = out + esc(src.slice(i));
+});
