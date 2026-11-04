@@ -247,3 +247,7 @@ input[type=range] { width: 100%; accent-color: var(--accent); height: 28px; curs
 .demo .callout { font-size: 16px; padding: 10px 14px; }
 .slide:has(.demo) h2 { margin-bottom: 16px; }
 .slide:has(.demo) { padding-bottom: 58px; }
+
+/* 표지 작성자 */
+.cover .author { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; margin: 0 0 26px; padding: 14px 0 0; border-top: 2px solid var(--line); max-width: 560px; font-size: 19px; color: var(--muted); }
+.cover .author b { font-size: 22px; color: var(--text); }
