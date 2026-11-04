@@ -136,7 +136,7 @@
 
 <!-- 3. 흐름 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">오늘의 흐름</span><span class="time">총 25분</span></div>
+  <div class="s-head"><span class="sec">오늘의 흐름</span></div>
   <h2>오늘의 흐름</h2>
   <div class="body">
     <div class="tl">
@@ -153,7 +153,7 @@
 
 <!-- 4. 도입 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">도입</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">도입</span></div>
   <h2>지난 시간의 그 코드, 실행해 보면?</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:30px">
     <div style="flex:1.15;display:flex;flex-direction:column;gap:10px">
@@ -183,7 +183,7 @@ KeyError: '불량'</pre>
 
 <!-- 6. 구조 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 오류 메시지 읽기</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">① 오류 메시지 읽기</span></div>
   <h2>트레이스백(Traceback)은 <span class="mark">아래에서부터</span> 읽는다</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:30px">
     <svg viewBox="0 0 560 420" style="width:560px;flex:none" role="img" aria-label="트레이스백의 구조: 맨 아래 오류 종류와 메시지, 화살표가 가리키는 내 코드의 줄, 그 사이의 라이브러리 내부 경로">
@@ -214,7 +214,7 @@ KeyError: '불량'</pre>
 
 <!-- 7. 직접 해 보기 1: 트레이스백 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 오류 메시지 읽기 · 직접 해 보기 1</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">① 오류 메시지 읽기 · 직접 해 보기 1</span></div>
   <h2>오류 메시지 해부하기 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg> <span class="muted" style="font-size:20px;font-weight:500">— 덩어리를 눌러 보세요</span></h2>
   <div class="demo" style="grid-template-columns:1fr 340px">
     <div class="plot" style="padding:12px"><div class="tb" id="tb" role="group" aria-label="KeyError 트레이스백. 각 덩어리를 누르면 설명이 나온다"></div></div>
@@ -233,7 +233,7 @@ KeyError: '불량'</pre>
 
 <!-- 8. 한 줄 해석 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 오류 메시지 읽기</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">① 오류 메시지 읽기</span></div>
   <h2>맨 아래 한 줄을 우리말로 옮겨 보기</h2>
   <div class="body">
     <div class="formula">
@@ -255,7 +255,7 @@ KeyError: '불량'</pre>
 
 <!-- 10. 여섯 가지 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 자주 만나는 오류</span><span class="time">약 8분</span></div>
+  <div class="s-head"><span class="sec">② 자주 만나는 오류</span></div>
   <h2>이것만 알아도 절반은 해결: 오류 여섯 가지</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(3,1fr);gap:14px">
@@ -272,7 +272,7 @@ KeyError: '불량'</pre>
 
 <!-- 11. KeyError 상세 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 자주 만나는 오류</span><span class="time">약 8분</span></div>
+  <div class="s-head"><span class="sec">② 자주 만나는 오류</span></div>
   <h2>가장 흔한 오류: 열 이름이 틀렸다 <span class="mono" style="color:var(--bad);font-size:32px">KeyError</span></h2>
   <div class="body">
     <div class="flow" style="gap:0">
@@ -295,7 +295,7 @@ KeyError: '불량'</pre>
 
 <!-- 12. 실행 순서와 자료형 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 자주 만나는 오류</span><span class="time">약 8분</span></div>
+  <div class="s-head"><span class="sec">② 자주 만나는 오류</span></div>
   <h2>Colab에서 특히 자주: 실행 순서와 자료형</h2>
   <div class="body">
     <div class="grid g2" style="gap:24px">
@@ -322,7 +322,7 @@ KeyError: '불량'</pre>
 
 <!-- 13. 직접 해 보기 2: 짝 맞추기 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 자주 만나는 오류 · 직접 해 보기 2</span><span class="time">약 8분</span></div>
+  <div class="s-head"><span class="sec">② 자주 만나는 오류 · 직접 해 보기 2</span></div>
   <h2>오류 메시지 ↔ 원인 짝 맞추기 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg> <span class="muted" style="font-size:20px;font-weight:500">— 왼쪽 하나, 오른쪽 하나</span></h2>
   <div class="body" style="justify-content:flex-start">
     <div class="match"><div class="col" id="m-left"></div><div class="col" id="m-right"></div></div>
@@ -344,7 +344,7 @@ KeyError: '불량'</pre>
 
 <!-- 15. 묻는 법 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ AI에게 묻고 고치기</span><span class="time">약 6분</span></div>
+  <div class="s-head"><span class="sec">③ AI에게 묻고 고치기</span></div>
   <h2>오류를 물을 때 함께 넣을 네 가지</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:30px">
     <div style="flex:1;display:grid;gap:10px">
@@ -366,7 +366,7 @@ KeyError: '불량'</pre>
 
 <!-- 16. 직접 해 보기 3: 질문 조립 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ AI에게 묻고 고치기 · 직접 해 보기 3</span><span class="time">약 6분</span></div>
+  <div class="s-head"><span class="sec">③ AI에게 묻고 고치기 · 직접 해 보기 3</span></div>
   <h2>질문을 바꾸면 AI의 답이 달라진다 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 330px">
     <div class="plot" style="flex-direction:column;align-items:stretch;justify-content:flex-start;gap:10px;padding:14px 16px">
@@ -389,7 +389,7 @@ KeyError: '불량'</pre>
 
 <!-- 17. 고친 뒤에는 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ AI에게 묻고 고치기</span><span class="time">약 6분</span></div>
+  <div class="s-head"><span class="sec">③ AI에게 묻고 고치기</span></div>
   <h2>오류 해결의 한 바퀴</h2>
   <div class="body">
     <div class="flow">
@@ -413,7 +413,7 @@ KeyError: '불량'</pre>
 
 <!-- 18. 실습 파일 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ AI에게 묻고 고치기 · 실습</span><span class="time">약 6분</span></div>
+  <div class="s-head"><span class="sec">③ AI에게 묻고 고치기 · 실습</span></div>
   <h2>실습: 일부러 오류를 내고, 읽고, 고치기</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:40px">
     <div style="flex:1">
@@ -436,7 +436,7 @@ KeyError: '불량'</pre>
 
 <!-- 19. 정리 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">정리</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">정리</span></div>
   <h2>오늘의 핵심 세 가지</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(3,1fr)">
@@ -450,7 +450,7 @@ KeyError: '불량'</pre>
 
 <!-- 20. 확인 문제 1·2 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제 <span class="muted" style="font-size:22px;font-weight:500">— 보기를 눌러 보세요</span></h2>
   <div class="grid g2">
     <div class="q" data-answer="d" data-explain="트레이스백은 가장 최근에 실행된 곳이 맨 아래에 옵니다. 맨 아래 줄의 오류 종류와 메시지부터 읽고, 화살표가 가리키는 내 코드의 줄을 찾습니다.">
@@ -479,7 +479,7 @@ KeyError: '불량'</pre>
 
 <!-- 21. 확인 문제 3·4 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제</h2>
   <div class="grid g2">
     <div class="q" data-answer="a" data-explain="Colab은 실행한 셀의 결과만 기억합니다. df를 만드는 셀을 실행하지 않았거나 런타임을 다시 시작했다면, 위 셀부터 차례로 다시 실행해야 합니다.">

@@ -108,7 +108,7 @@
 
 <!-- 3. 흐름 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">오늘의 흐름</span><span class="time">총 25분</span></div>
+  <div class="s-head"><span class="sec">오늘의 흐름</span></div>
   <h2>오늘의 흐름</h2>
   <div class="body">
     <div class="tl">
@@ -125,7 +125,7 @@
 
 <!-- 4. 도입 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">도입</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">도입</span></div>
   <h2>인장강도 494개, 한마디로 말하면?</h2>
   <div class="body" style="justify-content:flex-start">
     <div class="tile" style="padding:12px 16px 6px">
@@ -149,7 +149,7 @@
 
 <!-- 6. 평균 vs 중앙값 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 가운데는 어디?</span><span class="time">약 8분</span></div>
+  <div class="s-head"><span class="sec">① 가운데는 어디?</span></div>
   <h2>3호기 제품 9개의 사출 온도로 보면</h2>
   <div class="body">
     <div class="grid g2" style="gap:24px">
@@ -170,7 +170,7 @@
 
 <!-- 7. 직접 해 보기 1: 이상치 끌기 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 가운데는 어디? · 직접 해 보기 1</span><span class="time">약 8분</span></div>
+  <div class="s-head"><span class="sec">① 가운데는 어디? · 직접 해 보기 1</span></div>
   <h2>점 하나가 멀리 가면 누가 따라갈까? <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo">
     <div class="plot"><svg id="drag" viewBox="0 0 640 420" aria-label="온도 9개의 점 그림. 주황 점을 끌어 옮기면 평균과 중앙값 표시가 움직인다"></svg></div>
@@ -189,7 +189,7 @@
 
 <!-- 8. 실제 데이터: 정리 전후 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 가운데는 어디?</span><span class="time">약 8분</span></div>
+  <div class="s-head"><span class="sec">① 가운데는 어디?</span></div>
   <h2>5주차에 센서 오류값을 정리한 이유</h2>
   <div class="body">
     <div class="grid g2" style="gap:26px">
@@ -215,7 +215,7 @@
 
 <!-- 9. 언제 무엇을 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 가운데는 어디?</span><span class="time">약 8분</span></div>
+  <div class="s-head"><span class="sec">① 가운데는 어디?</span></div>
   <h2>평균을 쓸까, 중앙값을 쓸까?</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(3,1fr)">
@@ -237,7 +237,7 @@
 
 <!-- 11. 범위·분산·표준편차 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 얼마나 퍼져 있나?</span><span class="time">약 8분</span></div>
+  <div class="s-head"><span class="sec">② 얼마나 퍼져 있나?</span></div>
   <h2>퍼짐을 재는 세 가지 자</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:26px">
     <div class="tile" style="flex:1.15;padding:14px 16px 8px">
@@ -254,7 +254,7 @@
 
 <!-- 12. 직접 해 보기 2: 두 설비 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 얼마나 퍼져 있나? · 직접 해 보기 2</span><span class="time">약 8분</span></div>
+  <div class="s-head"><span class="sec">② 얼마나 퍼져 있나? · 직접 해 보기 2</span></div>
   <h2>평균이 같으면 같은 설비일까? <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo">
     <div class="plot"><svg id="mach" viewBox="0 0 640 420" aria-label="A설비와 B설비 제품 40개씩의 두께 점 그림과 규격 범위"></svg></div>
@@ -274,7 +274,7 @@
 
 <!-- 13. 표준편차 감 잡기 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 얼마나 퍼져 있나?</span><span class="time">약 8분</span></div>
+  <div class="s-head"><span class="sec">② 얼마나 퍼져 있나?</span></div>
   <h2>표준편차 감 잡기: 평균 ± 표준편차 안에 몇 개?</h2>
   <div class="body" style="justify-content:flex-start">
     <div class="tile" style="padding:12px 16px 4px">
@@ -297,7 +297,7 @@
 
 <!-- 15. 코드: 하나씩 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ pandas로 한 번에</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">③ pandas로 한 번에</span></div>
   <h2>열 하나를 골라 통계 메서드 붙이기</h2>
   <div class="codegrid">
     <div>
@@ -328,7 +328,7 @@ print(round(s.std(), 2))        # 표준편차</pre>
 
 <!-- 16. 직접 해 보기 3: describe -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ pandas로 한 번에 · 직접 해 보기 3</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">③ pandas로 한 번에 · 직접 해 보기 3</span></div>
   <h2>describe(): 요약 통계 여덟 줄 읽기 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 400px">
     <div class="plot" style="flex-direction:column;align-items:stretch;justify-content:flex-start;gap:12px;padding:16px 18px">
@@ -354,7 +354,7 @@ print(round(s.std(), 2))        # 표준편차</pre>
 
 <!-- 17. 실습 파일 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ pandas로 한 번에</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">③ pandas로 한 번에</span></div>
   <h2>실습 파일: 내 손으로 요약 통계 구하기</h2>
   <div class="body" style="flex-direction:row;gap:30px;align-items:stretch">
     <div class="tile" style="flex:1.1;padding:24px 26px">
@@ -379,7 +379,7 @@ print(round(s.std(), 2))        # 표준편차</pre>
 
 <!-- 18. 핵심 정리 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">정리</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">정리</span></div>
   <h2>오늘의 핵심 세 가지</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(3,1fr)">
@@ -393,7 +393,7 @@ print(round(s.std(), 2))        # 표준편차</pre>
 
 <!-- 19. 확인 문제 1·2 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제 <span class="muted" style="font-size:22px;font-weight:500">— 보기를 눌러 보세요</span></h2>
   <div class="grid g2">
     <div class="q" data-answer="b" data-explain="평균은 모든 값을 더해서 나누므로 극단값 하나에 크게 끌려갑니다. 중앙값은 줄 세운 순서만 보므로 거의 변하지 않습니다(직접 해 보기 1: 206.9 → 295.9, 중앙값은 205.4 → 207.2).">
@@ -422,7 +422,7 @@ print(round(s.std(), 2))        # 표준편차</pre>
 
 <!-- 20. 확인 문제 3·4 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제</h2>
   <div class="grid g2">
     <div class="q" data-answer="a" data-explain="분산은 편차를 제곱했기 때문에 단위도 제곱(℃², MPa²)이 됩니다. 제곱근을 씌운 표준편차는 원래 단위로 돌아와 ‘평균에서 보통 이만큼 떨어져 있다’고 읽을 수 있습니다.">

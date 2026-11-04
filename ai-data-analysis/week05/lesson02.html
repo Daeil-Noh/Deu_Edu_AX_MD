@@ -132,7 +132,7 @@
 
 <!-- 3. 흐름 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">오늘의 흐름</span><span class="time">총 25분</span></div>
+  <div class="s-head"><span class="sec">오늘의 흐름</span></div>
   <h2>오늘의 흐름</h2>
   <div class="body">
     <div class="tl">
@@ -149,7 +149,7 @@
 
 <!-- 4. 도입: 현장 질문 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">도입</span><span class="time">약 3분</span></div>
+  <div class="s-head"><span class="sec">도입</span></div>
   <h2>현장의 질문은 대부분 “고르기”와 “줄 세우기”</h2>
   <div class="body">
     <div class="grid" style="gap:14px">
@@ -171,7 +171,7 @@
 
 <!-- 6. 열 하나 vs 여러 개 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 열 고르기</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">① 열 고르기</span></div>
   <h2><code>df['temp']</code> 와 <code>df[['temp', 'pressure']]</code></h2>
   <div class="body">
     <div class="grid g2" style="gap:26px">
@@ -205,7 +205,7 @@ Name: temp, Length: 494, dtype: float64</pre>
 
 <!-- 7. 될까 안 될까 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 열 고르기 · 직접 해 보기 1</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">① 열 고르기 · 직접 해 보기 1</span></div>
   <h2>이 코드는 실행될까? <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg> <span class="muted" style="font-size:20px;font-weight:500">— 먼저 예상하고 카드를 눌러 보세요</span></h2>
   <div class="body" style="justify-content:flex-start">
     <div class="pcards" id="cards"></div>
@@ -223,7 +223,7 @@ Name: temp, Length: 494, dtype: float64</pre>
 
 <!-- 9. 불리언 마스크 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 조건으로 행 고르기</span><span class="time">약 10분</span></div>
+  <div class="s-head"><span class="sec">② 조건으로 행 고르기</span></div>
   <h2>조건 = 행마다 붙는 True / False 표시</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:20px">
     <div class="frag show" style="width:330px;flex:none">
@@ -269,7 +269,7 @@ Name: temp, Length: 494, dtype: float64</pre>
 
 <!-- 10. & | -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 조건으로 행 고르기</span><span class="time">약 10분</span></div>
+  <div class="s-head"><span class="sec">② 조건으로 행 고르기</span></div>
   <h2>조건 두 개 묶기: <code>&amp;</code> 그리고, <code>|</code> 또는</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:30px">
     <div style="width:500px;flex:none">
@@ -301,7 +301,7 @@ Name: temp, Length: 494, dtype: float64</pre>
 
 <!-- 11. isin -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 조건으로 행 고르기</span><span class="time">약 10분</span></div>
+  <div class="s-head"><span class="sec">② 조건으로 행 고르기</span></div>
   <h2>여러 값 중 하나: <code>isin</code></h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:30px">
     <div style="flex:1;min-width:0;display:grid;gap:12px">
@@ -324,7 +324,7 @@ df[df['defect_type'].isin(['찍힘', '스크래치'])]</pre>
 
 <!-- 12. 필터 만들기 데모 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 조건으로 행 고르기 · 직접 해 보기 2</span><span class="time">약 10분</span></div>
+  <div class="s-head"><span class="sec">② 조건으로 행 고르기 · 직접 해 보기 2</span></div>
   <h2>필터 만들기: 조건을 고르면 코드가 된다 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 390px">
     <div class="plot" style="flex-direction:column;align-items:stretch;justify-content:flex-start;gap:8px;padding:12px 14px">
@@ -355,7 +355,7 @@ df[df['defect_type'].isin(['찍힘', '스크래치'])]</pre>
 
 <!-- 13. 결과 세기 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 조건으로 행 고르기</span><span class="time">약 10분</span></div>
+  <div class="s-head"><span class="sec">② 조건으로 행 고르기</span></div>
   <h2>골랐으면 세어 보고, 고른 것끼리 계산하기</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:30px">
     <div style="flex:1;min-width:0;display:grid;gap:10px">
@@ -387,7 +387,7 @@ df.loc[df['temp'] &gt; 220, ['product_id', 'temp']]   # 행·열 함께</pre>
 
 <!-- 15. sort_values / nlargest -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 정렬과 순위</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">③ 정렬과 순위</span></div>
   <h2><code>sort_values</code> 로 줄 세우고, <code>nlargest</code> 로 상위 N개</h2>
   <div class="body">
     <div class="grid g2" style="gap:24px">
@@ -420,7 +420,7 @@ df.nlargest(5, 'temp')</pre>
 
 <!-- 16. 정렬 데모 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 정렬과 순위 · 직접 해 보기 3</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">③ 정렬과 순위 · 직접 해 보기 3</span></div>
   <h2>열 이름을 눌러 줄 세우기 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 360px">
     <div class="plot" style="flex-direction:column;align-items:stretch;justify-content:center;gap:10px;padding:14px">
@@ -439,7 +439,7 @@ df.nlargest(5, 'temp')</pre>
 
 <!-- 17. AI로 만들고 검증 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 정렬과 순위 · AI와 함께</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">③ 정렬과 순위 · AI와 함께</span></div>
   <h2>AI가 만든 조건 코드, 그대로 믿어도 될까?</h2>
   <div class="body" style="flex-direction:row;align-items:stretch;gap:24px">
     <div style="flex:1;min-width:0;display:grid;gap:10px;align-content:center">
@@ -460,7 +460,7 @@ print(len(result))</pre>
 
 <!-- 18. 실습 파일 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 정렬과 순위 · 실습 파일</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">③ 정렬과 순위 · 실습 파일</span></div>
   <h2>Colab 실습: 현장 질문 다섯 개에 코드로 답하기</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:40px">
     <div style="flex:1">
@@ -483,7 +483,7 @@ print(len(result))</pre>
 
 <!-- 19. 정리 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">정리</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">정리</span></div>
   <h2>오늘의 핵심 세 가지</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(3,1fr)">
@@ -497,7 +497,7 @@ print(len(result))</pre>
 
 <!-- 20. 확인 문제 1·2 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제 <span class="muted" style="font-size:22px;font-weight:500">— 보기를 눌러 보세요</span></h2>
   <div class="grid g2">
     <div class="q" data-answer="c" data-explain="여러 열을 고를 때는 열 이름 리스트를 대괄호 안에 넣습니다. df['temp','pressure']는 ('temp','pressure')라는 이름 하나를 찾다가 KeyError가 납니다.">
@@ -526,7 +526,7 @@ print(len(result))</pre>
 
 <!-- 21. 확인 문제 3·4 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제</h2>
   <div class="grid g2">
     <div class="q" data-answer="b" data-explain="isin(리스트)은 열의 값이 리스트 안의 값 중 하나와 같으면 True입니다. 즉 ‘찍힘 또는 스크래치’인 행 38개가 남습니다.">

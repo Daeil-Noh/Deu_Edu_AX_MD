@@ -103,7 +103,7 @@
 
 <!-- 3. 흐름 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">오늘의 흐름</span><span class="time">총 25분</span></div>
+  <div class="s-head"><span class="sec">오늘의 흐름</span></div>
   <h2>오늘의 흐름</h2>
   <div class="body">
     <div class="tl">
@@ -121,7 +121,7 @@
 
 <!-- 4. 임무 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">오늘의 임무</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">오늘의 임무</span></div>
   <h2>당신은 정비 관리자: 어느 경보 방법을 쓸까?</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:30px">
     <div style="flex:1;display:grid;gap:14px">
@@ -147,7 +147,7 @@
 
 <!-- 6. 셀 1 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 데이터 보기</span><span class="time">약 3분</span></div>
+  <div class="s-head"><span class="sec">① 데이터 보기</span></div>
   <h2>셀 1: 불러오고 설비별 평균 보기</h2>
   <div class="cbody">
     <div>
@@ -180,7 +180,7 @@ machine
 
 <!-- 7. 셀 2 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 데이터 보기</span><span class="time">약 3분</span></div>
+  <div class="s-head"><span class="sec">① 데이터 보기</span></div>
   <h2>셀 2: 설비별로 나란히 그리기</h2>
   <div class="cbody" style="grid-template-columns:1.25fr 1fr">
     <div>
@@ -214,7 +214,7 @@ plt.show()</pre>
 
 <!-- 9. 셀 3 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 규칙 경보</span><span class="time">약 6분</span></div>
+  <div class="s-head"><span class="sec">② 규칙 경보</span></div>
   <h2>셀 3: 설비마다 “평소 기준” 붙이기</h2>
   <div class="cbody">
     <div>
@@ -246,7 +246,7 @@ machine
 
 <!-- 10. 직접 해 보기 1: z 계산 따라가기 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 규칙 경보 · 직접 해 보기 1</span><span class="time">약 6분</span></div>
+  <div class="s-head"><span class="sec">② 규칙 경보 · 직접 해 보기 1</span></div>
   <h2>코드 한 줄을 숫자로 따라가 보자 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 420px">
     <div class="plot"><svg id="zc" viewBox="0 0 620 400" aria-label="고른 설비의 rms 그래프와 고른 날짜"></svg></div>
@@ -262,7 +262,7 @@ machine
 
 <!-- 11. 셀 4·5 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 규칙 경보</span><span class="time">약 6분</span></div>
+  <div class="s-head"><span class="sec">② 규칙 경보</span></div>
   <h2>셀 4·5: 설비별 7일 이동평균, 그리고 z &gt; 3 경보</h2>
   <div class="cbody">
     <div>
@@ -302,7 +302,7 @@ machine
 
 <!-- 13. 셀 6 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ IsolationForest</span><span class="time">약 4분</span></div>
+  <div class="s-head"><span class="sec">③ IsolationForest</span></div>
   <h2>셀 6: 정상 구간으로 학습하고, 전체를 판정</h2>
   <div class="cbody">
     <div>
@@ -335,7 +335,7 @@ Name: alarm_if, dtype: int64</pre>
 
 <!-- 14. 셀 7 그림 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ IsolationForest</span><span class="time">약 4분</span></div>
+  <div class="s-head"><span class="sec">③ IsolationForest</span></div>
   <h2>셀 7: 이상 점수를 설비별로 그려 보면</h2>
   <div class="body" style="gap:12px">
     <svg id="figif" viewBox="0 0 1120 380" role="img" aria-label="설비 6대의 IsolationForest 이상 점수 그래프"></svg>
@@ -346,7 +346,7 @@ Name: alarm_if, dtype: int64</pre>
 
 <!-- 15. 평가 약속 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">④ 평가와 대시보드</span><span class="time">약 8분</span></div>
+  <div class="s-head"><span class="sec">④ 평가와 대시보드</span></div>
   <h2>셀 8: 평가 약속을 코드로 — evaluate()</h2>
   <div class="body" style="gap:16px">
     <svg id="rule" viewBox="0 0 1120 220" role="img" aria-label="고장 설비와 정상 설비의 평가 구간 그림"></svg>
@@ -361,7 +361,7 @@ Name: alarm_if, dtype: int64</pre>
 
 <!-- 16. 셀 9 비교 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">④ 평가와 대시보드</span><span class="time">약 8분</span></div>
+  <div class="s-head"><span class="sec">④ 평가와 대시보드</span></div>
   <h2>셀 9: 세 방법을 한 표로</h2>
   <div class="body" style="gap:14px;justify-content:flex-start">
     <div class="chd"><span class="run">▶</span>셀 9 · 방법별 요약</div>
@@ -385,7 +385,7 @@ pd.DataFrame(rows, columns=['방법', '3호기_며칠전', '5호기_며칠전', 
 
 <!-- 17. 대시보드 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">④ 평가와 대시보드 · 직접 해 보기 2</span><span class="time">약 8분</span></div>
+  <div class="s-head"><span class="sec">④ 평가와 대시보드 · 직접 해 보기 2</span></div>
   <h2>정비 관리자 대시보드: 방법과 기준을 골라 보자 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 360px">
     <div class="plot"><svg id="dash" viewBox="0 0 660 430" aria-label="설비 6대의 경보 날짜 막대와 결과"></svg></div>
@@ -405,7 +405,7 @@ pd.DataFrame(rows, columns=['방법', '3호기_며칠전', '5호기_며칠전', 
 
 <!-- 18. 해석·주의·AI -->
 <section class="slide">
-  <div class="s-head"><span class="sec">④ 평가와 대시보드</span><span class="time">약 8분</span></div>
+  <div class="s-head"><span class="sec">④ 평가와 대시보드</span></div>
   <h2>결론을 내리기 전에: 검증과 보고</h2>
   <div class="body">
     <div class="grid g2" style="gap:22px;align-items:start">
@@ -425,7 +425,7 @@ pd.DataFrame(rows, columns=['방법', '3호기_며칠전', '5호기_며칠전', 
 
 <!-- 19. 핵심 정리 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">정리</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">정리</span></div>
   <h2>오늘의 핵심 세 가지</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(3,1fr)">
@@ -439,7 +439,7 @@ pd.DataFrame(rows, columns=['방법', '3호기_며칠전', '5호기_며칠전', 
 
 <!-- 20. 확인 문제 1·2 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제 <span class="muted" style="font-size:22px;font-weight:500">— 보기를 눌러 보세요</span></h2>
   <div class="grid g2">
     <div class="q" data-answer="b" data-explain="설비마다 평소 진동 수준이 다릅니다(평균 0.97~1.05). 전체를 한꺼번에 평균 내면 평소가 높은 설비는 자주 울리고, 낮은 설비는 늦게 울립니다.">
@@ -468,7 +468,7 @@ pd.DataFrame(rows, columns=['방법', '3호기_며칠전', '5호기_며칠전', 
 
 <!-- 21. 확인 문제 3·4 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제</h2>
   <div class="grid g2">
     <div class="q" data-answer="a" data-explain="contamination은 정상 학습 데이터 중 몇 %를 이상 쪽으로 볼지 정하는 기준입니다. 키우면 경계가 낮아져 더 많은 날이 경보 — 대시보드에서 0.05일 때 정상 설비 잘못 경보가 20일까지 늘었습니다.">

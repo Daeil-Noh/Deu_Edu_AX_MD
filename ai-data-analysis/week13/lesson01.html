@@ -111,7 +111,7 @@
 
 <!-- 3. 흐름 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">오늘의 흐름</span><span class="time">총 25분</span></div>
+  <div class="s-head"><span class="sec">오늘의 흐름</span></div>
   <h2>오늘의 흐름</h2>
   <div class="body">
     <div class="tl">
@@ -129,7 +129,7 @@
 
 <!-- 4. 도입: 지금까지의 경계선 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">도입</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">도입</span></div>
   <h2>“가운데만 정상”인 데이터, 어떻게 나눌까?</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(3,1fr)">
@@ -159,7 +159,7 @@
 
 <!-- 6. 뉴런 구조 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 뉴런 하나</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">① 뉴런 하나</span></div>
   <h2>뉴런 = <span class="mark">가중합 + 편향 → 활성화</span></h2>
   <svg viewBox="0 0 1120 440" style="flex:1;min-height:0" role="img" aria-label="온도와 압력 입력에 가중치를 곱해 더하고 편향을 더한 뒤 활성화 함수를 거쳐 불량 확률을 내는 뉴런 그림">
     <defs><marker id="ah1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10z" class="f-muted"/></marker></defs>
@@ -213,7 +213,7 @@
 
 <!-- 7. 활성화 함수 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 뉴런 하나</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">① 뉴런 하나</span></div>
   <h2>활성화 함수: 뉴런의 “스위치”</h2>
   <div class="body">
     <div class="grid g2" style="gap:26px">
@@ -243,7 +243,7 @@
 
 <!-- 8. 직접 해 보기 1: 뉴런 하나 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 뉴런 하나 · 직접 해 보기 1</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">① 뉴런 하나 · 직접 해 보기 1</span></div>
   <h2>뉴런 하나를 직접 조절해 보자 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo">
     <div class="plot"><svg id="neuron" viewBox="0 0 620 440" aria-label="온도와 압력 산점도 위에 뉴런 하나가 만드는 경계선과 불량 확률 색"></svg></div>
@@ -270,7 +270,7 @@
 
 <!-- 10. 직접 해 보기 2: 뉴런 합치기 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 층 쌓기 · 직접 해 보기 2</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">② 층 쌓기 · 직접 해 보기 2</span></div>
   <h2>직선 판단을 모아 “적정 구간”을 둘러싸자 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo">
     <div class="plot"><svg id="combine" viewBox="0 0 620 440" aria-label="적정 공정 구간 데이터 위에 은닉 뉴런들이 만드는 직선과 불량 영역"></svg></div>
@@ -286,7 +286,7 @@
 
 <!-- 11. 신경망 구조 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 층 쌓기</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">② 층 쌓기</span></div>
   <h2>입력층 → 은닉층 → 출력층, 깊으면 “딥러닝”</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:30px">
     <svg viewBox="0 0 700 420" style="width:700px;flex:none" role="img" aria-label="입력 4개, 은닉층 2개, 출력 1개로 이루어진 신경망">
@@ -310,7 +310,7 @@
 
 <!-- 13. 직접 해 보기 3: 경사하강법 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 학습 = 오차 줄이기 · 직접 해 보기 3</span><span class="time">약 6분</span></div>
+  <div class="s-head"><span class="sec">③ 학습 = 오차 줄이기 · 직접 해 보기 3</span></div>
   <h2>눈을 가리고 골짜기 바닥 찾기: 경사하강법 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo">
     <div class="plot"><svg id="gd" viewBox="0 0 640 420" aria-label="가중치에 따른 오차 곡선 위를 공이 한 걸음씩 내려가는 그림"></svg></div>
@@ -330,7 +330,7 @@
 
 <!-- 14. 직접 해 보기 4: 신경망 학습 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 학습 = 오차 줄이기 · 직접 해 보기 4</span><span class="time">약 6분</span></div>
+  <div class="s-head"><span class="sec">③ 학습 = 오차 줄이기 · 직접 해 보기 4</span></div>
   <h2>작은 신경망을 지금 학습시켜 보자 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo">
     <div class="plot"><svg id="train" viewBox="0 0 620 440" aria-label="신경망이 학습하며 불량 영역을 만들어 가는 산점도"></svg></div>
@@ -351,7 +351,7 @@
 
 <!-- 15. 신경망 vs 나무 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 학습 = 오차 줄이기</span><span class="time">약 6분</span></div>
+  <div class="s-head"><span class="sec">③ 학습 = 오차 줄이기</span></div>
   <h2>신경망 vs 의사결정나무(11주): 언제 무엇을?</h2>
   <div class="body">
     <table class="cmp">
@@ -370,7 +370,7 @@
 
 <!-- 16. 실습 코드 1 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">④ 실습</span><span class="time">약 3분</span></div>
+  <div class="s-head"><span class="sec">④ 실습</span></div>
   <h2>코드로 보기: 직선 하나 vs 신경망</h2>
   <div class="codegrid">
     <div>
@@ -398,7 +398,7 @@ mlp.fit(Xs_train, y_train)                      # 오차 줄이기 반복</pre>
 
 <!-- 17. 실습 코드 2 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">④ 실습</span><span class="time">약 3분</span></div>
+  <div class="s-head"><span class="sec">④ 실습</span></div>
   <h2>실제 공정 데이터에서는? (process.csv)</h2>
   <div class="codegrid">
     <div>
@@ -429,7 +429,7 @@ for name, m in models.items():
 
 <!-- 18. 실습 파일 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">④ 실습</span><span class="time">약 3분</span></div>
+  <div class="s-head"><span class="sec">④ 실습</span></div>
   <h2>실습 파일에서 해 볼 것</h2>
   <div class="body">
     <div class="flow">
@@ -451,7 +451,7 @@ for name, m in models.items():
 
 <!-- 19. 정리 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">정리</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">정리</span></div>
   <h2>오늘의 핵심 세 가지</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(3,1fr)">
@@ -465,7 +465,7 @@ for name, m in models.items():
 
 <!-- 20. 확인 문제 1·2 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제 <span class="muted" style="font-size:22px;font-weight:500">— 보기를 눌러 보세요</span></h2>
   <div class="grid g2">
     <div class="q" data-answer="c" data-explain="뉴런은 입력에 가중치를 곱해 더하고 편향을 더한 뒤, 활성화 함수로 출력을 정합니다. 뉴런 하나는 직선 하나의 경계를 만듭니다.">
@@ -494,7 +494,7 @@ for name, m in models.items():
 
 <!-- 21. 확인 문제 3·4 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제</h2>
   <div class="grid g2">
     <div class="q" data-answer="d" data-explain="보폭이 너무 크면 골짜기 바닥을 지나쳐 반대편으로 튀고, 심하면 오차가 오히려 커집니다. 너무 작으면 학습이 느립니다.">

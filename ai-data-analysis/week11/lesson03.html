@@ -111,7 +111,7 @@
 
 <!-- 3. 흐름 + 실습 파일 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">오늘의 흐름</span><span class="time">총 25분</span></div>
+  <div class="s-head"><span class="sec">오늘의 흐름</span></div>
   <h2>오늘의 흐름</h2>
   <div class="body">
     <div class="tl">
@@ -132,7 +132,7 @@
 
 <!-- 4. 도입 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">도입</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">도입</span></div>
   <h2>정확도 90.6%의 두 얼굴</h2>
   <div class="body">
     <div class="grid g2" style="gap:26px">
@@ -163,7 +163,7 @@
 
 <!-- 6. 4칸 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 혼동행렬</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">① 혼동행렬</span></div>
   <h2>혼동행렬: 실제 × 판정 = 네 칸</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:30px">
     <div class="cm" style="flex:1;height:400px">
@@ -186,7 +186,7 @@
 
 <!-- 7. 직접 해 보기 1 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 혼동행렬 · 직접 해 보기 1</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">① 혼동행렬 · 직접 해 보기 1</span></div>
   <h2>네 칸을 눌러 어떤 제품인지 확인해 보자 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 340px">
     <div class="plot" style="flex-direction:column;align-items:stretch;justify-content:center;gap:14px;padding:14px 20px">
@@ -219,7 +219,7 @@
 
 <!-- 8. confusion_matrix 코드 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 혼동행렬</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">① 혼동행렬</span></div>
   <h2>confusion_matrix: 순서에 주의</h2>
   <div class="body">
     <div class="cg" style="align-items:center">
@@ -255,7 +255,7 @@ print(cm)</pre>
 
 <!-- 10. 세 지표 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 정밀도·재현율</span><span class="time">약 4분</span></div>
+  <div class="s-head"><span class="sec">② 정밀도·재현율</span></div>
   <h2>세 가지 눈금, 세 가지 질문</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(3,1fr)">
@@ -270,7 +270,7 @@ print(cm)</pre>
 
 <!-- 11. 지표 코드 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 정밀도·재현율</span><span class="time">약 4분</span></div>
+  <div class="s-head"><span class="sec">② 정밀도·재현율</span></div>
   <h2>sklearn으로 한 번에: 그리고 게으른 검사기와 비교</h2>
   <div class="body">
     <div class="cg">
@@ -311,7 +311,7 @@ print(f1_score(y_test, pred))</pre>
 
 <!-- 13. 직접 해 보기 2: 기준 슬라이더 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 판정 기준 · 직접 해 보기 2</span><span class="time">약 8분</span></div>
+  <div class="s-head"><span class="sec">③ 판정 기준 · 직접 해 보기 2</span></div>
   <h2>판정 기준을 옮겨 보자: 정밀도와 재현율의 맞바꿈 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 350px">
     <div class="plot"><svg id="th-svg" viewBox="0 0 700 430" aria-label="시험 제품 149개를 불량 확률 순으로 세우고 판정 기준선을 그은 그림"></svg></div>
@@ -335,7 +335,7 @@ print(f1_score(y_test, pred))</pre>
 
 <!-- 14. 직접 해 보기 3: 비용 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 판정 기준 · 직접 해 보기 3</span><span class="time">약 8분</span></div>
+  <div class="s-head"><span class="sec">③ 판정 기준 · 직접 해 보기 3</span></div>
   <h2>어느 기준이 가장 쌀까? 오류의 값을 매겨 보자 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 350px">
     <div class="plot"><svg id="co-svg" viewBox="0 0 700 420" aria-label="판정 기준에 따른 총비용 그래프"></svg></div>
@@ -357,7 +357,7 @@ print(f1_score(y_test, pred))</pre>
 
 <!-- 15. 어떤 오류가 더 비쌀까 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 판정 기준</span><span class="time">약 8분</span></div>
+  <div class="s-head"><span class="sec">③ 판정 기준</span></div>
   <h2>공장에서는 어떤 오류가 더 비쌀까?</h2>
   <div class="body">
     <div class="grid g2" style="gap:24px">
@@ -387,7 +387,7 @@ print(f1_score(y_test, pred))</pre>
 
 <!-- 16. 기준 코드 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 판정 기준</span><span class="time">약 8분</span></div>
+  <div class="s-head"><span class="sec">③ 판정 기준</span></div>
   <h2>코드로 기준 바꾸기: predict_proba + 비교</h2>
   <div class="body">
     <div class="cg">
@@ -416,7 +416,7 @@ for t in [0.2, 0.3, 0.5, 0.9]:
 
 <!-- 17. 과제2 개요 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">과제2 · 불량품 분류</span><span class="time">약 4분</span></div>
+  <div class="s-head"><span class="sec">과제2 · 불량품 분류</span></div>
   <h2>과제2: 불량품 분류기를 만들고, 판정 기준을 정하라</h2>
   <div class="body" style="flex-direction:row;align-items:stretch;gap:26px">
     <div style="flex:1;display:grid;gap:10px">
@@ -437,7 +437,7 @@ for t in [0.2, 0.3, 0.5, 0.9]:
 
 <!-- 18. 과제2 평가 기준 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">과제2 · 불량품 분류</span><span class="time">약 4분</span></div>
+  <div class="s-head"><span class="sec">과제2 · 불량품 분류</span></div>
   <h2>과제2 평가 기준</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:26px">
     <table class="rub" style="flex:1">
@@ -467,7 +467,7 @@ for t in [0.2, 0.3, 0.5, 0.9]:
 
 <!-- 19. 정리 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">정리</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">정리</span></div>
   <h2>오늘의 핵심 세 가지</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(3,1fr)">
@@ -481,7 +481,7 @@ for t in [0.2, 0.3, 0.5, 0.9]:
 
 <!-- 20. 확인 문제 1·2 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제 <span class="muted" style="font-size:22px;font-weight:500">— 보기를 눌러 보세요</span></h2>
   <div class="grid g2">
     <div class="q" data-answer="c" data-explain="실제로는 불량인데 정상이라고 판정한 경우가 FN(위음성), 즉 놓친 불량입니다. 불량품이 그대로 출하됩니다.">
@@ -510,7 +510,7 @@ for t in [0.2, 0.3, 0.5, 0.9]:
 
 <!-- 21. 확인 문제 3·4 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제</h2>
   <div class="grid g2">
     <div class="q" data-answer="b" data-explain="기준을 낮추면 더 많은 제품을 불량으로 판정하므로 놓친 불량이 줄어 재현율이 오르고, 정상인데 경보가 울리는 경우가 늘어 정밀도는 보통 내려갑니다.">

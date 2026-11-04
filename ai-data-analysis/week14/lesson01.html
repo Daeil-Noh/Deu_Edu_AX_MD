@@ -141,7 +141,7 @@
 
 <!-- 3. 흐름 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">오늘의 흐름</span><span class="time">총 25분</span></div>
+  <div class="s-head"><span class="sec">오늘의 흐름</span></div>
   <h2>오늘의 흐름</h2>
   <div class="body">
     <div class="tl">
@@ -159,7 +159,7 @@
 
 <!-- 4. 도입 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">도입</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">도입</span></div>
   <h2>13주 동안 배운 것을 한 줄로 잇기</h2>
   <div class="body">
     <div class="flow">
@@ -189,7 +189,7 @@
 
 <!-- 6. 질문 다듬기 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 질문·정리</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">① 질문·정리</span></div>
   <h2>막연한 질문 → 데이터로 답할 수 있는 질문</h2>
   <div class="body" style="justify-content:flex-start;gap:16px">
     <div style="display:grid;grid-template-columns:300px 40px 1fr;align-items:stretch">
@@ -215,7 +215,7 @@
 
 <!-- 7. 정리 데모 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 질문·정리 · 직접 해 보기 1</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">① 질문·정리 · 직접 해 보기 1</span></div>
   <h2>process_raw.csv 정리하기 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 350px">
     <div class="plot" style="flex-direction:column;align-items:stretch;justify-content:center;gap:12px;padding:16px">
@@ -250,7 +250,7 @@
 
 <!-- 9. 탐색 데모 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 탐색 · 직접 해 보기 2</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">② 탐색 · 직접 해 보기 2</span></div>
   <h2>어떤 조건이 강도와 관계있을까? <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 360px">
     <div class="plot"><svg id="ex-plot" viewBox="0 0 640 430" aria-label="선택한 공정 조건과 인장강도의 산점도"></svg></div>
@@ -267,7 +267,7 @@
 
 <!-- 10. 그룹 비교 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 탐색</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">② 탐색</span></div>
   <h2>그룹으로 나눠 비교하기</h2>
   <div class="body">
     <div class="grid g2" style="gap:26px">
@@ -306,7 +306,7 @@
 
 <!-- 12. 모델 1 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 모델·해석</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">③ 모델·해석</span></div>
   <h2>모델 1: 다섯 조건으로 선형 회귀</h2>
   <div class="body" style="flex-direction:row;gap:26px;align-items:center">
     <div style="flex:1;display:grid;gap:10px">
@@ -335,7 +335,7 @@ print('평균으로 찍기 MAE:', round(mean_absolute_error(test[target], base),
 
 <!-- 13. 모델 비교 데모 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 모델·해석 · 직접 해 보기 3</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">③ 모델·해석 · 직접 해 보기 3</span></div>
   <h2>모델이 어디서 틀리는지 보고 고치기 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 340px">
     <div class="plot"><svg id="md-plot" viewBox="0 0 700 420" aria-label="검증 데이터의 실제 강도와 예측 강도, 온도 구간별 평균 잔차"></svg></div>
@@ -357,7 +357,7 @@ print('평균으로 찍기 MAE:', round(mean_absolute_error(test[target], base),
 
 <!-- 14. 해석 데모 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 모델·해석 · 직접 해 보기 4</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">③ 모델·해석 · 직접 해 보기 4</span></div>
   <h2>숫자를 말로: 무엇이 강도를 좌우하나? <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 360px">
     <div class="plot" style="flex-direction:column;align-items:stretch;justify-content:center;gap:10px;padding:16px 22px">
@@ -380,7 +380,7 @@ print('평균으로 찍기 MAE:', round(mean_absolute_error(test[target], base),
 
 <!-- 15. 한계 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">④ 한계·AI 검증</span><span class="time">약 4분</span></div>
+  <div class="s-head"><span class="sec">④ 한계·AI 검증</span></div>
   <h2>이 분석의 한계, 숨기지 않고 적는다</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(4,1fr)">
@@ -396,7 +396,7 @@ print('평균으로 찍기 MAE:', round(mean_absolute_error(test[target], base),
 
 <!-- 16. AI 답 검증 카드 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">④ 한계·AI 검증 · 직접 해 보기 5</span><span class="time">약 4분</span></div>
+  <div class="s-head"><span class="sec">④ 한계·AI 검증 · 직접 해 보기 5</span></div>
   <h2>AI의 답을 그대로 믿지 않은 여섯 장면 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg> <span class="muted" style="font-size:20px;font-weight:500">— 눌러서 확인</span></h2>
   <div class="body" style="justify-content:flex-start">
     <div class="pcards" id="ai-cards"></div>
@@ -407,7 +407,7 @@ print('평균으로 찍기 MAE:', round(mean_absolute_error(test[target], base),
 
 <!-- 17. 프로젝트 지도 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">④ 한계·AI 검증 · 직접 해 보기 6</span><span class="time">약 4분</span></div>
+  <div class="s-head"><span class="sec">④ 한계·AI 검증 · 직접 해 보기 6</span></div>
   <h2>프로젝트 지도: 단계를 눌러 코드와 검증 보기 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 330px">
     <div class="plot mapcode" style="flex-direction:column;align-items:stretch;justify-content:flex-start;gap:8px;padding:12px">
@@ -451,7 +451,7 @@ print('평균으로 찍기 MAE:', round(mean_absolute_error(test[target], base),
 
 <!-- 19. 핵심 정리 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">정리</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">정리</span></div>
   <h2>오늘의 핵심 세 가지</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(3,1fr)">
@@ -465,7 +465,7 @@ print('평균으로 찍기 MAE:', round(mean_absolute_error(test[target], base),
 
 <!-- 20. 확인 문제 1·2 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제 <span class="muted" style="font-size:22px;font-weight:500">— 보기를 눌러 보세요</span></h2>
   <div class="grid g2">
     <div class="q" data-answer="c" data-explain="상관계수는 직선 관계만 잽니다. 온도처럼 가운데가 볼록한 곡선 관계는 r이 작게 나올 수 있으므로 산점도·구간 평균으로 먼저 확인합니다.">
@@ -494,7 +494,7 @@ print('평균으로 찍기 MAE:', round(mean_absolute_error(test[target], base),
 
 <!-- 21. 확인 문제 3·4 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제</h2>
   <div class="grid g2">
     <div class="q" data-answer="a" data-explain="결측을 지웠는지 채웠는지, 몇 개였는지에 따라 결과가 달라집니다. 다른 사람이 같은 결과를 낼 수 있도록 방법과 개수를 적고, 한계에도 남깁니다.">

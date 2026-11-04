@@ -102,7 +102,7 @@
 
 <!-- 3. 흐름 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">오늘의 흐름</span><span class="time">총 25분</span></div>
+  <div class="s-head"><span class="sec">오늘의 흐름</span></div>
   <h2>오늘의 흐름</h2>
   <div class="body">
     <div class="tl">
@@ -120,7 +120,7 @@
 
 <!-- 4. 도입 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">도입</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">도입</span></div>
   <h2>사람은 흠집을 “보고”, 컴퓨터는 숫자를 “읽는다”</h2>
   <svg viewBox="0 0 1120 430" style="flex:1;min-height:0" role="img" aria-label="부품 사진 일부를 확대하면 밝기 숫자의 격자가 된다" id="intro-svg">
     <defs><marker id="ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10z" class="f-muted"/></marker></defs>
@@ -160,7 +160,7 @@
 
 <!-- 6. 직접 해 보기 1: 픽셀 그리기 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 이미지 = 숫자 · 직접 해 보기 1</span><span class="time">약 4분</span></div>
+  <div class="s-head"><span class="sec">① 이미지 = 숫자 · 직접 해 보기 1</span></div>
   <h2>픽셀에 흠집을 그려 보자 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo">
     <div class="plot"><svg id="paint" class="pxsvg" viewBox="0 0 640 420" aria-label="12×12 픽셀 부품 표면 이미지. 칸을 눌러 흠집을 그릴 수 있다"></svg></div>
@@ -185,7 +185,7 @@
 
 <!-- 8. 수작업 특징 vs 학습된 특징 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 특징과 필터</span><span class="time">약 9분</span></div>
+  <div class="s-head"><span class="sec">② 특징과 필터</span></div>
   <h2>특징(feature)을 누가 만드는가?</h2>
   <div class="body">
     <div class="grid g2" style="gap:26px">
@@ -211,7 +211,7 @@
 
 <!-- 9. 직접 해 보기 2: 필터 밀기 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 특징과 필터 · 직접 해 보기 2</span><span class="time">약 9분</span></div>
+  <div class="s-head"><span class="sec">② 특징과 필터 · 직접 해 보기 2</span></div>
   <h2>3×3 필터를 미끄러뜨리며 흠집 찾기 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo">
     <div class="plot"><svg id="conv" class="pxsvg" viewBox="0 0 680 420" aria-label="입력 이미지 위를 3×3 필터가 이동하며 특징 지도를 만드는 그림"></svg></div>
@@ -228,7 +228,7 @@
 
 <!-- 10. 직접 해 보기 3: 필터 고르기 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 특징과 필터 · 직접 해 보기 3</span><span class="time">약 9분</span></div>
+  <div class="s-head"><span class="sec">② 특징과 필터 · 직접 해 보기 3</span></div>
   <h2>어떤 필터가 어떤 불량을 찾을까? <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo">
     <div class="plot"><svg id="fsel" class="pxsvg" viewBox="0 0 680 420" aria-label="정상, 세로 흠집, 대각선 흠집, 얼룩 이미지 네 장과 고른 필터의 특징 지도"></svg></div>
@@ -244,7 +244,7 @@
 
 <!-- 11. CNN 구조 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 특징과 필터</span><span class="time">약 9분</span></div>
+  <div class="s-head"><span class="sec">② 특징과 필터</span></div>
   <h2>CNN(합성곱 신경망): 필터를 층층이 쌓는다</h2>
   <svg viewBox="0 0 1120 420" style="flex:1;min-height:0" role="img" aria-label="이미지에서 1층 필터가 선과 경계를, 2층이 모양을 찾고, 마지막에 불량 종류 확률을 낸다">
     <defs><marker id="ah3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10z" class="f-muted"/></marker></defs>
@@ -292,7 +292,7 @@
 
 <!-- 13. 데이터 조건 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 데이터와 검사 시스템</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">③ 데이터와 검사 시스템</span></div>
   <h2>비전 AI가 배우려면 필요한 것</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(4,1fr)">
@@ -307,7 +307,7 @@
 
 <!-- 14. 직접 해 보기 4: 조명 편향 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 데이터와 검사 시스템 · 직접 해 보기 4</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">③ 데이터와 검사 시스템 · 직접 해 보기 4</span></div>
   <h2>밝은 조명 사진으로만 배운 AI, 야간에는? <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 330px">
     <div class="plot" style="flex-direction:column;align-items:stretch;justify-content:center;gap:16px;padding:16px 22px">
@@ -333,7 +333,7 @@
 
 <!-- 15. 검사 파이프라인 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 데이터와 검사 시스템</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">③ 데이터와 검사 시스템</span></div>
   <h2>비전 검사 시스템의 흐름</h2>
   <div class="body">
     <div class="flow">
@@ -354,7 +354,7 @@
 
 <!-- 16. 실습 코드 1 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">④ 실습</span><span class="time">약 3분</span></div>
+  <div class="s-head"><span class="sec">④ 실습</span></div>
   <h2>코드로 보기: 가상 이미지 1500장 만들기</h2>
   <div class="codegrid">
     <div>
@@ -381,7 +381,7 @@ print(grid[:8, :8])                        # 왼쪽 위 8×8 부분을 숫자로
 
 <!-- 17. 실습 코드 2 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">④ 실습</span><span class="time">약 3분</span></div>
+  <div class="s-head"><span class="sec">④ 실습</span></div>
   <h2>신경망으로 분류하고, 틀린 것 들여다보기</h2>
   <div class="codegrid">
     <div>
@@ -411,7 +411,7 @@ print(confusion_matrix(y_test, model.predict(X_test)))</pre>
 
 <!-- 18. 실습 파일 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">④ 실습</span><span class="time">약 3분</span></div>
+  <div class="s-head"><span class="sec">④ 실습</span></div>
   <h2>실습 파일에서 해 볼 것</h2>
   <div class="body">
     <div class="flow">
@@ -433,7 +433,7 @@ print(confusion_matrix(y_test, model.predict(X_test)))</pre>
 
 <!-- 19. 정리 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">정리</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">정리</span></div>
   <h2>오늘의 핵심 세 가지</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(3,1fr)">
@@ -447,7 +447,7 @@ print(confusion_matrix(y_test, model.predict(X_test)))</pre>
 
 <!-- 20. 확인 문제 1·2 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제 <span class="muted" style="font-size:22px;font-weight:500">— 보기를 눌러 보세요</span></h2>
   <div class="grid g2">
     <div class="q" data-answer="c" data-explain="흑백 이미지는 픽셀마다 숫자 1개이므로 100 × 100 = 10,000개입니다. 컬러라면 픽셀마다 3개(빨강·초록·파랑)라 30,000개가 됩니다.">
@@ -476,7 +476,7 @@ print(confusion_matrix(y_test, model.predict(X_test)))</pre>
 
 <!-- 21. 확인 문제 3·4 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제</h2>
   <div class="grid g2">
     <div class="q" data-answer="d" data-explain="밝은 조명 이미지만 본 AI는 ‘어둡다 = 불량’처럼 잘못 배울 수 있습니다. 여러 조명의 이미지를 학습에 넣거나 밝기 보정 전처리를 해야 합니다.">

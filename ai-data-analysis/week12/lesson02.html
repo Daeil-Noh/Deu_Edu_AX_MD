@@ -98,7 +98,7 @@
 
 <!-- 3. 흐름 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">오늘의 흐름</span><span class="time">총 25분</span></div>
+  <div class="s-head"><span class="sec">오늘의 흐름</span></div>
   <h2>오늘의 흐름</h2>
   <div class="body">
     <div class="tl">
@@ -116,7 +116,7 @@
 
 <!-- 4. 도입: 6대 × 120일 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">도입</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">도입</span></div>
   <h2>1-2의 예지보전, 이번엔 실제 기록으로</h2>
   <div class="body" style="gap:12px">
     <svg id="multi6" viewBox="0 0 1120 410" role="img" aria-label="설비 6대의 120일 진동 세기(rms) 그래프"></svg>
@@ -134,7 +134,7 @@
 
 <!-- 6. 이상의 세 얼굴 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 이상이란?</span><span class="time">약 3분</span></div>
+  <div class="s-head"><span class="sec">① 이상이란?</span></div>
   <h2>이상(anomaly)의 세 가지 모양</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(3,1fr)">
@@ -149,7 +149,7 @@
 
 <!-- 7. 왜 분류가 아닌가 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 이상이란?</span><span class="time">약 3분</span></div>
+  <div class="s-head"><span class="sec">① 이상이란?</span></div>
   <h2>고장 기록으로 분류 모델을 배우면 안 될까?</h2>
   <div class="body" style="gap:14px">
     <svg id="cells720" viewBox="0 0 1120 250" role="img" aria-label="설비 6대 120일, 720일 중 고장 기록은 2칸"></svg>
@@ -170,7 +170,7 @@
 
 <!-- 9. z-점수 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 규칙으로 찾기</span><span class="time">약 8분</span></div>
+  <div class="s-head"><span class="sec">② 규칙으로 찾기</span></div>
   <h2>“평소”를 숫자로: 평균과 표준편차, 그리고 3σ</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:30px">
     <div style="flex:1;display:grid;gap:14px">
@@ -185,7 +185,7 @@
 
 <!-- 10. z 데모 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 규칙으로 찾기 · 직접 해 보기 1</span><span class="time">약 8분</span></div>
+  <div class="s-head"><span class="sec">② 규칙으로 찾기 · 직접 해 보기 1</span></div>
   <h2>3호기, 몇 σ에서 경보를 울릴까? <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo">
     <div class="plot"><svg id="zplot" viewBox="0 0 640 420" aria-label="3호기 96일 rms와 z-점수 경보 기준선"></svg></div>
@@ -205,7 +205,7 @@
 
 <!-- 11. 이동평균 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 규칙으로 찾기</span><span class="time">약 8분</span></div>
+  <div class="s-head"><span class="sec">② 규칙으로 찾기</span></div>
   <h2>규칙 ③ 이동평균: 최근 며칠의 평균으로 보기</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:30px">
     <div style="flex:1"><svg id="maexp" viewBox="0 0 640 360" role="img" aria-label="3호기 20~34일 rms와 7일 이동평균"></svg></div>
@@ -220,7 +220,7 @@
 
 <!-- 12. 이동평균 데모 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 규칙으로 찾기 · 직접 해 보기 2</span><span class="time">약 8분</span></div>
+  <div class="s-head"><span class="sec">② 규칙으로 찾기 · 직접 해 보기 2</span></div>
   <h2>며칠짜리 이동평균이 좋을까? <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo">
     <div class="plot"><svg id="maplot" viewBox="0 0 640 420" aria-label="3호기 rms 원래 값과 이동평균, 3σ 경보선"></svg></div>
@@ -247,7 +247,7 @@
 
 <!-- 14. 여러 센서 데모 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 여러 센서와 AI · 직접 해 보기 3</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">③ 여러 센서와 AI · 직접 해 보기 3</span></div>
   <h2>센서 셋을 나란히 놓고 하루씩 짚어 보자 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo">
     <div class="plot"><svg id="msplot" viewBox="0 0 640 430" aria-label="3호기 rms, 온도, 전류 96일 그래프와 날짜 커서"></svg></div>
@@ -268,7 +268,7 @@
 
 <!-- 15. IsolationForest 데모 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 여러 센서와 AI · 직접 해 보기 4</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">③ 여러 센서와 AI · 직접 해 보기 4</span></div>
   <h2>IsolationForest: 무작위로 잘라서 빨리 혼자 남으면 이상 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo">
     <div class="plot"><svg id="isoplot" viewBox="0 0 640 420" aria-label="3호기 rms와 온도 산점도에 무작위 자르기를 하는 그림"></svg></div>
@@ -287,7 +287,7 @@
 
 <!-- 16. 경보의 대가 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">④ 경보의 대가</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">④ 경보의 대가</span></div>
   <h2>잘못 경보 vs 놓친 고장: 둘 다 비용이다</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:30px">
     <div style="flex:1" class="mtx">
@@ -305,7 +305,7 @@
 
 <!-- 17. 3호기 비교 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">④ 경보의 대가</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">④ 경보의 대가</span></div>
   <h2>그래서, 3호기는 며칠 전에 알 수 있었나?</h2>
   <div class="body">
     <table class="cmp">
@@ -324,7 +324,7 @@
 
 <!-- 18. 실습 파일 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">④ 경보의 대가</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">④ 경보의 대가</span></div>
   <h2>실습 파일: 3호기로 규칙 만들어 보기</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:40px">
     <div style="flex:1">
@@ -347,7 +347,7 @@
 
 <!-- 19. 핵심 정리 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">정리</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">정리</span></div>
   <h2>오늘의 핵심 세 가지</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(3,1fr)">
@@ -361,7 +361,7 @@
 
 <!-- 20. 확인 문제 1·2 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제 <span class="muted" style="font-size:22px;font-weight:500">— 보기를 눌러 보세요</span></h2>
   <div class="grid g2">
     <div class="q" data-answer="d" data-explain="720일 중 고장 표시는 2일뿐이라 고장 예시로 배우기 어렵습니다. 넘치는 정상 기록으로 ‘평소 모습’을 정하고, 거기서 벗어난 날을 찾습니다.">
@@ -390,7 +390,7 @@
 
 <!-- 21. 확인 문제 3·4 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제</h2>
   <div class="grid g2">
     <div class="q" data-answer="a" data-explain="이동평균은 하루짜리 튐을 묽게 만들어 잘못 경보를 줄이지만, 진짜 변화도 며칠 쌓여야 평균에 반영되므로 경보가 늦어집니다. 3호기에서는 7일 이동평균이 2일 늦었습니다.">

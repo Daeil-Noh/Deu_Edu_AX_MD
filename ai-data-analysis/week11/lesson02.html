@@ -136,7 +136,7 @@
 
 <!-- 3. 흐름 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">오늘의 흐름</span><span class="time">총 25분</span></div>
+  <div class="s-head"><span class="sec">오늘의 흐름</span></div>
   <h2>오늘의 흐름</h2>
   <div class="body">
     <div class="tl">
@@ -154,7 +154,7 @@
 
 <!-- 4. 실습 파일 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">실습 준비</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">실습 준비</span></div>
   <h2>오늘 만들 것: 공정 조건 → 불량 판정기</h2>
   <div class="body">
     <div class="flow">
@@ -187,7 +187,7 @@
 
 <!-- 6. 불러오기 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 데이터 준비</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">① 데이터 준비</span></div>
   <h2>입력 X와 정답 y 정하기</h2>
   <div class="body">
     <div class="cg">
@@ -214,7 +214,7 @@ Name: count, dtype: int64</pre>
 
 <!-- 7. 직접 해 보기 1: stratify -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 데이터 준비 · 직접 해 보기 1 (9주 2차시 복습)</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">① 데이터 준비 · 직접 해 보기 1 (9주 2차시 복습)</span></div>
   <h2>다시 보기: 그냥 나누면 시험 데이터의 불량 수가 들쭉날쭉 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo">
     <div class="plot" style="flex-direction:column;align-items:stretch;justify-content:center;gap:22px;padding:20px 26px">
@@ -237,7 +237,7 @@ Name: count, dtype: int64</pre>
 
 <!-- 8. train_test_split -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 데이터 준비</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">① 데이터 준비</span></div>
   <h2>stratify=y: 정답 비율을 지키며 나누기</h2>
   <div class="body">
     <div class="cg">
@@ -270,7 +270,7 @@ print(round(y_train.mean(), 3), round(y_test.mean(), 3))</pre>
 
 <!-- 10. 학습 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 학습과 나무 읽기</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">② 학습과 나무 읽기</span></div>
   <h2>DecisionTreeClassifier: 만들고, 학습하고, 점수 보기</h2>
   <div class="body">
     <div class="cg">
@@ -296,7 +296,7 @@ print(round(model.score(X_test, y_test), 3))    # 시험</pre>
 
 <!-- 11. plot_tree -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 학습과 나무 읽기</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">② 학습과 나무 읽기</span></div>
   <h2>plot_tree: 학습한 나무를 그림으로</h2>
   <div class="body" style="flex-direction:row;align-items:stretch;gap:24px">
     <div class="box" style="flex:1;margin:0;padding:10px;display:flex;align-items:center"><svg id="treeA" viewBox="0 0 700 420" role="img" aria-label="max_depth=3으로 학습한 의사결정나무. 첫 질문은 습도 76.2 이하인가"></svg></div>
@@ -316,7 +316,7 @@ plt.show()</pre>
 
 <!-- 12. export_text -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 학습과 나무 읽기</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">② 학습과 나무 읽기</span></div>
   <h2>export_text: 나무를 규칙 문장으로 읽기</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:24px">
     <div style="width:520px;flex:none;display:grid;gap:8px">
@@ -356,7 +356,7 @@ plt.show()</pre>
 
 <!-- 14. predict -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 새 제품 판정</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">③ 새 제품 판정</span></div>
   <h2>predict는 판정, predict_proba는 불량 확률</h2>
   <div class="body">
     <div class="cg">
@@ -385,7 +385,7 @@ print(model.predict_proba(new).round(3))</pre>
 
 <!-- 15. 직접 해 보기 2: 검사기 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 새 제품 판정 · 직접 해 보기 2</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">③ 새 제품 판정 · 직접 해 보기 2</span></div>
   <h2>나무 판정기에 제품을 넣어 보자 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 340px">
     <div class="plot"><svg id="insp" viewBox="0 0 700 420" aria-label="입력한 제품이 나무를 따라 내려가는 길"></svg></div>
@@ -407,7 +407,7 @@ print(model.predict_proba(new).round(3))</pre>
 
 <!-- 17. 직접 해 보기 3: 게으른 검사기 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">④ 기준선·중요도 · 직접 해 보기 3</span><span class="time">약 4분</span></div>
+  <div class="s-head"><span class="sec">④ 기준선·중요도 · 직접 해 보기 3</span></div>
   <h2>“전부 정상”이라고만 하는 게으른 검사기와 비교 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo">
     <div class="plot" style="flex-direction:column;align-items:stretch;justify-content:center;gap:10px;padding:16px 20px">
@@ -432,7 +432,7 @@ print(model.predict_proba(new).round(3))</pre>
 
 <!-- 18. 중요도 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">④ 기준선·중요도</span><span class="time">약 4분</span></div>
+  <div class="s-head"><span class="sec">④ 기준선·중요도</span></div>
   <h2>feature_importances_: 나무가 어떤 질문으로 많이 나눴나</h2>
   <div class="body">
     <div class="grid" style="grid-template-columns:1.1fr 1fr;gap:28px;align-items:center">
@@ -467,7 +467,7 @@ dtype: float64</pre>
 
 <!-- 19. 정리 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">정리</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">정리</span></div>
   <h2>오늘의 핵심 세 가지</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(3,1fr)">
@@ -481,7 +481,7 @@ dtype: float64</pre>
 
 <!-- 20. 확인 문제 1·2 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제 <span class="muted" style="font-size:22px;font-weight:500">— 보기를 눌러 보세요</span></h2>
   <div class="grid g2">
     <div class="q" data-answer="b" data-explain="stratify=y는 정답(y)의 범주 비율이 학습·시험 데이터에서 같게 유지되도록 나눕니다. 불량처럼 드문 범주가 시험 데이터에 너무 적거나 많이 들어가는 것을 막습니다.">
@@ -510,7 +510,7 @@ dtype: float64</pre>
 
 <!-- 21. 확인 문제 3·4 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제</h2>
   <div class="grid g2">
     <div class="q" data-answer="a" data-explain="정상이 86%라면 아무 판단 없이 모두 ‘정상’이라고 해도 정확도가 약 86%입니다. 모델은 이 기준선보다 얼마나 나은지, 그리고 불량을 얼마나 잡는지로 봐야 합니다.">

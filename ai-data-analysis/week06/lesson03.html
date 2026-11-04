@@ -116,7 +116,7 @@
 
 <!-- 3. 흐름 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">오늘의 흐름</span><span class="time">총 25분</span></div>
+  <div class="s-head"><span class="sec">오늘의 흐름</span></div>
   <h2>오늘의 흐름</h2>
   <div class="body">
     <div class="tl">
@@ -133,7 +133,7 @@
 
 <!-- 4. 도입 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">도입</span><span class="time">약 3분</span></div>
+  <div class="s-head"><span class="sec">도입</span></div>
   <h2>불량률 13.8%, 그래서 어디를 손봐야 할까?</h2>
   <div class="body" style="flex-direction:row;align-items:stretch;gap:22px">
     <div class="tile" style="flex:1;padding:16px 18px;gap:6px">
@@ -159,7 +159,7 @@
 
 <!-- 6. 0/1 평균 = 비율 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① groupby의 원리</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">① groupby의 원리</span></div>
   <h2>먼저 요령 하나: 0/1 열의 평균 = 비율</h2>
   <div class="body">
     <div class="tile" style="padding:22px 26px;gap:16px">
@@ -182,7 +182,7 @@
 
 <!-- 7. 직접 해 보기 1: 나누기·계산하기·합치기 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① groupby의 원리 · 직접 해 보기 1</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">① groupby의 원리 · 직접 해 보기 1</span></div>
   <h2>나누기 → 계산하기 → 합치기 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 300px">
     <div class="plot" style="padding:14px 16px;align-items:stretch">
@@ -205,7 +205,7 @@
 
 <!-- 8. 코드 해부 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① groupby의 원리</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">① groupby의 원리</span></div>
   <h2>코드 한 줄 해부: 무엇으로 · 어떤 열을 · 무슨 계산</h2>
   <div class="body">
     <div class="anat">
@@ -238,7 +238,7 @@ Name: defect, dtype: float64</pre>
 
 <!-- 10. 직접 해 보기 2: 집계 탐색기 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 공정 비교하기 · 직접 해 보기 2</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">② 공정 비교하기 · 직접 해 보기 2</span></div>
   <h2>기준과 계산을 골라 비교해 보자 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 390px">
     <div class="plot"><svg id="agg" viewBox="0 0 640 420" aria-label="선택한 기준으로 나눈 그룹별 막대그래프"></svg></div>
@@ -256,7 +256,7 @@ Name: defect, dtype: float64</pre>
 
 <!-- 11. agg -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 공정 비교하기</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">② 공정 비교하기</span></div>
   <h2>agg(): 계산 여러 개를 한 번에</h2>
   <div class="codegrid">
     <div>
@@ -286,7 +286,7 @@ shift
 
 <!-- 12. 해석 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 공정 비교하기</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">② 공정 비교하기</span></div>
   <h2>야간 불량률이 3배 가까이 높다. 왜일까?</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:26px">
     <div class="tile" style="flex:1.2;padding:14px 18px 8px"><svg id="why" viewBox="0 0 620 330" role="img" aria-label="주간과 야간의 불량률, 평균 습도, 평균 온도 비교 막대"></svg></div>
@@ -308,7 +308,7 @@ shift
 
 <!-- 14. pivot_table -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 표로 펼치기 · 주의할 점</span><span class="time">약 6분</span></div>
+  <div class="s-head"><span class="sec">③ 표로 펼치기 · 주의할 점</span></div>
   <h2>pivot_table: 호기 × 주야간 불량률</h2>
   <div class="codegrid" style="grid-template-columns:1fr 1.1fr">
     <div>
@@ -327,7 +327,7 @@ shift
 
 <!-- 15. crosstab -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 표로 펼치기 · 주의할 점</span><span class="time">약 6분</span></div>
+  <div class="s-head"><span class="sec">③ 표로 펼치기 · 주의할 점</span></div>
   <h2>crosstab: 범주 두 개의 개수 세기</h2>
   <div class="codegrid">
     <div>
@@ -349,7 +349,7 @@ pd.crosstab(df['shift'], df['defect_type'],
 
 <!-- 16. 직접 해 보기 3: 작은 그룹 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 표로 펼치기 · 주의할 점 · 직접 해 보기 3</span><span class="time">약 6분</span></div>
+  <div class="s-head"><span class="sec">③ 표로 펼치기 · 주의할 점 · 직접 해 보기 3</span></div>
   <h2>불량률 100%인 날이 있다? <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo">
     <div class="plot"><svg id="small" viewBox="0 0 640 420" aria-label="날짜와 호기로 나눈 169개 그룹의 제품 수와 불량률 산점도"></svg></div>
@@ -369,7 +369,7 @@ g['defect'].agg(['mean', 'count'])</pre>
 
 <!-- 17. 체크리스트 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 표로 펼치기 · 주의할 점</span><span class="time">약 6분</span></div>
+  <div class="s-head"><span class="sec">③ 표로 펼치기 · 주의할 점</span></div>
   <h2>그룹을 비교할 때 네 가지 습관</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:1fr 1fr">
@@ -384,7 +384,7 @@ g['defect'].agg(['mean', 'count'])</pre>
 
 <!-- 18. 실습 파일 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 표로 펼치기 · 주의할 점</span><span class="time">약 6분</span></div>
+  <div class="s-head"><span class="sec">③ 표로 펼치기 · 주의할 점</span></div>
   <h2>실습 파일: 나눠서 비교하기</h2>
   <div class="body" style="flex-direction:row;gap:30px;align-items:stretch">
     <div class="tile" style="flex:1.1;padding:24px 26px">
@@ -409,7 +409,7 @@ g['defect'].agg(['mean', 'count'])</pre>
 
 <!-- 19. 핵심 정리 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">정리</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">정리</span></div>
   <h2>오늘의 핵심 세 가지</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(3,1fr)">
@@ -423,7 +423,7 @@ g['defect'].agg(['mean', 'count'])</pre>
 
 <!-- 20. 확인 문제 1·2 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제 <span class="muted" style="font-size:22px;font-weight:500">— 보기를 눌러 보세요</span></h2>
   <div class="grid g2">
     <div class="q" data-answer="c" data-explain="불량이 1, 정상이 0이면 모두 더한 값은 불량 개수이고, 이를 전체 개수로 나눈 평균은 불량의 비율(불량률)이 됩니다.">
@@ -452,7 +452,7 @@ g['defect'].agg(['mean', 'count'])</pre>
 
 <!-- 21. 확인 문제 3·4 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제</h2>
   <div class="grid g2">
     <div class="q" data-answer="d" data-explain="제품이 1개뿐이면 그 1개가 불량이기만 해도 100%가 됩니다. 비율을 볼 때는 늘 개수(count)를 함께 확인하고, 작은 그룹은 묶거나 데이터를 더 모읍니다.">

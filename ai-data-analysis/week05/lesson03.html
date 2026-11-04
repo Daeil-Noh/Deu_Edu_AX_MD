@@ -128,7 +128,7 @@
 
 <!-- 3. 흐름 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">오늘의 흐름</span><span class="time">총 25분</span></div>
+  <div class="s-head"><span class="sec">오늘의 흐름</span></div>
   <h2>오늘의 흐름</h2>
   <div class="body">
     <div class="tl">
@@ -145,7 +145,7 @@
 
 <!-- 4. 도입: 평균 온도 220? -->
 <section class="slide">
-  <div class="s-head"><span class="sec">도입</span><span class="time">약 3분</span></div>
+  <div class="s-head"><span class="sec">도입</span></div>
   <h2>정리 전 데이터의 평균 온도는 220℃?</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:30px">
     <div style="width:470px;flex:none;display:grid;gap:8px">
@@ -180,7 +180,7 @@ Name: temp, dtype: float64</pre>
 
 <!-- 6. isna / info -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 문제 찾기</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">① 문제 찾기</span></div>
   <h2>빈칸은 <code>NaN</code>, 세는 법은 <code>isna().sum()</code></h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:24px">
     <div style="width:330px;flex:none;display:grid;gap:8px">
@@ -225,7 +225,7 @@ dtypes: float64(4), int64(2), object(7)</pre>
 
 <!-- 7. 오류값 찾기 데모 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 문제 찾기 · 직접 해 보기 1</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">① 문제 찾기 · 직접 해 보기 1</span></div>
   <h2>정상 범위를 정해 센서 오류값 골라내기 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo">
     <div class="plot"><svg id="strip" viewBox="0 0 680 430" aria-label="원본 온도 499개의 분포와 정상 범위"></svg></div>
@@ -244,7 +244,7 @@ dtypes: float64(4), int64(2), object(7)</pre>
 
 <!-- 8. 오류값 → NaN -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 문제 찾기</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">① 문제 찾기</span></div>
   <h2>오류값은 지우지 말고 <code>NaN</code>으로 바꾼다</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:30px">
     <div style="flex:1;min-width:0;display:grid;gap:10px">
@@ -277,7 +277,7 @@ df.loc[bad, 'temp'] = np.nan</pre>
 
 <!-- 10. dropna vs fillna -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 결측치 처리</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">② 결측치 처리</span></div>
   <h2><code>dropna</code> 지우기 vs <code>fillna</code> 채우기</h2>
   <div class="body">
     <div class="grid g2" style="gap:24px">
@@ -309,7 +309,7 @@ df.loc[bad, 'temp'] = np.nan</pre>
 
 <!-- 11. 채우기 데모 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 결측치 처리 · 직접 해 보기 2</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">② 결측치 처리 · 직접 해 보기 2</span></div>
   <h2>습도 빈칸 19개, 어떻게 처리할까? <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo">
     <div class="plot"><svg id="hum" viewBox="0 0 680 430" aria-label="습도 분포와 결측치 처리 방법에 따른 변화"></svg></div>
@@ -329,7 +329,7 @@ df.loc[bad, 'temp'] = np.nan</pre>
 
 <!-- 12. 평균 vs 중앙값 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 결측치 처리</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">② 결측치 처리</span></div>
   <h2>평균으로 채울까, 중앙값으로 채울까?</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:34px">
     <div style="width:560px;flex:none">
@@ -366,7 +366,7 @@ df.loc[bad, 'temp'] = np.nan</pre>
 
 <!-- 14. 문자열 숫자 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 자료형·중복·기록</span><span class="time">약 6분</span></div>
+  <div class="s-head"><span class="sec">③ 자료형·중복·기록</span></div>
   <h2>“1.994mm” 하나가 열 전체를 문자열로 만든다</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:28px">
     <div style="flex:1;min-width:0;display:grid;gap:8px">
@@ -392,7 +392,7 @@ df['thickness'].dtype                  # → float64</pre>
 
 <!-- 15. 중복 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 자료형·중복·기록</span><span class="time">약 6분</span></div>
+  <div class="s-head"><span class="sec">③ 자료형·중복·기록</span></div>
   <h2>같은 행이 두 번: <code>duplicated</code> · <code>drop_duplicates</code></h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:28px">
     <div style="flex:1;min-width:0;display:grid;gap:8px">
@@ -419,7 +419,7 @@ df['product_id'].duplicated().sum()   # 제품 번호 중복 → 0</pre>
 
 <!-- 16. 파이프라인 데모 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 자료형·중복·기록 · 직접 해 보기 3</span><span class="time">약 6분</span></div>
+  <div class="s-head"><span class="sec">③ 자료형·중복·기록 · 직접 해 보기 3</span></div>
   <h2>정리 단계를 하나씩 켜 보기 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 340px">
     <div class="plot" style="flex-direction:column;align-items:stretch;justify-content:flex-start;gap:8px;padding:12px 14px">
@@ -448,7 +448,7 @@ df['product_id'].duplicated().sum()   # 제품 번호 중복 → 0</pre>
 
 <!-- 17. 변경 기록 + AI -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 자료형·중복·기록 · AI와 함께</span><span class="time">약 6분</span></div>
+  <div class="s-head"><span class="sec">③ 자료형·중복·기록 · AI와 함께</span></div>
   <h2>무엇을 바꿨는지 남기고, AI의 정리 코드는 숫자로 검증</h2>
   <div class="body" style="flex-direction:row;align-items:stretch;gap:24px">
     <div style="flex:1;min-width:0;display:grid;gap:10px;align-content:center">
@@ -475,7 +475,7 @@ df['product_id'].duplicated().sum()   # 제품 번호 중복 → 0</pre>
 
 <!-- 18. 실습 파일 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 자료형·중복·기록 · 실습 파일</span><span class="time">약 6분</span></div>
+  <div class="s-head"><span class="sec">③ 자료형·중복·기록 · 실습 파일</span></div>
   <h2>Colab 실습: 정리 전 원본을 직접 정리하기</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:40px">
     <div style="flex:1">
@@ -498,7 +498,7 @@ df['product_id'].duplicated().sum()   # 제품 번호 중복 → 0</pre>
 
 <!-- 19. 정리 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">정리</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">정리</span></div>
   <h2>오늘의 핵심 세 가지</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(3,1fr)">
@@ -512,7 +512,7 @@ df['product_id'].duplicated().sum()   # 제품 번호 중복 → 0</pre>
 
 <!-- 20. 확인 문제 1·2 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제 <span class="muted" style="font-size:22px;font-weight:500">— 보기를 눌러 보세요</span></h2>
   <div class="grid g2">
     <div class="q" data-answer="b" data-explain="isna()는 칸마다 빈칸이면 True를 돌려주고, sum()은 True(=1)를 열마다 더해 빈칸 개수를 셉니다.">
@@ -541,7 +541,7 @@ df['product_id'].duplicated().sum()   # 제품 번호 중복 → 0</pre>
 
 <!-- 21. 확인 문제 3·4 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제</h2>
   <div class="grid g2">
     <div class="q" data-answer="a" data-explain="평균은 극단값 하나에도 크게 끌려갑니다. 중앙값은 가운데 값이라 이상값의 영향을 거의 받지 않습니다.">

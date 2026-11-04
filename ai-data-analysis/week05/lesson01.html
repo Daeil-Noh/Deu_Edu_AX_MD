@@ -139,7 +139,7 @@
 
 <!-- 3. 흐름 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">오늘의 흐름</span><span class="time">총 25분</span></div>
+  <div class="s-head"><span class="sec">오늘의 흐름</span></div>
   <h2>오늘의 흐름</h2>
   <div class="body">
     <div class="tl">
@@ -155,7 +155,7 @@
 
 <!-- 4. 도입: CSV → 표 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">도입</span><span class="time">약 3분</span></div>
+  <div class="s-head"><span class="sec">도입</span></div>
   <h2>메모장으로 열면 쉼표투성이, pandas로 열면 표</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:22px">
     <div style="flex:1;min-width:0">
@@ -189,7 +189,7 @@ P00004<i>,</i>2026-03-02<i>,</i>주간<i>,</i>3라인<i>,</i>5호기<i>,</i>214.
 
 <!-- 5. 데이터 소개 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">도입</span><span class="time">약 3분</span></div>
+  <div class="s-head"><span class="sec">도입</span></div>
   <h2>오늘의 데이터: 사출 성형 공정 기록</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(4,1fr)">
@@ -212,7 +212,7 @@ P00004<i>,</i>2026-03-02<i>,</i>주간<i>,</i>3라인<i>,</i>5호기<i>,</i>214.
 
 <!-- 7. pandas = 파이썬의 엑셀 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 표와 pandas</span><span class="time">약 10분</span></div>
+  <div class="s-head"><span class="sec">① 표와 pandas</span></div>
   <h2>pandas: 파이썬에서 표를 다루는 라이브러리</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:34px">
     <div style="width:400px;flex:none">
@@ -238,7 +238,7 @@ import pandas as pd</pre>
 
 <!-- 8. 해부도 데모 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 표와 pandas · 직접 해 보기 1</span><span class="time">약 10분</span></div>
+  <div class="s-head"><span class="sec">① 표와 pandas · 직접 해 보기 1</span></div>
   <h2>DataFrame 해부도: 이름을 알면 꺼낼 수 있다 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 380px">
     <div class="plot" style="flex-direction:column;align-items:stretch;justify-content:center;gap:12px;padding:18px 20px">
@@ -256,7 +256,7 @@ import pandas as pd</pre>
 
 <!-- 9. read_csv -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 표와 pandas</span><span class="time">약 10분</span></div>
+  <div class="s-head"><span class="sec">① 표와 pandas</span></div>
   <h2>인터넷 주소로 바로 불러오기: <code>pd.read_csv</code></h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:30px">
     <div style="flex:1;min-width:0;display:grid;gap:12px">
@@ -281,7 +281,7 @@ df.shape</pre>
 
 <!-- 10. 불러오기 오류 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 표와 pandas</span><span class="time">약 10분</span></div>
+  <div class="s-head"><span class="sec">① 표와 pandas</span></div>
   <h2>불러오다 자주 만나는 오류 네 가지</h2>
   <div class="body">
     <div class="grid g2" style="gap:16px">
@@ -304,7 +304,7 @@ df.shape</pre>
 
 <!-- 12. 점검 루틴 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 데이터 살펴보기</span><span class="time">약 10분</span></div>
+  <div class="s-head"><span class="sec">② 데이터 살펴보기</span></div>
   <h2>새 데이터를 받으면 이 순서로</h2>
   <div class="body">
     <div class="flow">
@@ -325,7 +325,7 @@ df.shape</pre>
 
 <!-- 13. 메서드 탐색 데모 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 데이터 살펴보기 · 직접 해 보기 2</span><span class="time">약 10분</span></div>
+  <div class="s-head"><span class="sec">② 데이터 살펴보기 · 직접 해 보기 2</span></div>
   <h2>무엇을 돌려줄까? 눌러서 확인하기 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 330px">
     <div class="plot" style="flex-direction:column;align-items:stretch;justify-content:flex-start;gap:8px;padding:12px 14px;position:relative">
@@ -342,7 +342,7 @@ df.shape</pre>
 
 <!-- 14. info 읽기 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 데이터 살펴보기</span><span class="time">약 10분</span></div>
+  <div class="s-head"><span class="sec">② 데이터 살펴보기</span></div>
   <h2><code>df.info()</code> 한 번으로 보는 것</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:28px">
     <pre class="out" style="font-size:14.5px;line-height:1.42;width:560px;flex:none">&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -376,7 +376,7 @@ dtypes: float64(5), int64(2), object(6)</pre>
 
 <!-- 15. describe 읽기 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 데이터 살펴보기</span><span class="time">약 10분</span></div>
+  <div class="s-head"><span class="sec">② 데이터 살펴보기</span></div>
   <h2><code>df.describe()</code>: 숫자 열 요약표</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:26px">
     <div style="width:700px;flex:none;display:grid;gap:8px">
@@ -403,7 +403,7 @@ max    235.30     97.50  1405.00     87.70       2.20     46.68    1.00</pre>
 
 <!-- 16. value_counts -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 데이터 살펴보기</span><span class="time">약 10분</span></div>
+  <div class="s-head"><span class="sec">② 데이터 살펴보기</span></div>
   <h2>범주 열은 <code>value_counts()</code>로 세기</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:36px">
     <div style="width:530px;flex:none;display:grid;gap:10px">
@@ -432,7 +432,7 @@ df['defect_type'].value_counts(normalize=True)</pre>
 
 <!-- 17. 자료형 맞히기 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 데이터 살펴보기 · 직접 해 보기 3</span><span class="time">약 10분</span></div>
+  <div class="s-head"><span class="sec">② 데이터 살펴보기 · 직접 해 보기 3</span></div>
   <h2>이 열의 자료형은? <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg> <span class="muted" style="font-size:20px;font-weight:500">— 먼저 맞혀 보고 카드를 눌러 보세요</span></h2>
   <div class="body" style="justify-content:flex-start">
     <div class="pcards" id="dtcards"></div>
@@ -443,7 +443,7 @@ df['defect_type'].value_counts(normalize=True)</pre>
 
 <!-- 18. 실습 파일 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 데이터 살펴보기 · 실습 파일</span><span class="time">약 10분</span></div>
+  <div class="s-head"><span class="sec">② 데이터 살펴보기 · 실습 파일</span></div>
   <h2>Colab 실습: 내 손으로 3분 건강검진</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:40px">
     <div style="flex:1">
@@ -466,7 +466,7 @@ df['defect_type'].value_counts(normalize=True)</pre>
 
 <!-- 19. 핵심 정리 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">정리</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">정리</span></div>
   <h2>오늘의 핵심 세 가지</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(3,1fr)">
@@ -480,7 +480,7 @@ df['defect_type'].value_counts(normalize=True)</pre>
 
 <!-- 20. 확인 문제 1·2 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제 <span class="muted" style="font-size:22px;font-weight:500">— 보기를 눌러 보세요</span></h2>
   <div class="grid g2">
     <div class="q" data-answer="c" data-explain="shape는 (행 개수, 열 개수) 순서입니다. 제품 494개가 한 행씩, 기록 항목 13개가 한 열씩입니다.">
@@ -509,7 +509,7 @@ df['defect_type'].value_counts(normalize=True)</pre>
 
 <!-- 21. 확인 문제 3·4 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제</h2>
   <div class="grid g2">
     <div class="q" data-answer="a" data-explain="0과 1로만 된 열의 평균은 1의 비율입니다. 494개 중 68개가 불량(1)이므로 평균 0.138, 불량률 약 13.8%입니다.">

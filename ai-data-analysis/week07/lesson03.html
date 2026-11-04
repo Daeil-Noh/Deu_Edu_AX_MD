@@ -89,7 +89,7 @@
 
 <!-- 3. 흐름 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">오늘의 흐름</span><span class="time">총 25분</span></div>
+  <div class="s-head"><span class="sec">오늘의 흐름</span></div>
   <h2>오늘의 흐름</h2>
   <div class="body">
     <div class="tl">
@@ -107,7 +107,7 @@
 
 <!-- 4. 도입 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">도입</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">도입</span></div>
   <h2>압력을 올리면 강도가 올라갈까?</h2>
   <div class="demo" style="grid-template-columns:1fr 400px">
     <div class="plot"><svg id="c-intro" viewBox="0 0 640 420" role="img" aria-label="사출 압력과 인장강도 산점도"></svg></div>
@@ -129,7 +129,7 @@
 
 <!-- 6. r 개념 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 상관계수</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">① 상관계수</span></div>
   <h2>상관계수 r = 두 값이 <span class="mark">직선으로</span> 함께 움직이는 정도</h2>
   <div class="body" style="justify-content:flex-start;gap:18px">
     <div class="scale" id="scale"></div>
@@ -150,7 +150,7 @@
 
 <!-- 7. 직접 해 보기 1 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 상관계수 · 직접 해 보기 1</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">① 상관계수 · 직접 해 보기 1</span></div>
   <h2>r을 움직이면 점구름은 어떻게 변할까? <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 380px">
     <div class="plot"><svg id="rdemo" viewBox="0 0 640 430" role="img" aria-label="상관계수 값에 따라 바뀌는 점구름"></svg></div>
@@ -177,7 +177,7 @@
 
 <!-- 9. 직접 해 보기 2 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 공정 변수와 품질 · 직접 해 보기 2</span><span class="time">약 6분</span></div>
+  <div class="s-head"><span class="sec">② 공정 변수와 품질 · 직접 해 보기 2</span></div>
   <h2>인장강도와 가장 관계가 깊은 공정 변수는? <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 380px">
     <div class="plot"><svg id="vs" viewBox="0 0 640 430" role="img" aria-label="고른 공정 변수와 인장강도의 산점도"></svg></div>
@@ -202,7 +202,7 @@
 
 <!-- 10. 온도의 함정 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 공정 변수와 품질</span><span class="time">약 6분</span></div>
+  <div class="s-head"><span class="sec">② 공정 변수와 품질</span></div>
   <h2>r = −0.11, 온도는 강도와 상관없다?</h2>
   <div class="demo" style="grid-template-columns:1fr 400px">
     <div class="plot"><svg id="c-temp" viewBox="0 0 640 430" role="img" aria-label="사출 온도와 인장강도 산점도와 곡선"></svg></div>
@@ -217,7 +217,7 @@
 
 <!-- 11. corr 한꺼번에 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 공정 변수와 품질</span><span class="time">약 6분</span></div>
+  <div class="s-head"><span class="sec">② 공정 변수와 품질</span></div>
   <h2>상관계수 한꺼번에 구하기: <code style="font-size:.85em">.corr()</code></h2>
   <div class="body" style="flex-direction:row;gap:26px;align-items:center">
     <div style="flex:1.05;display:grid;gap:10px">
@@ -245,7 +245,7 @@ print(r.round(2).sort_values())</pre>
 
 <!-- 13. 야간 불량 + 교란 변수 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 상관 ≠ 인과</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">③ 상관 ≠ 인과</span></div>
   <h2>“야간 근무 때문에 불량이 3배?”</h2>
   <div class="body" style="flex-direction:row;gap:26px;align-items:stretch">
     <div class="tile" style="flex:1;padding:12px"><svg id="c-night" viewBox="0 0 520 380" role="img" aria-label="교대별 불량률, 평균 습도, 평균 온도 비교"></svg></div>
@@ -273,7 +273,7 @@ print(r.round(2).sort_values())</pre>
 
 <!-- 14. 직접 해 보기 3 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 상관 ≠ 인과 · 직접 해 보기 3</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">③ 상관 ≠ 인과 · 직접 해 보기 3</span></div>
   <h2>습도를 맞춰 놓고 비교하면? <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 380px">
     <div class="plot"><svg id="conf" viewBox="0 0 640 430" role="img" aria-label="교대별, 습도 구간별 불량률 비교"></svg></div>
@@ -292,7 +292,7 @@ print(r.round(2).sort_values())</pre>
 
 <!-- 15. 실험 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 상관 ≠ 인과</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">③ 상관 ≠ 인과</span></div>
   <h2>원인인지 확인하려면: 하나만 바꾸는 실험</h2>
   <div class="body">
     <div class="flow">
@@ -316,7 +316,7 @@ print(r.round(2).sort_values())</pre>
 
 <!-- 16. 과제1 안내 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">과제1 · 데이터 시각화</span><span class="time">약 3분</span></div>
+  <div class="s-head"><span class="sec">과제1 · 데이터 시각화</span></div>
   <h2>과제1: 목적이 다른 그래프 3장 + 해석</h2>
   <div class="body" style="flex-direction:row;gap:26px;align-items:stretch">
     <div style="flex:1.25;display:grid;gap:12px;align-content:center">
@@ -342,7 +342,7 @@ print(r.round(2).sort_values())</pre>
 
 <!-- 17. 과제1 평가 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">과제1 · 데이터 시각화</span><span class="time">약 3분</span></div>
+  <div class="s-head"><span class="sec">과제1 · 데이터 시각화</span></div>
   <h2>이렇게 평가합니다 + 해석 예시</h2>
   <div class="body" style="flex-direction:row;gap:24px;align-items:center">
     <table class="asg" style="flex:1.2">
@@ -369,7 +369,7 @@ print(r.round(2).sort_values())</pre>
 
 <!-- 18. 실습 파일 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">실습</span><span class="time">약 3분</span></div>
+  <div class="s-head"><span class="sec">실습</span></div>
   <h2>실습 파일: 상관계수 구하고 의심해 보기</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:36px">
     <div class="cell-ui" style="flex:1.2">
@@ -390,7 +390,7 @@ df.groupby(['hum_band', 'shift'])['defect'].mean()</pre>
 
 <!-- 19. 정리 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">정리</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">정리</span></div>
   <h2>오늘의 핵심 세 가지</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(3,1fr)">
@@ -404,7 +404,7 @@ df.groupby(['hum_band', 'shift'])['defect'].mean()</pre>
 
 <!-- 20. 확인 문제 1·2 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제 <span class="muted" style="font-size:22px;font-weight:500">— 보기를 눌러 보세요</span></h2>
   <div class="grid g2">
     <div class="q" data-answer="c" data-explain="r이 +0.70이면 압력이 높은 제품일수록 강도도 높은 경향이 꽤 강하다는 뜻입니다. 모든 제품이 그런 것은 아니고, 원인이라는 뜻도 아닙니다.">
@@ -433,7 +433,7 @@ df.groupby(['hum_band', 'shift'])['defect'].mean()</pre>
 
 <!-- 21. 확인 문제 3·4 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제</h2>
   <div class="grid g2">
     <div class="q" data-answer="a" data-explain="야간에는 습도도 높고, 습도가 높으면 불량이 늘어납니다. 이렇게 두 변수 모두에 영향을 주는 제3의 변수를 교란 변수라고 합니다.">

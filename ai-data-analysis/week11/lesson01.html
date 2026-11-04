@@ -131,7 +131,7 @@
 
 <!-- 3. 흐름 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">오늘의 흐름</span><span class="time">총 25분</span></div>
+  <div class="s-head"><span class="sec">오늘의 흐름</span></div>
   <h2>오늘의 흐름</h2>
   <div class="body">
     <div class="tl">
@@ -148,7 +148,7 @@
 
 <!-- 4. 도입: 회귀 vs 분류 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">도입</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">도입</span></div>
   <h2>지난주는 “얼마나?”, 이번 주는 “어느 쪽?”</h2>
   <div class="body">
     <div class="grid g2" style="gap:26px">
@@ -177,7 +177,7 @@
 
 <!-- 6. 분류 정의 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 분류란?</span><span class="time">약 4분</span></div>
+  <div class="s-head"><span class="sec">① 분류란?</span></div>
   <h2>분류 = 입력을 보고 <span class="mark">범주</span>를 고르는 모델</h2>
   <div class="body">
     <div class="flow">
@@ -198,7 +198,7 @@
 
 <!-- 7. 오늘의 데이터 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 분류란?</span><span class="time">약 4분</span></div>
+  <div class="s-head"><span class="sec">① 분류란?</span></div>
   <h2>오늘의 문제: 제품 494개 중 불량 68개</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:34px">
     <div style="flex:1">
@@ -223,7 +223,7 @@
 
 <!-- 9. 나무의 생김새 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 의사결정나무</span><span class="time">약 10분</span></div>
+  <div class="s-head"><span class="sec">② 의사결정나무</span></div>
   <h2>의사결정나무 = 예/아니오 질문의 연속</h2>
   <div class="body" style="flex-direction:row;align-items:stretch;gap:26px">
     <div class="box" style="flex:1;margin:0;padding:10px;display:flex;align-items:center"><svg id="tree2" viewBox="0 0 700 400" role="img" aria-label="학습 데이터로 배운 깊이 2의 의사결정나무. 습도 76.2 이하인지 먼저 묻고, 온도 또는 두께를 묻는다"></svg></div>
@@ -238,7 +238,7 @@
 
 <!-- 10. 직접 해 보기 1: 나무 따라가기 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 의사결정나무 · 직접 해 보기 1</span><span class="time">약 10분</span></div>
+  <div class="s-head"><span class="sec">② 의사결정나무 · 직접 해 보기 1</span></div>
   <h2>내가 나무가 되어 판정해 보자 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 340px">
     <div class="plot"><svg id="play" viewBox="0 0 700 420" aria-label="깊이 3의 의사결정나무. 현재 질문이 강조되고 지나온 길이 표시된다"></svg></div>
@@ -255,7 +255,7 @@
 
 <!-- 11. 좋은 질문이란 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 의사결정나무</span><span class="time">약 10분</span></div>
+  <div class="s-head"><span class="sec">② 의사결정나무</span></div>
   <h2>첫 질문은 어떻게 정할까? 더 <span class="mark">순수한</span> 그룹을 만드는 질문</h2>
   <div class="body">
     <div class="cmp">
@@ -285,7 +285,7 @@
 
 <!-- 12. 직접 해 보기 2: 첫 질문 고르기 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 의사결정나무 · 직접 해 보기 2</span><span class="time">약 10분</span></div>
+  <div class="s-head"><span class="sec">② 의사결정나무 · 직접 해 보기 2</span></div>
   <h2>첫 질문을 직접 골라 보자: 컴퓨터를 이길 수 있을까? <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 350px">
     <div class="plot" style="flex-direction:column;align-items:stretch;justify-content:center;gap:10px;padding:12px 18px">
@@ -309,7 +309,7 @@
 
 <!-- 13. 반복해서 자란다 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 의사결정나무</span><span class="time">약 10분</span></div>
+  <div class="s-head"><span class="sec">② 의사결정나무</span></div>
   <h2>같은 방법을 그룹마다 반복 → 나무가 자란다</h2>
   <div class="body">
     <div class="flow">
@@ -340,7 +340,7 @@ model.fit(X_train, y_train)   # 학습 = 질문 고르기</pre>
 
 <!-- 15. 직접 해 보기 3: 깊이 슬라이더 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 과적합 · 직접 해 보기 3</span><span class="time">약 6분</span></div>
+  <div class="s-head"><span class="sec">③ 과적합 · 직접 해 보기 3</span></div>
   <h2>나무를 깊게 키우면? <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 360px">
     <div class="plot"><svg id="grow" viewBox="0 0 700 430" aria-label="최대 깊이에 따라 자라는 의사결정나무"></svg></div>
@@ -359,7 +359,7 @@ model.fit(X_train, y_train)   # 학습 = 질문 고르기</pre>
 
 <!-- 16. 과적합이란 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 과적합</span><span class="time">약 6분</span></div>
+  <div class="s-head"><span class="sec">③ 과적합</span></div>
   <h2>과적합 = 기출문제 답만 외운 학생</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(3,1fr)">
@@ -374,7 +374,7 @@ model.fit(X_train, y_train)   # 학습 = 질문 고르기</pre>
 
 <!-- 17. 과적합 막기 + 질문 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 과적합</span><span class="time">약 6분</span></div>
+  <div class="s-head"><span class="sec">③ 과적합</span></div>
   <h2>과적합을 막는 방법</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:1fr 1fr">
@@ -390,7 +390,7 @@ model.fit(X_train, y_train)   # 학습 = 질문 고르기</pre>
 
 <!-- 18. 실습 파일 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 과적합 · 실습</span><span class="time">약 6분</span></div>
+  <div class="s-head"><span class="sec">③ 과적합 · 실습</span></div>
   <h2>실습 파일: 오늘 본 나무를 직접 만들어 보기</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:36px">
     <div style="flex:1;display:grid;gap:12px">
@@ -410,7 +410,7 @@ model.fit(X_train, y_train)   # 학습 = 질문 고르기</pre>
 
 <!-- 19. 정리 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">정리</span><span class="time">약 3분</span></div>
+  <div class="s-head"><span class="sec">정리</span></div>
   <h2>오늘의 핵심 세 가지</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(3,1fr)">
@@ -424,7 +424,7 @@ model.fit(X_train, y_train)   # 학습 = 질문 고르기</pre>
 
 <!-- 20. 확인 문제 1·2 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 3분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제 <span class="muted" style="font-size:22px;font-weight:500">— 보기를 눌러 보세요</span></h2>
   <div class="grid g2">
     <div class="q" data-answer="c" data-explain="정상/불량처럼 정해진 범주 중 하나를 고르는 것은 분류입니다. 강도·수율·시간처럼 연속된 숫자를 맞히는 것은 회귀입니다.">
@@ -453,7 +453,7 @@ model.fit(X_train, y_train)   # 학습 = 질문 고르기</pre>
 
 <!-- 21. 확인 문제 3·4 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 3분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제</h2>
   <div class="grid g2">
     <div class="q" data-answer="d" data-explain="학습 데이터는 거의 다 맞히는데 처음 보는 시험 데이터에서 정확도가 떨어지는 것은 학습 데이터의 우연까지 외운 과적합의 전형적인 신호입니다.">

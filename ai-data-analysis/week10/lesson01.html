@@ -108,7 +108,7 @@
 
 <!-- 3. 오늘의 흐름 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">오늘의 흐름</span><span class="time">총 25분</span></div>
+  <div class="s-head"><span class="sec">오늘의 흐름</span></div>
   <h2>오늘의 흐름</h2>
   <div class="body">
     <div class="tl">
@@ -126,7 +126,7 @@
 
 <!-- 4. 도입: 맞혀 보기 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">도입 · 직접 해 보기 1</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">도입 · 직접 해 보기 1</span></div>
   <h2>압력만 보고 강도를 맞혀 보자 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo">
     <div class="plot"><svg id="gs-plot" viewBox="0 0 620 430" aria-label="내가 맞힌 값과 실제 강도를 압력에 따라 찍은 그래프"></svg></div>
@@ -153,7 +153,7 @@
 
 <!-- 6. 회귀 정의 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 회귀란?</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">① 회귀란?</span></div>
   <h2>회귀 = 입력으로 <span class="mark">숫자</span>를 예측하는 지도학습</h2>
   <div class="body">
     <div class="flow">
@@ -175,7 +175,7 @@
 
 <!-- 7. 데이터 보기 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 회귀란?</span><span class="time">약 5분</span></div>
+  <div class="s-head"><span class="sec">① 회귀란?</span></div>
   <h2>데이터 494개가 보여 주는 경향</h2>
   <div class="body" style="flex-direction:row;align-items:stretch;gap:30px">
     <div style="flex:1;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:8px;min-height:0;display:flex"><svg id="sc-all" viewBox="0 0 640 420" style="height:100%" aria-label="압력과 인장강도 산점도 494개"></svg></div>
@@ -197,7 +197,7 @@
 
 <!-- 9. y = ax + b -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 직선 규칙과 잔차</span><span class="time">약 6분</span></div>
+  <div class="s-head"><span class="sec">② 직선 규칙과 잔차</span></div>
   <h2>예측 규칙: 강도 = <span style="color:var(--accent-2)">a</span> × 압력 + <span style="color:var(--accent)">b</span></h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:36px">
     <svg viewBox="0 0 560 400" style="width:560px;flex:none" role="img" aria-label="기울기는 압력 1 bar 증가당 강도 증가량, 절편은 직선의 높이">
@@ -226,7 +226,7 @@
 
 <!-- 10. 잔차 데모 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 직선 규칙과 잔차 · 직접 해 보기 2</span><span class="time">약 6분</span></div>
+  <div class="s-head"><span class="sec">② 직선 규칙과 잔차 · 직접 해 보기 2</span></div>
   <h2>잔차 = 실제값 − 예측값 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo">
     <div class="plot"><svg id="rs-plot" viewBox="0 0 620 430" aria-label="제품 40개와 예측 직선. 점을 누르면 잔차가 나온다"></svg></div>
@@ -253,7 +253,7 @@
 
 <!-- 12. 왜 제곱인가 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 가장 좋은 직선</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">③ 가장 좋은 직선</span></div>
   <h2>잔차를 그냥 더하면 안 되는 이유</h2>
   <div class="body">
     <div class="grid g2" style="gap:26px">
@@ -287,7 +287,7 @@
 
 <!-- 13. 직선 맞추기 데모 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 가장 좋은 직선 · 직접 해 보기 3</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">③ 가장 좋은 직선 · 직접 해 보기 3</span></div>
   <h2>내가 직선을 그어 오차 제곱합을 줄여 보자 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo">
     <div class="plot"><svg id="fit-plot" viewBox="0 0 620 430" aria-label="제품 40개 위에 직선을 움직여 오차 제곱합을 줄이는 화면. 동그라미 손잡이를 끌거나 슬라이더를 쓴다" style="touch-action:none"></svg></div>
@@ -305,7 +305,7 @@
 
 <!-- 14. 코드 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 가장 좋은 직선</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">③ 가장 좋은 직선</span></div>
   <h2>컴퓨터에게 시키면: 코드 몇 줄</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:30px">
     <div style="flex:1.5;display:flex;flex-direction:column;gap:12px">
@@ -332,7 +332,7 @@ print('절편 b =', round(model.intercept_, 2))</pre>
 
 <!-- 15. 실습 파일 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 가장 좋은 직선 · 실습 파일</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">③ 가장 좋은 직선 · 실습 파일</span></div>
   <h2>Colab에서 직접 해 보기</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:40px">
     <div style="flex:1">
@@ -351,7 +351,7 @@ print('절편 b =', round(model.intercept_, 2))</pre>
 
 <!-- 16. 입력이 여러 개 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">④ 더 넓게 보기</span><span class="time">약 3분</span></div>
+  <div class="s-head"><span class="sec">④ 더 넓게 보기</span></div>
   <h2>입력이 여러 개라면?</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:34px">
     <svg viewBox="0 0 640 380" style="width:640px;flex:none" role="img" aria-label="압력, 두께, 습도, 속도, 온도에 각각 계수를 곱해 더하면 강도 예측값">
@@ -383,7 +383,7 @@ print('절편 b =', round(model.intercept_, 2))</pre>
 
 <!-- 17. 회귀 vs 분류 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">④ 더 넓게 보기 · 직접 해 보기 4</span><span class="time">약 3분</span></div>
+  <div class="s-head"><span class="sec">④ 더 넓게 보기 · 직접 해 보기 4</span></div>
   <h2>회귀일까, 분류일까? <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg> <span class="muted" style="font-size:20px;font-weight:500">— 먼저 생각하고 카드를 눌러 보세요</span></h2>
   <div class="body" style="justify-content:flex-start">
     <div class="pcards" id="rc-cards"></div>
@@ -394,7 +394,7 @@ print('절편 b =', round(model.intercept_, 2))</pre>
 
 <!-- 18. 핵심 정리 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">정리</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">정리</span></div>
   <h2>오늘의 핵심 세 가지</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(3,1fr)">
@@ -408,7 +408,7 @@ print('절편 b =', round(model.intercept_, 2))</pre>
 
 <!-- 19. 확인 문제 1·2 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제 <span class="muted" style="font-size:22px;font-weight:500">— 보기를 눌러 보세요</span></h2>
   <div class="grid g2">
     <div class="q" data-answer="c" data-explain="기울기 0.36은 압력이 1 bar 늘 때 강도가 평균 0.36 MPa 늘어난다는 뜻입니다. 10 bar 늘면 약 3.6 MPa 늘어납니다.">
@@ -437,7 +437,7 @@ print('절편 b =', round(model.intercept_, 2))</pre>
 
 <!-- 20. 확인 문제 3·4 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제</h2>
   <div class="grid g2">
     <div class="q" data-answer="d" data-explain="잔차를 그냥 더하면 +와 −가 서로 지워집니다. 제곱해서 더한 오차 제곱합이 가장 작은 직선을 고르는 것이 최소제곱법입니다.">

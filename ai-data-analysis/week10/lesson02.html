@@ -117,7 +117,7 @@
 
 <!-- 3. 흐름 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">오늘의 흐름</span><span class="time">총 25분</span></div>
+  <div class="s-head"><span class="sec">오늘의 흐름</span></div>
   <h2>오늘의 흐름</h2>
   <div class="body">
     <div class="tl">
@@ -134,7 +134,7 @@
 
 <!-- 4. 도입 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">도입</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">도입</span></div>
   <h2>압력 하나로는 설명하지 못한 흩어짐</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:34px">
     <svg viewBox="0 0 560 400" style="width:540px;flex:none" role="img" aria-label="압력 직선 주변에 흩어진 점들. 남은 흩어짐에는 다른 조건의 영향이 섞여 있다">
@@ -167,7 +167,7 @@
 
 <!-- 6. X / y 고르기 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 학습 준비</span><span class="time">약 4분</span></div>
+  <div class="s-head"><span class="sec">① 학습 준비</span></div>
   <h2>입력 X 와 목표 y 고르기</h2>
   <div class="body" style="justify-content:flex-start;gap:18px">
     <table class="ctab">
@@ -189,7 +189,7 @@
 
 <!-- 7. 코드: 나누기 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">① 학습 준비</span><span class="time">약 4분</span></div>
+  <div class="s-head"><span class="sec">① 학습 준비</span></div>
   <h2>코드 ① X, y 정하고 학습용·시험용으로 나누기</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:30px">
     <div style="flex:1.8;display:flex;flex-direction:column;gap:12px">
@@ -223,7 +223,7 @@ print(X_train.shape, X_test.shape)</pre>
 
 <!-- 9. 코드: 학습 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 학습과 계수 해석</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">② 학습과 계수 해석</span></div>
   <h2>코드 ② 학습하고 계수 꺼내 보기</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:30px">
     <div style="flex:1.5;display:flex;flex-direction:column;gap:10px">
@@ -254,7 +254,7 @@ dtype: float64
 
 <!-- 10. 계수 막대 데모 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 학습과 계수 해석 · 직접 해 보기 1</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">② 학습과 계수 해석 · 직접 해 보기 1</span></div>
   <h2>어떤 조건의 영향이 가장 클까? <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 340px">
     <div class="plot" style="flex-direction:column;align-items:stretch;justify-content:center;gap:8px">
@@ -276,7 +276,7 @@ dtype: float64
 
 <!-- 11. 계수 해석 주의 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">② 학습과 계수 해석</span><span class="time">약 7분</span></div>
+  <div class="s-head"><span class="sec">② 학습과 계수 해석</span></div>
   <h2>계수를 읽을 때 지킬 세 가지</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(3,1fr)">
@@ -298,7 +298,7 @@ dtype: float64
 
 <!-- 13. 코드: 새 제품 예측 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 예측하고 개선하기</span><span class="time">약 10분</span></div>
+  <div class="s-head"><span class="sec">③ 예측하고 개선하기</span></div>
   <h2>코드 ③ 새 제품의 강도 예측하기</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:30px">
     <div style="flex:1.8;display:flex;flex-direction:column;gap:12px">
@@ -321,7 +321,7 @@ print('예측 강도:', pred.round(2), 'MPa')</pre>
 
 <!-- 14. what-if 데모 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 예측하고 개선하기 · 직접 해 보기 2</span><span class="time">약 10분</span></div>
+  <div class="s-head"><span class="sec">③ 예측하고 개선하기 · 직접 해 보기 2</span></div>
   <h2>공정 조건을 바꾸면 강도는? <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 330px">
     <div class="plot" style="flex-direction:column;align-items:stretch;justify-content:center;padding:10px 6px">
@@ -344,7 +344,7 @@ print('예측 강도:', pred.round(2), 'MPa')</pre>
 
 <!-- 15. 온도 곡선 데모 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 예측하고 개선하기 · 직접 해 보기 3</span><span class="time">약 10분</span></div>
+  <div class="s-head"><span class="sec">③ 예측하고 개선하기 · 직접 해 보기 3</span></div>
   <h2>직선이 놓친 것: 온도의 곡선 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo">
     <div class="plot"><svg id="tc-plot" viewBox="0 0 620 430" aria-label="온도와 인장강도 산점도 494개와 직선 또는 곡선 예측"></svg></div>
@@ -363,7 +363,7 @@ print('예측 강도:', pred.round(2), 'MPa')</pre>
 
 <!-- 16. 코드: 특성 추가 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 예측하고 개선하기</span><span class="time">약 10분</span></div>
+  <div class="s-head"><span class="sec">③ 예측하고 개선하기</span></div>
   <h2>코드 ④ 특성 하나 만들어 넣기</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:26px">
     <div style="flex:1.8;display:flex;flex-direction:column;gap:10px">
@@ -394,7 +394,7 @@ dtype: float64</pre>
 
 <!-- 17. 생성형AI 활용 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">③ 예측하고 개선하기 · 생성형AI 활용</span><span class="time">약 10분</span></div>
+  <div class="s-head"><span class="sec">③ 예측하고 개선하기 · 생성형AI 활용</span></div>
   <h2>AI에게 계수 해석을 부탁할 때</h2>
   <div class="body" style="flex-direction:row;align-items:stretch;gap:30px">
     <div style="flex:1.2;display:flex;flex-direction:column;gap:12px;justify-content:center">
@@ -413,7 +413,7 @@ dtype: float64</pre>
 
 <!-- 18. 실습 파일 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">실습 파일</span><span class="time">약 10분</span></div>
+  <div class="s-head"><span class="sec">실습 파일</span></div>
   <h2>Colab에서 직접 해 보기</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:40px">
     <div style="flex:1">
@@ -432,7 +432,7 @@ dtype: float64</pre>
 
 <!-- 19. 핵심 정리 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">정리</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">정리</span></div>
   <h2>오늘의 핵심 세 가지</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(3,1fr)">
@@ -446,7 +446,7 @@ dtype: float64</pre>
 
 <!-- 20. 확인 문제 1·2 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제 <span class="muted" style="font-size:22px;font-weight:500">— 보기를 눌러 보세요</span></h2>
   <div class="grid g2">
     <div class="q" data-answer="c" data-explain="defect(불량 여부)는 강도를 측정한 뒤에야 정해지는 결과입니다. 생산 전에 강도를 예측하려는 상황에서는 알 수 없는 값이므로 입력에 넣으면 안 됩니다.">
@@ -475,7 +475,7 @@ dtype: float64</pre>
 
 <!-- 21. 확인 문제 3·4 -->
 <section class="slide">
-  <div class="s-head"><span class="sec">확인 문제</span><span class="time">약 2분</span></div>
+  <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제</h2>
   <div class="grid g2">
     <div class="q" data-answer="d" data-explain="학습 데이터의 압력은 62~98 bar 범위입니다. 그 밖의 값을 넣으면 계산은 되지만, 그 범위에서도 같은 규칙이 통한다는 근거가 없습니다.">
