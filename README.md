@@ -22,7 +22,10 @@ ai-data-analysis/
   weekNN/lessonMM.html        # N주 M차시 슬라이드 교안
   weekNN/lessonMM.js          # 그 차시의 직접 해 보기(인터랙티브) 화면
 genai-practice/
-  index.html
+  index.html                  # 주차별 강의 목록
+  materials/                  # 가상 회사 '바다결' 소개·공통 실습 파일(매출·후기 CSV)
+  weekNN/lessonMM.html        # N주 M차시 슬라이드 교안 (실습 도구: Gemini·Claude)
+  weekNN/materials/           # 그 주차 실습 자료(회의록·메일·양식 등, 모두 가상)
 ```
 
 ## 실습 파일과 데이터
