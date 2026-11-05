@@ -5,7 +5,7 @@
 | 폴더 | 교과 | 대상 |
 |---|---|---|
 | [`ai-data-analysis/`](ai-data-analysis/) | AI와 데이터 분석 | 이공계열 2학년 |
-| [`genai-practice/`](genai-practice/) | 생성형AI 활용 실무 | 인문·상경계열 2학년 |
+| [`genai-practice/`](genai-practice/) | 생성형AI 활용 실무 | 2학년 (학과 공통) |
 | `assets/` | 두 교과가 함께 쓰는 스타일(CSS)·스크립트(JS) | — |
 
 ## 구조
