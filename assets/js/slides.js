@@ -134,3 +134,22 @@ document.querySelectorAll('pre.code').forEach((pre) => {
   }
   pre.innerHTML = out + esc(src.slice(i));
 });
+
+// 프롬프트 복사 버튼: .prompt 안의 .copy → 같은 상자의 pre 내용을 클립보드로
+document.querySelectorAll('.prompt .copy').forEach((btn) => {
+  btn.addEventListener('click', async () => {
+    const pre = btn.closest('.prompt').querySelector('pre');
+    const text = pre ? pre.innerText : '';
+    let ok = false;
+    try { await navigator.clipboard.writeText(text); ok = true; } catch (e) {
+      const ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { ok = document.execCommand('copy'); } catch (e2) { ok = false; }
+      ta.remove();
+    }
+    const old = btn.textContent;
+    btn.textContent = ok ? '복사됨' : '직접 선택해 복사';
+    btn.classList.toggle('done', ok);
+    setTimeout(() => { btn.textContent = old; btn.classList.remove('done'); }, 1600);
+  });
+});
