@@ -190,7 +190,7 @@
 <!-- 7. 코드: 나누기 -->
 <section class="slide">
   <div class="s-head"><span class="sec">① 학습 준비</span></div>
-  <h2>코드 ① X, y 정하고 학습용·시험용으로 나누기</h2>
+  <h2>코드 ① X, y 정하고 훈련용·시험용으로 나누기</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:30px">
     <div style="flex:1.8;display:flex;flex-direction:column;gap:12px">
 <pre class="code" style="font-size:17px">from sklearn.model_selection import train_test_split
@@ -206,12 +206,12 @@ print(X_train.shape, X_test.shape)</pre>
 <pre class="out">(395, 5) (99, 5)</pre>
     </div>
     <div style="flex:1;display:flex;flex-direction:column;gap:14px">
-      <div class="tile frag show row"><span class="ic-badge"><svg class="ic"><use href="#i-book"/></svg></span><div><div class="h" style="font-size:21px">학습용 395개</div><div class="d">모델이 보고 배우는 데이터 (교과서)</div></div></div>
+      <div class="tile frag show row"><span class="ic-badge"><svg class="ic"><use href="#i-book"/></svg></span><div><div class="h" style="font-size:21px">훈련용 395개</div><div class="d">모델이 보고 배우는 데이터 (교과서)</div></div></div>
       <div class="tile frag row"><span class="ic-badge o"><svg class="ic"><use href="#i-check"/></svg></span><div><div class="h" style="font-size:21px">시험용 99개</div><div class="d">학습에 쓰지 않고 남겨 둔 데이터 (시험 문제) → 다음 차시 평가에 사용</div></div></div>
       <div class="tile frag row"><span class="ic-badge g"><svg class="ic"><use href="#i-reset"/></svg></span><div><div class="h" style="font-size:21px">random_state=42</div><div class="d">나누는 방식을 고정 — 누가 실행해도 같은 결과</div></div></div>
     </div>
   </div>
-  <div class="s-foot"><span>AI와 데이터 분석 · 10주 2차시 · 학습·시험 데이터 나누기는 9주 2차시 · (395, 5) = 395행 5열</span><span class="no"></span></div>
+  <div class="s-foot"><span>AI와 데이터 분석 · 10주 2차시 · 훈련·시험 데이터 나누기는 9주 2차시 · (395, 5) = 395행 5열</span><span class="no"></span></div>
 </section>
 
 <!-- 8. 섹션 ② -->
@@ -230,7 +230,7 @@ print(X_train.shape, X_test.shape)</pre>
 <pre class="code" style="font-size:17px">from sklearn.linear_model import LinearRegression
 
 model = LinearRegression()
-model.fit(X_train, y_train)   # 학습용으로만 학습
+model.fit(X_train, y_train)   # 훈련용으로만 학습
 
 coef = pd.Series(model.coef_, index=features)
 print(coef.round(4))          # 입력별 계수
@@ -436,7 +436,7 @@ dtype: float64</pre>
   <h2>오늘의 핵심 세 가지</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(3,1fr)">
-      <div class="tile frag show"><span class="ic-badge lg"><svg class="ic"><use href="#i-filter"/></svg></span><div class="h">나누고 → 학습 → 예측</div><div style="font-size:21px">train_test_split → <strong>fit</strong>(학습용) → <strong>predict</strong>(새 조건)</div></div>
+      <div class="tile frag show"><span class="ic-badge lg"><svg class="ic"><use href="#i-filter"/></svg></span><div class="h">나누고 → 학습 → 예측</div><div style="font-size:21px">train_test_split → <strong>fit</strong>(훈련용) → <strong>predict</strong>(새 조건)</div></div>
       <div class="tile frag"><span class="ic-badge lg"><svg class="ic"><use href="#i-chart"/></svg></span><div class="h">계수 = 조건 하나의 효과</div><div style="font-size:21px">다른 조건은 그대로, <strong>단위와 함께</strong>, 데이터 범위 안에서 읽는다</div></div>
       <div class="tile frag"><span class="ic-badge lg o"><svg class="ic"><use href="#i-thermo"/></svg></span><div class="h">곡선은 특성으로</div><div style="font-size:21px">직선이 놓친 관계는 <strong>(온도 − 210)²</strong> 같은 새 열로 보완</div></div>
     </div>
@@ -478,13 +478,13 @@ dtype: float64</pre>
   <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제</h2>
   <div class="grid g2">
-    <div class="q" data-answer="d" data-explain="학습 데이터의 압력은 62~98 bar 범위입니다. 그 밖의 값을 넣으면 계산은 되지만, 그 범위에서도 같은 규칙이 통한다는 근거가 없습니다.">
+    <div class="q" data-answer="d" data-explain="훈련 데이터의 압력은 62~98 bar 범위입니다. 그 밖의 값을 넣으면 계산은 되지만, 그 범위에서도 같은 규칙이 통한다는 근거가 없습니다.">
       <p class="q-title"><b>Q3.</b> 압력 150 bar 를 넣었더니 예측 강도 약 64 MPa 가 나왔다. 가장 알맞은 판단은?</p>
       <div class="opts">
         <button type="button" data-v="a">압력을 150 bar 로 올리면 강도가 크게 오른다</button>
         <button type="button" data-v="b">모델에 오류가 있으니 다시 학습한다</button>
         <button type="button" data-v="c">계수를 모두 두 배로 바꾼다</button>
-        <button type="button" data-v="d">학습 데이터 범위 밖이라 믿을 근거가 없다</button>
+        <button type="button" data-v="d">훈련 데이터 범위 밖이라 믿을 근거가 없다</button>
       </div>
       <div class="feedback" aria-live="polite"></div>
     </div>

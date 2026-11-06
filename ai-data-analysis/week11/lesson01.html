@@ -226,14 +226,14 @@
   <div class="s-head"><span class="sec">② 의사결정나무</span></div>
   <h2>의사결정나무 = 예/아니오 질문의 연속</h2>
   <div class="body" style="flex-direction:row;align-items:stretch;gap:26px">
-    <div class="box" style="flex:1;margin:0;padding:10px;display:flex;align-items:center"><svg id="tree2" viewBox="0 0 700 400" role="img" aria-label="학습 데이터로 배운 깊이 2의 의사결정나무. 습도 76.2 이하인지 먼저 묻고, 온도 또는 두께를 묻는다"></svg></div>
+    <div class="box" style="flex:1;margin:0;padding:10px;display:flex;align-items:center"><svg id="tree2" viewBox="0 0 700 400" role="img" aria-label="훈련 데이터로 배운 깊이 2의 의사결정나무. 습도 76.2 이하인지 먼저 묻고, 온도 또는 두께를 묻는다"></svg></div>
     <div style="width:330px;flex:none;display:grid;gap:12px;align-content:center">
       <div class="tile row frag show" style="padding:14px 16px"><span class="ic-badge"><svg class="ic"><use href="#i-chat"/></svg></span><div><div class="h" style="font-size:19px">질문 (마디)</div><div class="d" style="font-size:16px">특성 하나와 기준값 하나: “습도 ≤ 76.2?”</div></div></div>
       <div class="tile row frag" style="padding:14px 16px"><span class="ic-badge"><svg class="ic"><use href="#i-link"/></svg></span><div><div class="h" style="font-size:19px">가지</div><div class="d" style="font-size:16px">예는 왼쪽, 아니오는 오른쪽으로 내려간다</div></div></div>
-      <div class="tile row frag" style="padding:14px 16px"><span class="ic-badge o"><svg class="ic"><use href="#i-check"/></svg></span><div><div class="h" style="font-size:19px">잎 (판정)</div><div class="d" style="font-size:16px">도착한 학습 제품 중 <strong>많은 쪽</strong>으로 판정</div></div></div>
+      <div class="tile row frag" style="padding:14px 16px"><span class="ic-badge o"><svg class="ic"><use href="#i-check"/></svg></span><div><div class="h" style="font-size:19px">잎 (판정)</div><div class="d" style="font-size:16px">도착한 훈련 데이터 제품 중 <strong>많은 쪽</strong>으로 판정</div></div></div>
     </div>
   </div>
-  <div class="s-foot"><span>AI와 데이터 분석 · 11주 1차시 · 학습 데이터 345개로 실제로 학습한 나무 (max_depth=2) · 숫자는 학습 제품 수</span><span class="no"></span></div>
+  <div class="s-foot"><span>AI와 데이터 분석 · 11주 1차시 · 훈련 데이터 345개로 실제로 학습한 나무 (max_depth=2) · 숫자는 훈련 데이터 제품 수</span><span class="no"></span></div>
 </section>
 
 <!-- 10. 직접 해 보기 1: 나무 따라가기 -->
@@ -289,7 +289,7 @@
   <h2>첫 질문을 직접 골라 보자: 컴퓨터를 이길 수 있을까? <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 350px">
     <div class="plot" style="flex-direction:column;align-items:stretch;justify-content:center;gap:10px;padding:12px 18px">
-      <svg id="sp-hist" viewBox="0 0 700 270" aria-label="선택한 특성 값에 따라 학습 제품 345개를 쌓은 점 그림과 기준선"></svg>
+      <svg id="sp-hist" viewBox="0 0 700 270" aria-label="선택한 특성 값에 따라 훈련 데이터 제품 345개를 쌓은 점 그림과 기준선"></svg>
       <div class="grp"><span class="nm" id="sp-ln">예 (≤ 기준)</span><span class="bar2"><i id="sp-l0" style="background:var(--accent-soft)"></i><i id="sp-l1" style="background:var(--accent-2)"></i></span><span class="rt" id="sp-lr">-</span></div>
       <div class="grp"><span class="nm" id="sp-rn">아니오 (&gt; 기준)</span><span class="bar2"><i id="sp-r0" style="background:var(--accent-soft)"></i><i id="sp-r1" style="background:var(--accent-2)"></i></span><span class="rt" id="sp-rr">-</span></div>
     </div>
@@ -304,7 +304,7 @@
       <div class="callout b" id="sp-msg">특성을 고르고 기준값을 움직여 <strong>섞임 정도를 가장 낮게</strong> 만들어 보세요.</div>
     </div>
   </div>
-  <div class="s-foot"><span>AI와 데이터 분석 · 11주 1차시 · 학습 데이터 345개 · 섞임 정도 = 지니 불순도 (두 그룹 가중 평균)</span><span class="no"></span></div>
+  <div class="s-foot"><span>AI와 데이터 분석 · 11주 1차시 · 훈련 데이터 345개 · 섞임 정도 = 지니 불순도 (두 그룹 가중 평균)</span><span class="no"></span></div>
 </section>
 
 <!-- 13. 반복해서 자란다 -->
@@ -354,7 +354,7 @@ model.fit(X_train, y_train)   # 학습 = 질문 고르기</pre>
       <div class="callout b" id="gr-msg" style="font-size:15.5px">-</div>
     </div>
   </div>
-  <div class="s-foot"><span>AI와 데이터 분석 · 11주 1차시 · 학습 345개·시험 149개 (test_size=0.3, stratify, random_state=42) · 깊이 11에서 더 자라지 않음</span><span class="no"></span></div>
+  <div class="s-foot"><span>AI와 데이터 분석 · 11주 1차시 · 훈련 345개·시험 149개 (test_size=0.3, stratify, random_state=42) · 깊이 11에서 더 자라지 않음</span><span class="no"></span></div>
 </section>
 
 <!-- 16. 과적합이란 -->
@@ -365,7 +365,7 @@ model.fit(X_train, y_train)   # 학습 = 질문 고르기</pre>
     <div class="tiles" style="grid-template-columns:repeat(3,1fr)">
       <div class="tile frag show"><span class="ic-badge lg g"><svg class="ic"><use href="#i-book"/></svg></span><div class="h">과소적합 · 깊이 1</div><div class="d">질문이 너무 적어 <strong>덜 배운</strong> 상태</div><div style="font-size:19px">훈련 <b>88.4%</b> · 시험 <b>85.9%</b></div></div>
       <div class="tile frag" style="border:2px solid var(--accent)"><span class="ic-badge lg"><svg class="ic"><use href="#i-check"/></svg></span><div class="h">적당 · 깊이 2~3</div><div class="d">공통된 <strong>규칙</strong>만 배워 새 제품에도 통한다</div><div style="font-size:19px">훈련 <b>90.1~91.0%</b> · 시험 <b style="color:var(--accent)">90.6%</b></div></div>
-      <div class="tile frag"><span class="ic-badge lg o"><svg class="ic"><use href="#i-alert"/></svg></span><div class="h">과적합 · 깊이 11</div><div class="d">학습 제품 하나하나의 <strong>우연까지 외웠다</strong></div><div style="font-size:19px">훈련 <b>100%</b> · 시험 <b style="color:var(--accent-2)">86.6%</b></div></div>
+      <div class="tile frag"><span class="ic-badge lg o"><svg class="ic"><use href="#i-alert"/></svg></span><div class="h">과적합 · 깊이 11</div><div class="d">훈련 데이터 제품 하나하나의 <strong>우연까지 외웠다</strong></div><div style="font-size:19px">훈련 <b>100%</b> · 시험 <b style="color:var(--accent-2)">86.6%</b></div></div>
     </div>
     <div class="box warn frag" style="margin-top:22px"><p style="font-size:21px;margin:0">훈련 정확도는 <strong>“외운 문제를 다시 푼 점수”</strong>. 모델의 실력은 처음 보는 <strong>시험 데이터</strong>(9주 2차시의 시험 데이터)로 재야 합니다 — 데이터를 나눈 이유.</p></div>
   </div>
@@ -380,7 +380,7 @@ model.fit(X_train, y_train)   # 학습 = 질문 고르기</pre>
     <div class="tiles" style="grid-template-columns:1fr 1fr">
       <div class="tile row"><span class="ic-badge lg"><svg class="ic"><use href="#i-layers"/></svg></span><div><div class="h">깊이 제한 · max_depth</div><div class="d">질문 횟수의 상한. 오늘 데이터에서는 2~3이 가장 좋았다</div></div></div>
       <div class="tile row"><span class="ic-badge lg"><svg class="ic"><use href="#i-filter"/></svg></span><div><div class="h">잎 크기 제한 · min_samples_leaf</div><div class="d">잎 하나에 제품이 최소 몇 개는 있어야 한다 → 한두 개짜리 “외운 규칙” 방지</div></div></div>
-      <div class="tile row"><span class="ic-badge lg"><svg class="ic"><use href="#i-target"/></svg></span><div><div class="h">시험 데이터로 확인</div><div class="d">설정을 바꿀 때마다 훈련이 아닌 시험 정확도를 본다</div></div></div>
+      <div class="tile row"><span class="ic-badge lg"><svg class="ic"><use href="#i-target"/></svg></span><div><div class="h">처음 보는 데이터로 고르기</div><div class="d">설정은 훈련이 아닌 <b>검증 데이터</b> 정확도로 고르고, 시험 데이터는 마지막에 한 번 (오늘 실습은 데이터가 작아 시험 데이터로 비교)</div></div></div>
       <div class="tile row"><span class="ic-badge lg o"><svg class="ic"><use href="#i-database"/></svg></span><div><div class="h">데이터 더 모으기</div><div class="d">제품이 많을수록 우연과 규칙을 구별하기 쉬워진다</div></div></div>
     </div>
     <div class="box think frag" style="margin-top:20px"><p style="font-size:21px;margin:0"><svg class="ic"><use href="#i-bulb"/></svg> 그런데 시험 정확도 <strong>90.6%</strong>, 잘한 걸까요? 모든 제품을 그냥 “정상”이라고만 해도 시험 데이터에서 <strong>85.9%</strong>가 나옵니다. → 다음 차시</p></div>
@@ -394,7 +394,7 @@ model.fit(X_train, y_train)   # 학습 = 질문 고르기</pre>
   <h2>실습 파일: 오늘 본 나무를 직접 만들어 보기</h2>
   <div class="body" style="flex-direction:row;align-items:center;gap:36px">
     <div style="flex:1;display:grid;gap:12px">
-      <div class="tile row" style="padding:14px 18px"><span class="ic-badge"><svg class="ic"><use href="#i-database"/></svg></span><div><div class="h" style="font-size:20px">1~3. 불러오고 나누기</div><div class="d">process.csv → X(공정 조건 5개), y(defect) → 학습 70% · 시험 30%</div></div></div>
+      <div class="tile row" style="padding:14px 18px"><span class="ic-badge"><svg class="ic"><use href="#i-database"/></svg></span><div><div class="h" style="font-size:20px">1~3. 불러오고 나누기</div><div class="d">process.csv → X(공정 조건 5개), y(defect) → 훈련 70% · 시험 30%</div></div></div>
       <div class="tile row" style="padding:14px 18px"><span class="ic-badge"><svg class="ic"><use href="#i-filter"/></svg></span><div><div class="h" style="font-size:20px">4~6. 나무 학습·그리기</div><div class="d">max_depth=2 나무 → plot_tree 그림, export_text 규칙</div></div></div>
       <div class="tile row" style="padding:14px 18px"><span class="ic-badge"><svg class="ic"><use href="#i-target"/></svg></span><div><div class="h" style="font-size:20px">7. 섞임 정도 계산</div><div class="d">질문 A·B의 지니 불순도를 직접 계산해 비교</div></div></div>
       <div class="tile row" style="padding:14px 18px"><span class="ic-badge o"><svg class="ic"><use href="#i-chart"/></svg></span><div><div class="h" style="font-size:20px">8~9. 깊이별 정확도 그래프</div><div class="d">max_depth 1~11 → 훈련·시험 정확도 → 과적합 확인</div></div></div>
@@ -456,13 +456,13 @@ model.fit(X_train, y_train)   # 학습 = 질문 고르기</pre>
   <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제</h2>
   <div class="grid g2">
-    <div class="q" data-answer="d" data-explain="학습 데이터는 거의 다 맞히는데 처음 보는 시험 데이터에서 정확도가 떨어지는 것은 학습 데이터의 우연까지 외운 과적합의 전형적인 신호입니다.">
+    <div class="q" data-answer="d" data-explain="훈련 데이터는 거의 다 맞히는데 처음 보는 시험 데이터에서 정확도가 떨어지는 것은 훈련 데이터의 우연까지 외운 과적합의 전형적인 신호입니다.">
       <p class="q-title"><b>Q3.</b> 훈련 정확도 100%, 시험 정확도 86.6%인 나무에 대한 설명으로 옳은 것은?</p>
       <div class="opts">
         <button type="button" data-v="a">완벽한 모델이므로 그대로 쓴다</button>
         <button type="button" data-v="b">시험 데이터에 오류가 있다</button>
         <button type="button" data-v="c">질문이 너무 적어 덜 배웠다</button>
-        <button type="button" data-v="d">학습 데이터를 외워 버린 과적합이다</button>
+        <button type="button" data-v="d">훈련 데이터를 외워 버린 과적합이다</button>
       </div>
       <div class="feedback" aria-live="polite"></div>
     </div>

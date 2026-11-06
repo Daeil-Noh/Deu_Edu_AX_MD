@@ -61,7 +61,7 @@ df[features + [target]].describe().round(2)
 
 # %% [markdown]
 # ## 3. 방법
-# > 다른 사람이 **똑같이 다시 할 수 있게**: 사용한 분석(그룹 비교, 회귀, 분류 등), 학습/검증 분할 비율과 `random_state`, 평가 지표(MAE, R², 정확도·재현율 등), 사용 도구(Python, pandas, scikit-learn, Colab).
+# > 다른 사람이 **똑같이 다시 할 수 있게**: 사용한 분석(그룹 비교, 회귀, 분류 등), 훈련/시험 분할 비율과 `random_state`, 평가 지표(MAE, R², 정확도·재현율 등), 사용 도구(Python, pandas, scikit-learn, Colab).
 #
 # [ ]
 
@@ -94,7 +94,7 @@ print(summary)
 # **그림 2.** [그룹 이름과 개수, 무엇의 평균인지, 단위]
 
 # %%
-# 모델 — 학습/검증 분할 후 시험 점수 보고
+# 모델 — 훈련/시험 분할 후 시험 점수 보고
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, r2_score
@@ -103,8 +103,8 @@ train, test = train_test_split(df, test_size=0.2, random_state=42)
 model = LinearRegression().fit(train[features], train[target])
 pred = model.predict(test[features])
 base = np.full(len(test), train[target].mean())
-table1 = pd.DataFrame({'검증 MAE': [mean_absolute_error(test[target], base), mean_absolute_error(test[target], pred)],
-                       '검증 R²': [r2_score(test[target], base), r2_score(test[target], pred)]},
+table1 = pd.DataFrame({'시험 MAE': [mean_absolute_error(test[target], base), mean_absolute_error(test[target], pred)],
+                       '시험 R²': [r2_score(test[target], base), r2_score(test[target], pred)]},
                       index=['평균으로 찍기(기준)', '선형 회귀'])
 
 # %% [markdown]
@@ -149,7 +149,7 @@ table1.round(3)
 check = {
     '결측 없음(또는 처리함)': int(df[features + [target]].isna().sum().sum()) == 0,
     '시험 데이터로 평가함': len(test) > 0,
-    '기준(평균 찍기)보다 나음': table1.loc['선형 회귀', '검증 MAE'] < table1.loc['평균으로 찍기(기준)', '검증 MAE'],
+    '기준(평균 찍기)보다 나음': table1.loc['선형 회귀', '시험 MAE'] < table1.loc['평균으로 찍기(기준)', '시험 MAE'],
 }
 for k, v in check.items():
     print('[O]' if v else '[X]', k)

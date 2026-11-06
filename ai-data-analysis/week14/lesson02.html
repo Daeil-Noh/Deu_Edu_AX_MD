@@ -246,8 +246,8 @@
         <div style="display:flex;align-items:center;gap:12px"><span class="ic-badge"><svg class="ic"><use href="#i-code"/></svg></span><div class="h">3. 방법</div></div>
         <ul style="font-size:18px;margin:0;line-height:1.5">
           <li><b>분석</b>: 구간별 평균 비교, 선형 회귀 (온도² 추가)</li>
-          <li><b>분할</b>: 학습 80% · 검증 20%, <code>random_state=42</code></li>
-          <li><b>평가 지표</b>: 검증 MAE, R² + 비교 기준(평균으로 찍기)</li>
+          <li><b>분할</b>: 훈련 80% · 시험 20%, <code>random_state=42</code></li>
+          <li><b>평가 지표</b>: 시험 MAE, R² + 비교 기준(평균으로 찍기)</li>
           <li><b>도구</b>: Python, pandas, scikit-learn, Google Colab</li>
         </ul>
       </div>
@@ -375,7 +375,7 @@
     <div style="flex:1">
       <div style="display:flex;gap:8px;align-items:center;font-size:18px;margin-bottom:8px"><span class="anno">1</span><span><b>표 1.</b> 시험 데이터(n=99)에서의 모델별 예측 오차</span></div>
       <table class="ttab">
-        <thead><tr><th>모델</th><th>입력 변수</th><th class="num">검증 MAE (MPa) <span class="anno" style="width:22px;height:22px;font-size:13px">2</span></th><th class="num">검증 R²</th></tr></thead>
+        <thead><tr><th>모델</th><th>입력 변수</th><th class="num">시험 MAE (MPa) <span class="anno" style="width:22px;height:22px;font-size:13px">2</span></th><th class="num">시험 R²</th></tr></thead>
         <tbody>
           <tr><td>평균으로 찍기 (기준) <span class="anno" style="width:22px;height:22px;font-size:13px">4</span></td><td>없음</td><td class="num">2.58</td><td class="num">0.00</td></tr>
           <tr><td>모델 1 · 선형 회귀</td><td>조건 5개</td><td class="num">1.48</td><td class="num">0.65</td></tr>
@@ -472,7 +472,7 @@
       <p class="q-title"><b>Q1.</b> ‘결과’ 절에 가장 알맞은 문장은?</p>
       <div class="opts">
         <button type="button" data-v="a">압력이 강도를 결정하는 핵심 원인이다.</button>
-        <button type="button" data-v="b">모델 2의 검증 MAE는 1.05 MPa였다(표 1).</button>
+        <button type="button" data-v="b">모델 2의 시험 MAE는 1.05 MPa였다(표 1).</button>
         <button type="button" data-v="c">온도가 너무 높으면 수지가 열화되는 것으로 보인다.</button>
         <button type="button" data-v="d">이 모델은 모든 공장에서 잘 맞을 것이다.</button>
       </div>

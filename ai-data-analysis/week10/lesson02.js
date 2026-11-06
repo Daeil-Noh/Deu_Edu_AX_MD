@@ -14,7 +14,7 @@
     bs.forEach((b) => b.addEventListener('click', () => { bs.forEach((x) => x.setAttribute('aria-pressed', x === b)); fn(b.dataset.m); }));
   };
 
-  /* ───────── 학습한 모델 (scikit-learn LinearRegression, train_test_split(test_size=0.2, random_state=42) 의 학습용 395개) ───────── */
+  /* ───────── 학습한 모델 (scikit-learn LinearRegression, train_test_split(test_size=0.2, random_state=42) 의 훈련용 395개) ───────── */
   const M = {
     f5: { coef: [0.35252668, 13.32152830, -0.05797473, -0.00517563, -0.05620544], g: 0, b: 5.25753566 },
     f6: { coef: [0.34683787, 14.86905489, -0.04914200, -0.00476530, 0.00246154], g: -0.01932160, b: -9.69452169 },

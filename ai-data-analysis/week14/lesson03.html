@@ -122,7 +122,7 @@
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(4,1fr)">
       <div class="tile"><span class="ic-badge"><svg class="ic"><use href="#i-target"/></svg></span><div class="h">질문과 답</div><div class="d">내 결과가 분석 질문에 직접 답하는지 확인한다</div></div>
-      <div class="tile"><span class="ic-badge o"><svg class="ic"><use href="#i-alert"/></svg></span><div class="h">과장 찾기</div><div class="d">상관 ≠ 인과, 학습 점수, 범위 밖 예측 같은 과장을 고친다</div></div>
+      <div class="tile"><span class="ic-badge o"><svg class="ic"><use href="#i-alert"/></svg></span><div class="h">과장 찾기</div><div class="d">상관 ≠ 인과, 훈련 점수, 범위 밖 예측 같은 과장을 고친다</div></div>
       <div class="tile"><span class="ic-badge"><svg class="ic"><use href="#i-shield"/></svg></span><div class="h">데이터·윤리</div><div class="d">데이터 품질·편향·개인정보·출처를 점검한다</div></div>
       <div class="tile"><span class="ic-badge"><svg class="ic"><use href="#i-reset"/></svg></span><div class="h">AI·재현성</div><div class="d">AI 결과를 검증·공개하고, 처음부터 다시 실행해 본다</div></div>
     </div>
@@ -188,7 +188,7 @@
       </div>
       <div class="tile frag" style="border:2px solid var(--ok)">
         <div class="h" style="color:var(--ok)">✓ 답하는 결론</div>
-        <div style="font-size:18px">“① <b>예측할 수 있었다</b> — 검증 MAE 1.05 MPa, 기준 2.58 MPa(표 1). ② 관찰 범위 안에서 <b>압력</b>이 가장 크게 관련되었다(그림 4).”</div>
+        <div style="font-size:18px">“① <b>예측할 수 있었다</b> — 시험 MAE 1.05 MPa, 기준 2.58 MPa(표 1). ② 관찰 범위 안에서 <b>압력</b>이 가장 크게 관련되었다(그림 4).”</div>
         <div class="d">질문 하나에 답 하나, 답마다 숫자와 근거(그림·표 번호)</div>
       </div>
     </div>
@@ -232,17 +232,17 @@
 <!-- 9. 과적합 데모 -->
 <section class="slide">
   <div class="s-head"><span class="sec">① 결과 해석 점검 · 직접 해 보기 3</span></div>
-  <h2>학습 점수 0.999, 보고서에 써도 될까? <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
+  <h2>훈련 점수 0.999, 보고서에 써도 될까? <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 360px">
-    <div class="plot"><svg id="of-plot" viewBox="0 0 640 410" aria-label="의사결정나무 깊이에 따른 학습 R²와 검증 R²"></svg></div>
+    <div class="plot"><svg id="of-plot" viewBox="0 0 640 410" aria-label="의사결정나무 깊이에 따른 학습 R²와 시험 R²"></svg></div>
     <div class="side">
       <div class="ctrl"><label>의사결정나무 최대 깊이 <output id="of-d-o">3</output></label><input id="of-d" type="range" min="1" max="15" step="1" value="3" aria-label="나무 깊이"></div>
       <div class="grid g2" style="gap:8px">
         <div class="meter"><div class="lbl">학습 R²</div><div class="val" id="of-tr" style="font-size:32px">0.606</div></div>
-        <div class="meter"><div class="lbl">검증 R²</div><div class="val o" id="of-te" style="font-size:32px">0.590</div></div>
+        <div class="meter"><div class="lbl">시험 R²</div><div class="val o" id="of-te" style="font-size:32px">0.590</div></div>
       </div>
       <div class="status ok" id="of-st"></div>
-      <div class="callout b" style="font-size:15px">점검: 보고서의 성능 숫자가 <strong>검증</strong> 데이터 점수인가? 학습과 검증의 차이도 적었나?</div>
+      <div class="callout b" style="font-size:15px">점검: 보고서의 성능 숫자가 <strong>검증</strong> 데이터 점수인가? 훈련과 시험의 차이도 적었나?</div>
     </div>
   </div>
   <div class="s-foot"><span>AI와 데이터 분석 · 14주 3차시 · 강도 예측, 조건 5개, 8:2 분할 random_state=42 · 과적합은 11주 1차시</span><span class="no"></span></div>
@@ -320,7 +320,7 @@
     <div class="grid g2" style="gap:14px">
       <div class="tile frag show"><div class="h" style="font-size:19px">① 셀을 오가며 실행했다</div><pre class="out err">NameError: name 'model2' is not defined</pre><div class="d" style="font-size:15px">아래 셀에서 만든 변수를 위 셀이 쓰고 있다 → 실행 순서대로 셀 배치</div></div>
       <div class="tile frag"><div class="h" style="font-size:19px">② 내 컴퓨터에만 있는 파일</div><pre class="out err">FileNotFoundError: [Errno 2] No such file or directory: 'my_data.csv'</pre><div class="d" style="font-size:15px">Colab에 올린 파일은 세션이 끝나면 사라진다 → 공개 주소나 드라이브 연결로 읽기</div></div>
-      <div class="tile frag"><div class="h" style="font-size:19px">③ 돌릴 때마다 숫자가 다르다</div><pre class="out">검증 R² 0.867 … 다시 돌리면 0.794</pre><div class="d" style="font-size:15px">분할에 <code>random_state</code>를 고정하고 보고서에 적기 (14-1: 0.79~0.87)</div></div>
+      <div class="tile frag"><div class="h" style="font-size:19px">③ 돌릴 때마다 숫자가 다르다</div><pre class="out">시험 R² 0.867 … 다시 돌리면 0.794</pre><div class="d" style="font-size:15px">분할에 <code>random_state</code>를 고정하고 보고서에 적기 (14-1: 0.79~0.87)</div></div>
       <div class="tile frag"><div class="h" style="font-size:19px">④ 설치·불러오기 셀이 빠졌다</div><pre class="out err">ModuleNotFoundError: No module named 'koreanize_matplotlib'</pre><div class="d" style="font-size:15px">맨 위 준비 셀에 <code>!pip install</code>과 <code>import</code>를 모두</div></div>
     </div>
   </div>
@@ -349,7 +349,7 @@
   <h2>오늘의 핵심 세 가지</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(3,1fr)">
-      <div class="tile frag show"><span class="ic-badge lg"><svg class="ic"><use href="#i-target"/></svg></span><div class="h">답하고, 근거만큼만</div><div style="font-size:21px">질문에 <strong>직접</strong> 답한다. 관계를 인과로, 학습 점수를 성능으로, 범위 밖을 예측으로 쓰지 않는다</div></div>
+      <div class="tile frag show"><span class="ic-badge lg"><svg class="ic"><use href="#i-target"/></svg></span><div class="h">답하고, 근거만큼만</div><div style="font-size:21px">질문에 <strong>직접</strong> 답한다. 관계를 인과로, 훈련 점수를 성능으로, 범위 밖을 예측으로 쓰지 않는다</div></div>
       <div class="tile frag"><span class="ic-badge lg"><svg class="ic"><use href="#i-shield"/></svg></span><div class="h">데이터를 지킨다</div><div style="font-size:21px">처리한 흔적·개수·치우침을 적고, <strong>개인정보는 지우고</strong>, 출처를 밝힌다</div></div>
       <div class="tile frag"><span class="ic-badge lg o"><svg class="ic"><use href="#i-reset"/></svg></span><div class="h">확인하고, 밝히고, 다시 돌린다</div><div style="font-size:21px">AI 결과는 다섯 계단으로 검증해 <strong>AI 활용 내역</strong>에. 마지막은 <strong>모두 실행</strong></div></div>
     </div>
@@ -372,8 +372,8 @@
       </div>
       <div class="feedback" aria-live="polite"></div>
     </div>
-    <div class="q" data-answer="b" data-explain="학습 R²가 0.999인데 검증 R²가 0.48이면 학습 데이터를 외운 과적합입니다. 보고서에는 시험 점수를 쓰고, 나무 깊이를 줄이는 등 모델을 단순하게 합니다.">
-      <p class="q-title"><b>Q2.</b> 나무 모델이 학습 R² 0.999, 검증 R² 0.48이다. 옳은 판단은?</p>
+    <div class="q" data-answer="b" data-explain="학습 R²가 0.999인데 시험 R²가 0.48이면 훈련 데이터를 외운 과적합입니다. 보고서에는 시험 점수를 쓰고, 나무 깊이를 줄이는 등 모델을 단순하게 합니다.">
+      <p class="q-title"><b>Q2.</b> 나무 모델이 학습 R² 0.999, 시험 R² 0.48이다. 옳은 판단은?</p>
       <div class="opts">
         <button type="button" data-v="a">거의 완벽한 모델이므로 학습 R²를 보고한다.</button>
         <button type="button" data-v="b">과적합이다. 시험 점수를 보고하고 모델을 단순하게 한다.</button>

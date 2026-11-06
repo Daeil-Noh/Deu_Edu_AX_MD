@@ -140,7 +140,7 @@
     const svg = $('md-plot'); if (!svg || !D) return;
     const L = 58, R = 330, T = 30, B = 360, A0 = 30, A1 = 48;
     const sx = (v) => L + (v - A0) / (A1 - A0) * (R - L), sy = (v) => B - (v - A0) / (A1 - A0) * (B - T);
-    el('text', { x: (L + R) / 2, y: 18, 'text-anchor': 'middle', class: 'p-lab' }, svg).textContent = '실제 vs 예측 (검증 99개)';
+    el('text', { x: (L + R) / 2, y: 18, 'text-anchor': 'middle', class: 'p-lab' }, svg).textContent = '실제 vs 예측 (시험 99개)';
     for (let v = 30; v <= 48; v += 6) {
       el('line', { x1: L, x2: R, y1: sy(v), y2: sy(v), class: 'p-grid' }, svg);
       el('text', { x: L - 8, y: sy(v) + 4, 'text-anchor': 'end', class: 'p-tick' }, svg).textContent = v;
@@ -190,7 +190,7 @@
       $('md-msg').className = 'callout' + (m === 1 ? ' b' : '');
       $('md-msg').innerHTML = m === 1
         ? '오른쪽 막대: 온도 구간별 평균 <strong>잔차</strong>(실제 − 예측). 양 끝이 크게 음수 — 직선이 <strong>곡선을 놓쳤다</strong>.'
-        : `<strong>내가 확인한 것</strong>: 학습 R²만이 아니라 <strong>검증 R²</strong>가 ${D.m1.teR2} → ${D.m2.teR2}, 오차 ${D.m1.teMAE} → ${D.m2.teMAE} MPa. 잔차도 고르게 0 근처.`;
+        : `<strong>내가 확인한 것</strong>: 학습 R²만이 아니라 <strong>시험 R²</strong>가 ${D.m1.teR2} → ${D.m2.teR2}, 오차 ${D.m1.teMAE} → ${D.m2.teMAE} MPa. 잔차도 고르게 0 근처.`;
     }
     btns.forEach((b) => b.addEventListener('click', () => show(+b.dataset.m)));
     show(1);
@@ -233,7 +233,7 @@
       { ic: 'code', s: '정리', n: 'AI 코드: thickness를 바로 astype(float)', a: '<b>실행해 보니</b> ValueError: could not convert string to float: \'1.994mm\' → ‘mm’를 먼저 지우도록 순서를 바꿨다.' },
       { ic: 'filter', s: '정리', n: 'AI 제안: “결측은 dropna()로 지우세요”', a: '<b>세어 보니</b> 494행 → 458행, 36행(7%) 손실 → 중앙값으로 채우고 한계에 기록했다.' },
       { ic: 'chart', s: '탐색', n: 'AI 답: “r = -0.11이니 온도는 관계가 약합니다”', a: '<b>그려 보니</b> 210℃ 부근이 꼭대기인 곡선 → 온도² 열을 넣었다.' },
-      { ic: 'trend', s: '모델', n: 'AI 요약: “모델 R²가 0.85로 좋습니다”', a: '<b>확인해 보니</b> 0.85는 학습 R² → 보고서에는 검증 R² 0.831과 분할에 따른 범위 0.79~0.87을 쓴다.' },
+      { ic: 'trend', s: '모델', n: 'AI 요약: “모델 R²가 0.85로 좋습니다”', a: '<b>확인해 보니</b> 0.85는 학습 R² → 보고서에는 시험 R² 0.831과 분할에 따른 범위 0.79~0.87을 쓴다.' },
       { ic: 'alert', s: '해석', n: 'AI 초안: “압력을 120 bar로 올리면 강도가 오른다”', a: '<b>범위를 보니</b> 관찰은 62~97.5 bar, 그리고 관찰 데이터 → “관찰 범위 안에서 압력이 높을수록 강도가 높았다”로 고쳤다.' },
       { ic: 'log', s: '보고서', n: 'AI가 쓴 요약 문단 속 숫자들', a: '<b>대조해 보니</b> MAE를 1.5가 아니라 1.05로 적어야 했다 → 숫자는 모두 출력에서 직접 옮긴다.' },
     ];
@@ -289,8 +289,8 @@
         vfy: '산점도와 <strong>구간 평균</strong>으로 확인 → 가운데가 높은 곡선. 상관계수는 직선만 잰다.',
         rep: '보고서 → <strong>4. 결과</strong> (그림 1: 산점도, 표: 구간 평균)' },
       { ic: 'trend', n: '모델', wk: '10~11주',
-        code: "df['temp2'] = (df['temp'] - 210) ** 2\ntrain, test = train_test_split(df, test_size=0.2, random_state=42)\nfeatures2 = features + ['temp2']\nmodel2 = LinearRegression().fit(train[features2], train[target])\nfor name, m, cols in [('모델 1', model1, features), ('모델 2', model2, features2)]:\n    tr = r2_score(train[target], m.predict(train[cols]))\n    te = r2_score(test[target], m.predict(test[cols]))\n    mae = mean_absolute_error(test[target], m.predict(test[cols]))\n    print(f'{name}  학습 R² {tr:.3f}  검증 R² {te:.3f}  검증 MAE {mae:.2f} MPa')",
-        out: `모델 1  학습 R² ${D ? D.m1.trR2.toFixed(3) : ''}  검증 R² ${D ? D.m1.teR2.toFixed(3) : ''}  검증 MAE ${D ? D.m1.teMAE.toFixed(2) : ''} MPa\n모델 2  학습 R² ${D ? D.m2.trR2.toFixed(3) : ''}  검증 R² ${D ? D.m2.teR2.toFixed(3) : ''}  검증 MAE ${D ? D.m2.teMAE.toFixed(2) : ''} MPa`,
+        code: "df['temp2'] = (df['temp'] - 210) ** 2\ntrain, test = train_test_split(df, test_size=0.2, random_state=42)\nfeatures2 = features + ['temp2']\nmodel2 = LinearRegression().fit(train[features2], train[target])\nfor name, m, cols in [('모델 1', model1, features), ('모델 2', model2, features2)]:\n    tr = r2_score(train[target], m.predict(train[cols]))\n    te = r2_score(test[target], m.predict(test[cols]))\n    mae = mean_absolute_error(test[target], m.predict(test[cols]))\n    print(f'{name}  학습 R² {tr:.3f}  시험 R² {te:.3f}  시험 MAE {mae:.2f} MPa')",
+        out: `모델 1  학습 R² ${D ? D.m1.trR2.toFixed(3) : ''}  시험 R² ${D ? D.m1.teR2.toFixed(3) : ''}  시험 MAE ${D ? D.m1.teMAE.toFixed(2) : ''} MPa\n모델 2  학습 R² ${D ? D.m2.trR2.toFixed(3) : ''}  시험 R² ${D ? D.m2.teR2.toFixed(3) : ''}  시험 MAE ${D ? D.m2.teMAE.toFixed(2) : ''} MPa`,
         ask: '잔차가 온도 양 끝에서 음수야. 곡선 관계를 반영하려면?',
         vfy: '온도² 추가 후 <strong>검증</strong> 점수로 개선 확인 (학습만 좋아진 게 아님).',
         rep: '보고서 → <strong>3. 방법</strong> (분할·지표) + <strong>4. 결과</strong> (표 1: 모델 비교)' },
@@ -301,8 +301,8 @@
         vfy: '“압력을 120 bar로” → <strong>범위 밖·인과 표현</strong> 수정. 숫자는 출력과 하나씩 대조.',
         rep: '보고서 → <strong>5. 해석</strong> (“~범위 안에서 ~로 보인다”)' },
       { ic: 'alert', n: '한계', wk: '1·4주',
-        code: "for rs in [0, 1, 7, 42, 2026]:\n    a, b = train_test_split(df, test_size=0.2, random_state=rs)\n    m = LinearRegression().fit(a[features2], a[target])\n    print(f'random_state={rs:<5} 검증 R² {r2_score(b[target], m.predict(b[features2])):.3f}')\nprint('입력 범위:', {c: (float(df[c].min()), float(df[c].max())) for c in ['temp', 'pressure']})",
-        out: (D ? D.rs.map(([s, v]) => `random_state=${String(s).padEnd(5)} 검증 R² ${v.toFixed(3)}`).join('\n') : '') + "\n입력 범위: {'temp': (191.9, 235.3), 'pressure': (62.0, 97.5)}",
+        code: "for rs in [0, 1, 7, 42, 2026]:\n    a, b = train_test_split(df, test_size=0.2, random_state=rs)\n    m = LinearRegression().fit(a[features2], a[target])\n    print(f'random_state={rs:<5} 시험 R² {r2_score(b[target], m.predict(b[features2])):.3f}')\nprint('입력 범위:', {c: (float(df[c].min()), float(df[c].max())) for c in ['temp', 'pressure']})",
+        out: (D ? D.rs.map(([s, v]) => `random_state=${String(s).padEnd(5)} 시험 R² ${v.toFixed(3)}`).join('\n') : '') + "\n입력 범위: {'temp': (191.9, 235.3), 'pressure': (62.0, 97.5)}",
         ask: '내 분석의 한계를 3가지 찾아 줘. 수집 기간, 결측 처리, 분할 방법 기준으로.',
         vfy: 'AI가 든 한계마다 <strong>숫자로 확인</strong>: 30일, 결측 36개, R² 0.79~0.87.',
         rep: '보고서 → <strong>6. 한계</strong> + 마지막 <strong>AI 활용 내역</strong> 표' },

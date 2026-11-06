@@ -2,7 +2,7 @@
 # # 11주 2차시 · 불량품 판정 실습
 #
 # **학습 목표**
-# - `stratify=y` 로 학습·시험 데이터의 불량 비율을 맞춰 나눈다.
+# - `stratify=y` 로 훈련·시험 데이터의 불량 비율을 맞춰 나눈다.
 # - `DecisionTreeClassifier` 를 학습하고 `plot_tree`, `export_text` 로 규칙을 읽는다.
 # - `predict`, `predict_proba` 로 새 제품을 판정한다.
 # - “전부 정상” 기준선과 비교하고, 특성 중요도(`feature_importances_`)를 조심해서 읽는다.
@@ -42,7 +42,7 @@ print(X.shape)
 print(y.value_counts())
 
 # %% [markdown]
-# ## 4. 학습용·시험용으로 나누기 — `stratify=y`
+# ## 4. 훈련용·시험용으로 나누기 — `stratify=y`
 # 9주 2차시의 복습입니다. 먼저 `stratify` 없이 `random_state` 만 바꿔 여러 번 나눠 보고, 시험 데이터에 불량이 몇 개씩 들어가는지 봅니다.
 # 이번에는 시험 데이터를 30%로 잡습니다(9~10주는 20%). 20%면 시험 불량이 14개뿐이라 불량을 잡는 실력을 재기에 너무 적기 때문입니다.
 # 그다음 `stratify=y` 로 나눈 결과를 이후 모든 단계에서 씁니다.
@@ -55,7 +55,7 @@ for s in range(5):
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.3, random_state=42, stratify=y)   # y의 0/1 비율대로 나눈다
 print('stratify=y →', len(X_train), len(X_test))
-print('불량률 학습', round(y_train.mean(), 3), '/ 시험', round(y_test.mean(), 3))
+print('불량률 훈련', round(y_train.mean(), 3), '/ 시험', round(y_test.mean(), 3))
 
 # %% [markdown]
 # ## 5. 나무 만들고 학습하기
@@ -69,7 +69,7 @@ print('시험 정확도:', round(model.score(X_test, y_test), 3))
 
 # %% [markdown]
 # ## 6. plot_tree 로 나무 그리기
-# 상자 안: 질문 / gini(섞임 정도) / samples(학습 제품 수) / value([정상 수, 불량 수]) / class(판정).
+# 상자 안: 질문 / gini(섞임 정도) / samples(훈련 데이터 제품 수) / value([정상 수, 불량 수]) / class(판정).
 
 # %%
 plt.figure(figsize=(16, 7))
@@ -99,7 +99,7 @@ print(model.predict(new))        # 0 = 정상, 1 = 불량
 
 # %% [markdown]
 # ## 9. 불량 확률 보기 — `predict_proba`
-# 결과는 `[정상 확률, 불량 확률]`. 나무에서는 **도착한 잎의 학습 제품 중 불량 비율**입니다.
+# 결과는 `[정상 확률, 불량 확률]`. 나무에서는 **도착한 잎의 훈련 데이터 제품 중 불량 비율**입니다.
 # `predict` 는 불량 확률이 0.5를 넘으면 1로 판정합니다.
 
 # %%

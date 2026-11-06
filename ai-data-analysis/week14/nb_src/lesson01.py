@@ -114,7 +114,7 @@ print(df.groupby('shift')[['defect', 'humidity']].mean().round(3))   # 불량률
 
 # %% [markdown]
 # ## 4단계 · 모델: 강도 예측하기 (10주 회귀)
-# 학습 80% / 검증 20%로 나누고(9주), 선형 회귀로 강도를 예측합니다. 비교 기준으로 "학습 데이터 평균으로 찍기"의 오차도 같이 봅니다.
+# 훈련 80% / 시험 20%로 나누고(9주), 선형 회귀로 강도를 예측합니다. 비교 기준으로 "훈련 데이터 평균으로 찍기"의 오차도 같이 봅니다.
 
 # %%
 from sklearn.model_selection import train_test_split
@@ -124,8 +124,8 @@ from sklearn.metrics import mean_absolute_error, r2_score
 train, test = train_test_split(df, test_size=0.2, random_state=42)   # random_state 고정 → 다시 해도 같은 결과
 model1 = LinearRegression().fit(train[features], train[target])
 pred1 = model1.predict(test[features])
-print('검증 MAE :', round(mean_absolute_error(test[target], pred1), 2), 'MPa')
-print('검증 R²  :', round(r2_score(test[target], pred1), 3))
+print('시험 MAE :', round(mean_absolute_error(test[target], pred1), 2), 'MPa')
+print('시험 R²  :', round(r2_score(test[target], pred1), 3))
 base = np.full(len(test), train[target].mean())
 print('평균으로 찍기 MAE:', round(mean_absolute_error(test[target], base), 2), 'MPa')
 
@@ -146,7 +146,7 @@ print(band_resid.round(2))
 # 온도 양 끝에서 잔차가 크게 음수 → 직선 모델이 **곡선**을 놓쳤습니다.
 #
 # **[AI에게 물은 것]**: "선형 회귀 잔차가 온도 양 끝에서 음수야. 곡선 관계를 반영하려면 어떻게 해?"
-# **[내가 확인한 것]**: AI가 제안한 '온도 제곱 열 추가'를 해 본 뒤 **학습 점수가 아니라 시험 점수**로 좋아졌는지 확인했다. 210은 탐색에서 본 곡선의 꼭대기 근처 값이다.
+# **[내가 확인한 것]**: AI가 제안한 '온도 제곱 열 추가'를 해 본 뒤 **훈련 점수가 아니라 시험 점수**로 좋아졌는지 확인했다. 210은 탐색에서 본 곡선의 꼭대기 근처 값이다.
 
 # %%
 df['temp2'] = (df['temp'] - 210) ** 2           # 210℃에서 멀어질수록 커지는 열
@@ -157,7 +157,7 @@ for name, m, cols in [('모델 1', model1, features), ('모델 2', model2, featu
     tr = r2_score(train[target], m.predict(train[cols]))
     te = r2_score(test[target], m.predict(test[cols]))
     mae = mean_absolute_error(test[target], m.predict(test[cols]))
-    print(f'{name}  학습 R² {tr:.3f}  검증 R² {te:.3f}  검증 MAE {mae:.2f} MPa')
+    print(f'{name}  학습 R² {tr:.3f}  시험 R² {te:.3f}  시험 MAE {mae:.2f} MPa')
 
 # %% [markdown]
 # ## 5단계 · 해석: 숫자를 말로 바꾸기
@@ -183,13 +183,13 @@ print('예측 강도(75 bar, 85 bar):', model2.predict(new[features2]).round(2))
 
 # %% [markdown]
 # ## 6단계 · 한계: 정직하게 적기
-# 시험 점수는 학습/검증을 **어떻게 나눴는지**에 따라 조금씩 달라집니다. 몇 번 바꿔 보고 범위로 보고합니다.
+# 시험 점수는 훈련/시험을 **어떻게 나눴는지**에 따라 조금씩 달라집니다. 몇 번 바꿔 보고 범위로 보고합니다.
 
 # %%
 for rs in [0, 1, 7, 42, 2026]:
     a, b = train_test_split(df, test_size=0.2, random_state=rs)
     m = LinearRegression().fit(a[features2], a[target])
-    print(f'random_state={rs:<5} 검증 R² {r2_score(b[target], m.predict(b[features2])):.3f}')
+    print(f'random_state={rs:<5} 시험 R² {r2_score(b[target], m.predict(b[features2])):.3f}')
 print('입력 범위:', {c: (float(df[c].min()), float(df[c].max())) for c in ['temp', 'pressure']})
 
 # %% [markdown]
@@ -197,15 +197,15 @@ print('입력 범위:', {c: (float(df[c].min()), float(df[c].max())) for c in ['
 # 1. 가상 데이터, 30일(평일)·1개 공장 기록 → 계절·원료 변화는 반영되지 않았다.
 # 2. 관찰 데이터 → 관계는 보였지만 **인과**는 확인하지 못했다.
 # 3. 결측 36개(약 7%)를 중앙값으로 채웠다 → 그 행들의 변동이 실제보다 작게 들어갔다.
-# 4. 검증 R²는 분할에 따라 0.79~0.87 사이로 달라졌다. 입력 범위 밖(예: 압력 98 bar 초과)은 예측할 수 없다.
+# 4. 시험 R²는 분할에 따라 0.79~0.87 사이로 달라졌다. 입력 범위 밖(예: 압력 98 bar 초과)은 예측할 수 없다.
 
 # %% [exercise]
-# 직접 바꿔 보기 ① 입력 변수에서 하나를 빼면 검증 R²가 얼마나 떨어질까?
+# 직접 바꿔 보기 ① 입력 변수에서 하나를 빼면 시험 R²가 얼마나 떨어질까?
 #   'pressure'를 빼 보고, 'speed'를 빼 보세요. 어느 쪽이 더 크게 떨어지나요?
 drop_col = 'pressure'
 cols = [c for c in features2 if c != drop_col]
 m = LinearRegression().fit(train[cols], train[target])
-print(drop_col, '뺐을 때 검증 R²:', round(r2_score(test[target], m.predict(test[cols])), 3))
+print(drop_col, '뺐을 때 시험 R²:', round(r2_score(test[target], m.predict(test[cols])), 3))
 
 # %% [exercise]
 # 직접 바꿔 보기 ② 조건을 바꿔 강도를 예측해 보세요.
@@ -225,9 +225,9 @@ print('예측 인장강도:', round(model2.predict(my[features2])[0], 2), 'MPa')
 # | 질문 | 분석 질문 후보 3개 | 인과 질문은 제외, 예측·관계로 좁힘 |
 # | 정리 | 정리 코드 4단계 | 오류 난 순서 수정, 공식본과 행 수·평균 대조 |
 # | 탐색 | 상관 -0.11의 의미 | 산점도·구간 평균으로 곡선 확인 |
-# | 모델 | 곡선 반영 방법 | 검증 R² 0.654 → 0.831 확인 |
+# | 모델 | 곡선 반영 방법 | 시험 R² 0.654 → 0.831 확인 |
 # | 해석 | 결과 문단 초안 | 범위 밖·인과 표현 수정, 숫자 대조 |
 #
 # **생성형AI에게 물어볼 만한 질문**
-# - "이 출력(검증 R², MAE)을 처음 보는 사람에게 두 문장으로 설명해 줘. 과장된 표현이 있으면 알려 줘."
+# - "이 출력(시험 R², MAE)을 처음 보는 사람에게 두 문장으로 설명해 줘. 과장된 표현이 있으면 알려 줘."
 # - "내 분석의 한계를 3가지 찾아 줘. 데이터 수집 기간, 결측 처리, 분할 방법을 기준으로."

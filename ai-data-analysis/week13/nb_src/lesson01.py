@@ -60,7 +60,7 @@ plt.show()
 
 # %% [markdown]
 # ## 2. 직선 하나(로지스틱 회귀) vs 신경망
-# - 학습 데이터 70%, 시험 데이터 30%로 나눕니다 (9주차).
+# - 훈련 데이터 70%, 시험 데이터 30%로 나눕니다 (9주차).
 # - 신경망은 숫자의 크기에 민감하므로 **표준화**(평균 0, 표준편차 1로 맞추기)를 먼저 합니다.
 # - `MLPClassifier`: 은닉층이 있는 신경망. `hidden_layer_sizes=(8,)` = 은닉층 1개에 뉴런 8개
 
@@ -69,7 +69,7 @@ X = df[['temp', 'pressure']]
 y = df['defect']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0, stratify=y)
 
-scaler = StandardScaler().fit(X_train)   # 학습 데이터로만 기준을 정한다
+scaler = StandardScaler().fit(X_train)   # 훈련 데이터로만 기준을 정한다
 Xs_train = scaler.transform(X_train)
 Xs_test = scaler.transform(X_test)
 
@@ -128,7 +128,7 @@ sizes = [(1,), (3,), (8,), (8, 8)]      # ← 바꿔 보기: (2,), (16,), (32, 1
 for s in sizes:
     m = MLPClassifier(hidden_layer_sizes=s, learning_rate_init=0.03, max_iter=2000, random_state=0)
     m.fit(Xs_train, y_train)
-    print(f'은닉층 {s}: 학습 정확도 {m.score(Xs_train, y_train):.3f}, 시험 정확도 {m.score(Xs_test, y_test):.3f}')
+    print(f'은닉층 {s}: 훈련 정확도 {m.score(Xs_train, y_train):.3f}, 시험 정확도 {m.score(Xs_test, y_test):.3f}')
 
 # %% [markdown]
 # ## 4. 실제 공정 데이터에 적용하기 (`process.csv`)
@@ -142,7 +142,7 @@ proc = pd.read_csv(DATA + 'process.csv')
 cols = ['temp', 'pressure', 'speed', 'humidity', 'thickness']
 Xp, yp = proc[cols], proc['defect']
 Xp_train, Xp_test, yp_train, yp_test = train_test_split(Xp, yp, test_size=0.3, random_state=0, stratify=yp)
-print('학습', len(Xp_train), '행 / 검증', len(Xp_test), '행, 불량 비율', round(yp.mean(), 3))
+print('훈련', len(Xp_train), '행 / 시험', len(Xp_test), '행, 불량 비율', round(yp.mean(), 3))
 
 # %%
 def new_nn():                       # 같은 구조의 신경망을 새로 만든다
@@ -167,6 +167,7 @@ for name, m in models.items():
 # %% [markdown]
 # ### 직접 바꿔 보기 ②: 신경망 구조와 반복 횟수
 # `hidden` 과 `iters` 를 바꿔 보세요. 결과가 좋아지나요, 나빠지나요? 시험 데이터 기준으로 판단합니다.
+# (이렇게 설정을 고르는 데 쓰면 그 데이터는 사실상 **검증 데이터** 역할을 합니다. 실무에서는 검증 데이터로 고르고, 시험 데이터는 마지막에 한 번만 씁니다 — 9주 2차시.)
 
 # %% [exercise]
 hidden = (16, 8)     # ← 바꿔 보기: (4,), (32,), (32, 16, 8)

@@ -471,13 +471,13 @@ pd.DataFrame(rows, columns=['방법', '3호기_며칠전', '5호기_며칠전', 
   <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제</h2>
   <div class="grid g2">
-    <div class="q" data-answer="a" data-explain="contamination은 정상 학습 데이터 중 몇 %를 이상 쪽으로 볼지 정하는 기준입니다. 키우면 경계가 낮아져 더 많은 날이 경보 — 대시보드에서 0.05일 때 정상 설비 잘못 경보가 20일까지 늘었습니다.">
+    <div class="q" data-answer="a" data-explain="contamination은 정상 훈련 데이터 중 몇 %를 이상 쪽으로 볼지 정하는 기준입니다. 키우면 경계가 낮아져 더 많은 날이 경보 — 대시보드에서 0.05일 때 정상 설비 잘못 경보가 20일까지 늘었습니다.">
       <p class="q-title"><b>Q3.</b> IsolationForest의 contamination을 0.01 → 0.05로 키우면?</p>
       <div class="opts">
         <button type="button" data-v="a">더 많은 날을 이상으로 봐서 잘못 경보가 늘어난다</button>
         <button type="button" data-v="b">모델이 정답 열을 쓰기 시작한다</button>
         <button type="button" data-v="c">경보가 하나도 울리지 않는다</button>
-        <button type="button" data-v="d">학습 데이터가 5배로 늘어난다</button>
+        <button type="button" data-v="d">훈련 데이터가 5배로 늘어난다</button>
       </div>
       <div class="feedback" aria-live="polite"></div>
     </div>

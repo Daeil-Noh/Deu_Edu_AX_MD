@@ -13,7 +13,7 @@
 #
 # **사용법** 먼저 `파일 → Drive에 사본 저장`. 이 파일은 그대로도 끝까지 실행됩니다. `# ← 바꿀 곳` 표시가 있는 셀을 내 선택으로 바꾸고, 마지막에 `런타임 → 모두 실행` 후 저장해 제출하세요.
 #
-# **규칙** 학습·시험 나누기(`test_size=0.3, random_state=42, stratify=y`)는 바꾸지 않습니다. 모두 같은 시험 데이터로 비교하기 위해서입니다.
+# **규칙** 훈련·시험 나누기(`test_size=0.3, random_state=42, stratify=y`)는 바꾸지 않습니다. 모두 같은 시험 데이터로 비교하기 위해서입니다.
 
 # %% [markdown]
 # ## 0. 제출자 정보 (직접 입력)
@@ -60,12 +60,12 @@ y = df['defect']
 print('입력 특성:', MY_FEATURES)
 
 # %% [markdown]
-# ## 4. 학습·시험 데이터 나누기 (바꾸지 마세요)
+# ## 4. 훈련·시험 데이터 나누기 (바꾸지 마세요)
 
 # %%
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.3, random_state=42, stratify=y)
-print('학습', len(X_train), '개 / 시험', len(X_test), '개 (시험 불량', y_test.sum(), '개)')
+print('훈련', len(X_train), '개 / 시험', len(X_test), '개 (시험 불량', y_test.sum(), '개)')
 
 # %% [markdown]
 # ## 5. 모델 만들고 학습하기 ← 바꿀 곳
@@ -73,7 +73,7 @@ print('학습', len(X_train), '개 / 시험', len(X_test), '개 (시험 불량',
 
 # %%
 MY_DEPTH = 3          # ← 바꿀 곳
-MY_LEAF = 1           # ← 바꿀 곳 (잎 하나의 최소 학습 제품 수)
+MY_LEAF = 1           # ← 바꿀 곳 (잎 하나의 최소 훈련 데이터 제품 수)
 
 model = DecisionTreeClassifier(max_depth=MY_DEPTH, min_samples_leaf=MY_LEAF, random_state=42)
 model.fit(X_train, y_train)

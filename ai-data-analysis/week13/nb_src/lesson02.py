@@ -108,7 +108,7 @@ print('어두운 조명 이미지 정확도:', round(np.mean(rule_bad[dark] == t
 # %% [markdown]
 # ## 4. 신경망으로 배우기
 # - **밝기 보정**(전처리): 각 이미지를 자기 평균 밝기로 나눠, 조명이 달라도 “주변보다 얼마나 어두운가”만 남깁니다.
-# - 학습 75%, 검증 25%로 나눕니다.
+# - 훈련 75%, 시험 25%로 나눕니다.
 
 # %%
 use_norm = True                                   # 밝기 보정 사용 여부
@@ -170,7 +170,7 @@ n_images = 300                    # ← 바꿔 보기: 600, 1500, 3000
 Xs, ys, _ = make_set(n_images, 110, 210, seed=13)
 Xa, Xb, ya, yb = train_test_split(prepare(Xs), ys, test_size=0.25, random_state=0, stratify=ys)
 m = MLPClassifier(hidden_layer_sizes=(128,), max_iter=500, random_state=0).fit(Xa, ya)
-print(f'이미지 {n_images}장 → 학습 정확도 {m.score(Xa, ya):.3f}, 시험 정확도 {m.score(Xb, yb):.3f}')
+print(f'이미지 {n_images}장 → 훈련 정확도 {m.score(Xa, ya):.3f}, 시험 정확도 {m.score(Xb, yb):.3f}')
 
 # %% [markdown]
 # ### 직접 바꿔 보기 ③: 밝은 조명으로만 학습했다면? (1주 3차시: 데이터 편향)

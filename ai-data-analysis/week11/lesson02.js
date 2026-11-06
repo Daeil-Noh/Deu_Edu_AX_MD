@@ -1,9 +1,9 @@
 // 11주 2차시 전용: plot_tree 그림, stratify 다시 나누기, 나무 판정기, 게으른 검사기 vs 나무
 // 아래 데이터는 process.csv 에서 python3 + scikit-learn 으로 계산한 실제 값입니다.
 //   특성 = temp, pressure, speed, humidity, thickness / 정답 = defect
-//   train_test_split(test_size=0.3, random_state=42, stratify=y) → 학습 345개, 시험 149개
+//   train_test_split(test_size=0.3, random_state=42, stratify=y) → 훈련 345개, 시험 149개
 //   model = DecisionTreeClassifier(max_depth=3, random_state=42)
-//   나무 마디: [특성 번호(-2=잎), 기준값, 왼쪽(예) 자식, 오른쪽(아니오) 자식, 학습 정상 수, 학습 불량 수]
+//   나무 마디: [특성 번호(-2=잎), 기준값, 왼쪽(예) 자식, 오른쪽(아니오) 자식, 훈련 정상 수, 훈련 불량 수]
 const TREE = [[3,76.200001,1,8,298,47],[0,223.350006,2,5,294,36],[4,1.9545,3,4,291,29],[-2,-2.0,-1,-1,63,19],[-2,-2.0,-1,-1,228,10],[4,2.0135,6,7,3,7],[-2,-2.0,-1,-1,1,6],[-2,-2.0,-1,-1,2,1],[4,2.0425,9,10,4,11],[-2,-2.0,-1,-1,0,9],[2,1179.5,11,12,4,2],[-2,-2.0,-1,-1,0,2],[-2,-2.0,-1,-1,4,0]];
 const BASE = 0.8591; // 시험 데이터에서 “전부 정상”일 때 정확도 (128/149)
 // stratify 비교: [random_state, stratify 없이 나눈 시험 불량 수, stratify=y 로 나눈 시험 불량 수] (test_size=0.3)
@@ -151,7 +151,7 @@ const TEST = [["P00487",219.4,77.4,1182,56.3,2.109,0,0.042],["P00190",218.9,87.0
       const r = route(TREE, v), leaf = TREE[r.leaf], tot = leaf[4] + leaf[5], p = leaf[5] / tot, pred = cls(leaf);
       drawTree(svg, TREE, { W: 700, H: 420, path: r.path });
       const st = $('in-st');
-      let h = `<b class="k">판정: ${pred ? '불량' : '정상'} · 불량 확률 ${p.toFixed(3)}</b>도착한 잎: 학습 제품 ${tot}개 중 불량 ${leaf[5]}개.`;
+      let h = `<b class="k">판정: ${pred ? '불량' : '정상'} · 불량 확률 ${p.toFixed(3)}</b>도착한 잎: 훈련 제품 ${tot}개 중 불량 ${leaf[5]}개.`;
       if (cur) {
         const ok = cur[6] === pred;
         h += ` <strong>${cur[0]}의 실제 결과: ${cur[6] ? '불량' : '정상'}</strong> → ${ok ? '맞혔습니다.' : cur[6] ? '불량을 놓쳤습니다.' : '잘못 경보입니다.'}`;

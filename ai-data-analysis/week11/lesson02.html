@@ -125,7 +125,7 @@
   <h2>오늘 수업이 끝나면</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(4,1fr)">
-      <div class="tile"><span class="ic-badge"><svg class="ic"><use href="#i-layers"/></svg></span><div class="h">고르게 나누기</div><div class="d">stratify로 학습·시험 데이터의 불량 비율을 맞춘다</div></div>
+      <div class="tile"><span class="ic-badge"><svg class="ic"><use href="#i-layers"/></svg></span><div class="h">고르게 나누기</div><div class="d">stratify로 훈련·시험 데이터의 불량 비율을 맞춘다</div></div>
       <div class="tile"><span class="ic-badge"><svg class="ic"><use href="#i-filter"/></svg></span><div class="h">나무 학습·읽기</div><div class="d">DecisionTreeClassifier를 학습하고 plot_tree·export_text로 읽는다</div></div>
       <div class="tile"><span class="ic-badge"><svg class="ic"><use href="#i-check"/></svg></span><div class="h">새 제품 판정</div><div class="d">predict·predict_proba로 새 제품을 판정한다</div></div>
       <div class="tile"><span class="ic-badge o"><svg class="ic"><use href="#i-alert"/></svg></span><div class="h">기준선과 중요도</div><div class="d">“전부 정상” 기준선과 비교하고, 특성 중요도를 조심해서 읽는다</div></div>
@@ -252,9 +252,9 @@ print(round(y_train.mean(), 3), round(y_test.mean(), 3))</pre>
 0.136 0.141</pre>
       </div>
       <div style="display:grid;gap:12px">
-        <div class="tile row" style="padding:14px 18px"><span class="ic-badge"><svg class="ic"><use href="#i-database"/></svg></span><div><div class="h" style="font-size:19px">학습 345개 (불량 47개)</div><div class="d" style="font-size:16px">나무가 질문을 고르는 데 쓴다</div></div></div>
+        <div class="tile row" style="padding:14px 18px"><span class="ic-badge"><svg class="ic"><use href="#i-database"/></svg></span><div><div class="h" style="font-size:19px">훈련 345개 (불량 47개)</div><div class="d" style="font-size:16px">나무가 질문을 고르는 데 쓴다</div></div></div>
         <div class="tile row" style="padding:14px 18px"><span class="ic-badge o"><svg class="ic"><use href="#i-target"/></svg></span><div><div class="h" style="font-size:19px">시험 149개 (불량 21개)</div><div class="d" style="font-size:16px">끝까지 숨겨 두었다가 실력 평가에만</div></div></div>
-        <div class="callout frag">불량률 학습 13.6% · 시험 14.1% — <strong>전체(13.8%)와 거의 같다</strong>. 9~10주는 8:2였지만 오늘은 <strong>7:3</strong>: 20%면 시험 불량이 14개뿐이라 불량을 잡는 실력을 재기에 너무 적다.</div>
+        <div class="callout frag">불량률 훈련 13.6% · 시험 14.1% — <strong>전체(13.8%)와 거의 같다</strong>. 9~10주는 8:2였지만 오늘은 <strong>7:3</strong>: 20%면 시험 불량이 14개뿐이라 불량을 잡는 실력을 재기에 너무 적다.</div>
       </div>
     </div>
   </div>
@@ -307,11 +307,11 @@ plt.figure(figsize=(16, 7))
 plot_tree(model, feature_names=features,
     class_names=['정상', '불량'], filled=True)
 plt.show()</pre>
-      <div class="callout b" style="font-size:16px">Colab 그림에는 상자마다 <strong>gini</strong>(섞임 정도), <strong>samples</strong>(학습 제품 수), <strong>value</strong>[정상, 불량]가 함께 나옵니다.</div>
+      <div class="callout b" style="font-size:16px">Colab 그림에는 상자마다 <strong>gini</strong>(섞임 정도), <strong>samples</strong>(훈련 데이터 제품 수), <strong>value</strong>[정상, 불량]가 함께 나옵니다.</div>
       <div class="callout" style="font-size:16px">첫 질문은 <strong>습도</strong>, 그다음은 온도·두께. 압력은 <strong>한 번도 묻지 않았다</strong>.</div>
     </div>
   </div>
-  <div class="s-foot"><span>AI와 데이터 분석 · 11주 2차시 · 실습 파일 6단계 결과를 같은 숫자로 다시 그린 그림 · 숫자는 학습 제품 수</span><span class="no"></span></div>
+  <div class="s-foot"><span>AI와 데이터 분석 · 11주 2차시 · 실습 파일 6단계 결과를 같은 숫자로 다시 그린 그림 · 숫자는 훈련 데이터 제품 수</span><span class="no"></span></div>
 </section>
 
 <!-- 12. export_text -->
@@ -338,7 +338,7 @@ plt.show()</pre>
 |   |--- thickness &gt;  2.04  …(2개 잎 생략)</pre>
     </div>
     <div style="flex:1;display:grid;gap:12px">
-      <div class="tile frag show" style="padding:14px 18px;gap:4px;border-left:6px solid var(--accent-2)"><div class="h" style="font-size:19px">규칙 ① 습도 &gt; 76.2 이고 두께 ≤ 2.04 → 불량</div><div class="d" style="font-size:16px">학습 제품 9개 모두 불량 — 가장 확실한 불량 조건</div></div>
+      <div class="tile frag show" style="padding:14px 18px;gap:4px;border-left:6px solid var(--accent-2)"><div class="h" style="font-size:19px">규칙 ① 습도 &gt; 76.2 이고 두께 ≤ 2.04 → 불량</div><div class="d" style="font-size:16px">훈련 데이터 제품 9개 모두 불량 — 가장 확실한 불량 조건</div></div>
       <div class="tile frag" style="padding:14px 18px;gap:4px;border-left:6px solid var(--accent-2)"><div class="h" style="font-size:19px">규칙 ② 온도 &gt; 223.35 이고 두께 ≤ 2.01 → 불량</div><div class="d" style="font-size:16px">7개 중 6개 불량 (습도 ≤ 76.2인 경우)</div></div>
       <div class="tile frag" style="padding:14px 18px;gap:4px;border-left:6px solid var(--accent)"><div class="h" style="font-size:19px">가장 큰 잎: 보통 조건 + 두께 &gt; 1.95 → 정상</div><div class="d" style="font-size:16px">238개 중 불량 10개 (4%)</div></div>
       <div class="box warn frag" style="margin:0;padding:14px 18px"><p style="margin:0;font-size:17px"><strong>주의:</strong> 두께 ≤ 1.95인 잎은 82개 중 <strong>불량 19개(23%)</strong>인데도 다수결로 “정상”. 이 불량들은 모두 놓칩니다.</p></div>
@@ -375,7 +375,7 @@ print(model.predict_proba(new).round(3))</pre>
       </div>
       <div style="display:grid;gap:12px">
         <div class="tile row frag show" style="padding:14px 18px"><span class="ic-badge"><svg class="ic"><use href="#i-check"/></svg></span><div><div class="h" style="font-size:19px">predict → 0 또는 1</div><div class="d" style="font-size:16px">A 정상 · B 불량 · C 불량</div></div></div>
-        <div class="tile row frag" style="padding:14px 18px"><span class="ic-badge o"><svg class="ic"><use href="#i-chart"/></svg></span><div><div class="h" style="font-size:19px">predict_proba → [정상 확률, 불량 확률]</div><div class="d" style="font-size:16px">B는 불량 확률 0.857 = 도착한 잎의 학습 제품 7개 중 불량 6개</div></div></div>
+        <div class="tile row frag" style="padding:14px 18px"><span class="ic-badge o"><svg class="ic"><use href="#i-chart"/></svg></span><div><div class="h" style="font-size:19px">predict_proba → [정상 확률, 불량 확률]</div><div class="d" style="font-size:16px">B는 불량 확률 0.857 = 도착한 잎의 훈련 데이터 제품 7개 중 불량 6개</div></div></div>
         <div class="callout frag">predict는 불량 확률이 <strong>0.5를 넘으면</strong> 1로 판정합니다. 이 0.5를 바꾸는 이야기가 다음 차시의 <strong>판정 기준</strong>.</div>
       </div>
     </div>
@@ -471,7 +471,7 @@ dtype: float64</pre>
   <h2>오늘의 핵심 세 가지</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(3,1fr)">
-      <div class="tile frag show"><span class="ic-badge lg"><svg class="ic"><use href="#i-layers"/></svg></span><div class="h">stratify=y</div><div style="font-size:21px">드문 불량도 학습·시험에 <strong>같은 비율</strong>로 나눈다</div></div>
+      <div class="tile frag show"><span class="ic-badge lg"><svg class="ic"><use href="#i-layers"/></svg></span><div class="h">stratify=y</div><div style="font-size:21px">드문 불량도 훈련·시험에 <strong>같은 비율</strong>로 나눈다</div></div>
       <div class="tile frag"><span class="ic-badge lg"><svg class="ic"><use href="#i-filter"/></svg></span><div class="h">학습 → 읽기 → 판정</div><div style="font-size:21px">fit 후 <strong>plot_tree·export_text</strong>로 규칙을 확인하고 predict로 판정</div></div>
       <div class="tile frag"><span class="ic-badge lg o"><svg class="ic"><use href="#i-alert"/></svg></span><div class="h">기준선부터 비교</div><div style="font-size:21px">“전부 정상”도 85.9%. 정확도만 보면 <strong>놓친 불량</strong>이 안 보인다</div></div>
     </div>
@@ -484,22 +484,22 @@ dtype: float64</pre>
   <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제 <span class="muted" style="font-size:22px;font-weight:500">— 보기를 눌러 보세요</span></h2>
   <div class="grid g2">
-    <div class="q" data-answer="b" data-explain="stratify=y는 정답(y)의 범주 비율이 학습·시험 데이터에서 같게 유지되도록 나눕니다. 불량처럼 드문 범주가 시험 데이터에 너무 적거나 많이 들어가는 것을 막습니다.">
+    <div class="q" data-answer="b" data-explain="stratify=y는 정답(y)의 범주 비율이 훈련·시험 데이터에서 같게 유지되도록 나눕니다. 불량처럼 드문 범주가 시험 데이터에 너무 적거나 많이 들어가는 것을 막습니다.">
       <p class="q-title"><b>Q1.</b> train_test_split에 stratify=y를 넣는 이유는?</p>
       <div class="opts">
         <button type="button" data-v="a">학습 속도를 빠르게 하려고</button>
-        <button type="button" data-v="b">학습·시험 데이터의 불량 비율을 같게 맞추려고</button>
+        <button type="button" data-v="b">훈련·시험 데이터의 불량 비율을 같게 맞추려고</button>
         <button type="button" data-v="c">불량 제품을 데이터에서 빼려고</button>
         <button type="button" data-v="d">시험 데이터를 더 크게 만들려고</button>
       </div>
       <div class="feedback" aria-live="polite"></div>
     </div>
-    <div class="q" data-answer="c" data-explain="의사결정나무의 predict_proba는 제품이 도착한 잎에 있던 학습 제품의 범주 비율입니다. 7개 중 6개가 불량이면 불량 확률 6/7 ≈ 0.857입니다.">
+    <div class="q" data-answer="c" data-explain="의사결정나무의 predict_proba는 제품이 도착한 잎에 있던 훈련 데이터 제품의 범주 비율입니다. 7개 중 6개가 불량이면 불량 확률 6/7 ≈ 0.857입니다.">
       <p class="q-title"><b>Q2.</b> 제품 B의 predict_proba가 [0.143, 0.857]인 이유는?</p>
       <div class="opts">
         <button type="button" data-v="a">B를 7번 검사해서 6번 불량이 나왔다</button>
         <button type="button" data-v="b">나무가 임의로 정한 숫자다</button>
-        <button type="button" data-v="c">B가 도착한 잎의 학습 제품 7개 중 6개가 불량이었다</button>
+        <button type="button" data-v="c">B가 도착한 잎의 훈련 데이터 제품 7개 중 6개가 불량이었다</button>
         <button type="button" data-v="d">온도가 85.7% 높았다</button>
       </div>
       <div class="feedback" aria-live="polite"></div>
@@ -519,7 +519,7 @@ dtype: float64</pre>
         <button type="button" data-v="a">“전부 정상”과 다를 바 없을 수 있으니 잡은 불량 수를 확인한다</button>
         <button type="button" data-v="b">86%면 충분히 높으니 바로 현장에 쓴다</button>
         <button type="button" data-v="c">정확도는 100%가 아니면 의미가 없다</button>
-        <button type="button" data-v="d">시험 데이터를 학습 데이터로 바꿔 다시 잰다</button>
+        <button type="button" data-v="d">시험 데이터를 훈련 데이터로 바꿔 다시 잰다</button>
       </div>
       <div class="feedback" aria-live="polite"></div>
     </div>

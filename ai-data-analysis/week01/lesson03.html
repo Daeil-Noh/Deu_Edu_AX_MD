@@ -332,7 +332,7 @@
       </div>
     </div>
     <div class="side">
-      <div class="ctrl"><label>학습 데이터 중 야간 이미지 <output id="b-o">5%</output></label><input id="b-s" type="range" min="0" max="50" step="5" value="5" aria-label="야간 이미지 비율"></div>
+      <div class="ctrl"><label>훈련 데이터 중 야간 이미지 <output id="b-o">5%</output></label><input id="b-s" type="range" min="0" max="50" step="5" value="5" aria-label="야간 이미지 비율"></div>
       <div class="status bad" id="b-st"><b class="k">야간 근무조에 불리한 AI</b>야간 제품을 자꾸 잘못 판정합니다.</div>
       <div class="callout b">AI는 <strong>본 적 있는 상황</strong>만 잘 판단합니다. 사람을 판단하는 AI(채용·대출·출입)라면 특정 집단에 <strong>불공정</strong>해집니다.</div>
     </div>
@@ -346,7 +346,7 @@
   <h2>AI를 쓸 때 기억할 네 가지</h2>
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(4,1fr)">
-      <div class="tile frag show"><span class="ic-badge lg"><svg class="ic"><use href="#i-layers"/></svg></span><div class="h">공정성</div><div class="d">학습 데이터가 한쪽으로 치우치지 않았는지 확인한다</div></div>
+      <div class="tile frag show"><span class="ic-badge lg"><svg class="ic"><use href="#i-layers"/></svg></span><div class="h">공정성</div><div class="d">훈련 데이터가 한쪽으로 치우치지 않았는지 확인한다</div></div>
       <div class="tile frag"><span class="ic-badge lg"><svg class="ic"><use href="#i-eye"/></svg></span><div class="h">투명성</div><div class="d">AI가 쓰인다는 사실과, 어떤 데이터로 판단하는지 설명할 수 있다</div></div>
       <div class="tile frag"><span class="ic-badge lg o"><svg class="ic"><use href="#i-user"/></svg></span><div class="h">사람의 책임</div><div class="d">중요한 결정은 사람이 최종 확인하고 책임진다</div></div>
       <div class="tile frag"><span class="ic-badge lg"><svg class="ic"><use href="#i-shield"/></svg></span><div class="h">안전·보안</div><div class="d">데이터와 모델이 새거나 악용되지 않게 지킨다</div></div>
@@ -429,10 +429,10 @@
   <div class="s-head"><span class="sec">확인 문제</span></div>
   <h2>확인 문제</h2>
   <div class="grid g2">
-    <div class="q" data-answer="a" data-explain="학습 데이터에 야간 이미지가 거의 없으면, AI는 야간 조건을 배우지 못해 야간 제품을 자주 틀립니다. 데이터 편향입니다.">
+    <div class="q" data-answer="a" data-explain="훈련 데이터에 야간 이미지가 거의 없으면, AI는 야간 조건을 배우지 못해 야간 제품을 자주 틀립니다. 데이터 편향입니다.">
       <p class="q-title"><b>Q3.</b> 주간 이미지로만 학습한 비전 검사 AI가 야간 제품을 자주 틀린다. 원인은?</p>
       <div class="opts">
-        <button type="button" data-v="a">학습 데이터가 한쪽 조건으로 치우쳤다</button>
+        <button type="button" data-v="a">훈련 데이터가 한쪽 조건으로 치우쳤다</button>
         <button type="button" data-v="b">AI 모델이 너무 최신이다</button>
         <button type="button" data-v="c">야간 제품이 실제로 더 좋다</button>
         <button type="button" data-v="d">카메라 해상도가 너무 높다</button>

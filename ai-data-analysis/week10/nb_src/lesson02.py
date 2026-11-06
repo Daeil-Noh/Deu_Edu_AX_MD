@@ -2,7 +2,7 @@
 # # 10주 2차시 · 공정 조건으로 품질 예측하기
 #
 # **학습 목표**
-# - 입력 X(공정 조건 5개)와 목표 y(인장강도)를 정하고, 학습용·시험용으로 나눈다.
+# - 입력 X(공정 조건 5개)와 목표 y(인장강도)를 정하고, 훈련용·시험용으로 나눈다.
 # - `LinearRegression` 으로 학습하고 `coef_`(계수)를 단위와 함께 해석한다.
 # - 새 제품의 강도를 예측하고, 직선이 놓친 온도의 곡선 관계를 새 특성으로 보완한다.
 #
@@ -31,7 +31,7 @@ df.head(3)
 # - y: 맞히고 싶은 인장강도
 # - `defect`(불량 여부)는 강도를 잰 뒤에야 정해지는 결과라서 입력에 넣지 않습니다.
 #
-# 학습용 80%, 시험용 20% 로 나눕니다. `random_state=42` 로 나누는 방식을 고정합니다.
+# 훈련용 80%, 시험용 20% 로 나눕니다. `random_state=42` 로 나누는 방식을 고정합니다.
 
 # %%
 features = ['pressure', 'thickness', 'humidity',
@@ -45,11 +45,11 @@ print(X_train.shape, X_test.shape)
 
 # %% [markdown]
 # ## 2. 학습하고 계수 보기
-# `fit` 은 **학습용 데이터로만** 합니다. 시험용은 다음 차시에 채점할 때 씁니다.
+# `fit` 은 **훈련용 데이터로만** 합니다. 시험용은 다음 차시에 채점할 때 씁니다.
 
 # %%
 model = LinearRegression()
-model.fit(X_train, y_train)   # 학습용으로만 학습
+model.fit(X_train, y_train)   # 훈련용으로만 학습
 
 coef = pd.Series(model.coef_, index=features)
 print(coef.round(4))          # 입력별 계수

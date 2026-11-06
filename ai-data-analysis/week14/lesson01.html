@@ -313,13 +313,13 @@
       <pre class="code" style="font-size:14.5px">train, test = train_test_split(df, test_size=0.2, random_state=42)
 model1 = LinearRegression().fit(train[features], train[target])
 pred1 = model1.predict(test[features])
-print('검증 MAE :', round(mean_absolute_error(test[target], pred1), 2), 'MPa')
-print('검증 R²  :', round(r2_score(test[target], pred1), 3))
-# 비교 기준: 학습 데이터 평균으로 찍기
+print('시험 MAE :', round(mean_absolute_error(test[target], pred1), 2), 'MPa')
+print('시험 R²  :', round(r2_score(test[target], pred1), 3))
+# 비교 기준: 훈련 데이터 평균으로 찍기
 base = np.full(len(test), train[target].mean())
 print('평균으로 찍기 MAE:', round(mean_absolute_error(test[target], base), 2), 'MPa')</pre>
-      <pre class="out">검증 MAE : 1.48 MPa
-검증 R²  : 0.654
+      <pre class="out">시험 MAE : 1.48 MPa
+시험 R²  : 0.654
 평균으로 찍기 MAE: 2.58 MPa</pre>
     </div>
     <div style="width:330px;display:grid;gap:12px">
@@ -330,7 +330,7 @@ print('평균으로 찍기 MAE:', round(mean_absolute_error(test[target], base),
       <div class="vfy frag"><div class="k"><svg class="ic"><use href="#i-check"/></svg> 내가 확인한 것</div><strong>기준(평균 찍기)</strong>을 같이 출력해서 “1.48이 좋은 건지”를 판단했다. 오차가 약 43% 줄었다.</div>
     </div>
   </div>
-  <div class="s-foot"><span>AI와 데이터 분석 · 14주 1차시 · 학습 395개 / 검증 99개 · MAE·R²는 10주 3차시</span><span class="no"></span></div>
+  <div class="s-foot"><span>AI와 데이터 분석 · 14주 1차시 · 훈련 395개 / 시험 99개 · MAE·R²는 10주 3차시</span><span class="no"></span></div>
 </section>
 
 <!-- 13. 모델 비교 데모 -->
@@ -345,8 +345,8 @@ print('평균으로 찍기 MAE:', round(mean_absolute_error(test[target], base),
         <button class="btn ghost mbtn" type="button" data-m="2" aria-pressed="false">모델 2<br><small style="font-weight:600">+ 온도²</small></button>
       </div>
       <div class="grid g2" style="gap:8px">
-        <div class="meter"><div class="lbl">검증 MAE</div><div class="val" id="md-mae" style="font-size:32px">1.48</div></div>
-        <div class="meter"><div class="lbl">검증 R²</div><div class="val" id="md-r2" style="font-size:32px">0.654</div></div>
+        <div class="meter"><div class="lbl">시험 MAE</div><div class="val" id="md-mae" style="font-size:32px">1.48</div></div>
+        <div class="meter"><div class="lbl">시험 R²</div><div class="val" id="md-r2" style="font-size:32px">0.654</div></div>
       </div>
       <div class="callout b" id="md-msg">오른쪽 막대: 온도 구간별 평균 <strong>잔차</strong>(실제 − 예측). 양 끝이 크게 음수 — 직선이 <strong>곡선을 놓쳤다</strong>.</div>
       <div class="ask" style="font-size:14.5px"><div class="k"><svg class="ic"><use href="#i-sparkles"/></svg> AI에게 물은 것</div><q>잔차가 온도 양 끝에서 음수야. 곡선을 반영하려면?</q> → “온도 제곱 열 추가”</div>
@@ -387,7 +387,7 @@ print('평균으로 찍기 MAE:', round(mean_absolute_error(test[target], base),
       <div class="tile frag show"><span class="ic-badge o"><svg class="ic"><use href="#i-clock"/></svg></span><div class="h">데이터 범위</div><div class="d">가상 데이터, <b>30일(평일)</b>·공장 한 곳 → 계절·원료 변화는 없다</div></div>
       <div class="tile frag"><span class="ic-badge o"><svg class="ic"><use href="#i-link"/></svg></span><div class="h">관찰 ≠ 실험</div><div class="d">관계는 보였지만 <b>인과</b>는 확인하지 못했다. 압력의 효과는 실험으로 확인할 일</div></div>
       <div class="tile frag"><span class="ic-badge o"><svg class="ic"><use href="#i-filter"/></svg></span><div class="h">정리의 흔적</div><div class="d">결측 <b>36개(약 7%)</b>를 중앙값으로 채움 → 그 행들의 변동이 작게 들어갔다</div></div>
-      <div class="tile frag"><span class="ic-badge o"><svg class="ic"><use href="#i-reset"/></svg></span><div class="h">점수의 흔들림</div><div class="d">분할(random_state)을 바꾸면 검증 R² <b>0.79~0.87</b>. 관찰 범위 밖은 예측 불가</div></div>
+      <div class="tile frag"><span class="ic-badge o"><svg class="ic"><use href="#i-reset"/></svg></span><div class="h">점수의 흔들림</div><div class="d">분할(random_state)을 바꾸면 시험 R² <b>0.79~0.87</b>. 관찰 범위 밖은 예측 불가</div></div>
     </div>
     <p class="muted frag" style="margin-top:22px;font-size:21px">한계를 적는 것은 약점 고백이 아니라, 결과를 <strong style="color:var(--text)">어디까지 믿을 수 있는지</strong> 알려 주는 정보입니다.</p>
   </div>
@@ -478,10 +478,10 @@ print('평균으로 찍기 MAE:', round(mean_absolute_error(test[target], base),
       </div>
       <div class="feedback" aria-live="polite"></div>
     </div>
-    <div class="q" data-answer="b" data-explain="학습 데이터 점수는 모델이 이미 본 데이터라 좋게 나옵니다. 처음 보는 시험 데이터의 점수를, 평균으로 찍기 같은 기준과 함께 보고합니다.">
+    <div class="q" data-answer="b" data-explain="훈련 데이터 점수는 모델이 이미 본 데이터라 좋게 나옵니다. 처음 보는 시험 데이터의 점수를, 평균으로 찍기 같은 기준과 함께 보고합니다.">
       <p class="q-title"><b>Q2.</b> 보고서에 모델 성능으로 적어야 할 숫자는?</p>
       <div class="opts">
-        <button type="button" data-v="a">가장 높게 나온 학습 데이터 R²</button>
+        <button type="button" data-v="a">가장 높게 나온 훈련 데이터 R²</button>
         <button type="button" data-v="b">시험 데이터의 MAE·R²와 기준(평균 찍기)의 오차</button>
         <button type="button" data-v="c">random_state를 여러 번 바꿔 가장 좋았던 값 하나</button>
         <button type="button" data-v="d">AI가 알려 준 일반적인 정확도</button>

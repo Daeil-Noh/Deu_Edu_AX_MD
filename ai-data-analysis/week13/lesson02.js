@@ -342,9 +342,9 @@
       $('lb-bv').textContent = pct(B.acc); $('lb-dv').textContent = pct(D.acc);
       $('lb-ba').textContent = '정확도 ' + pct(B.acc); $('lb-da').textContent = '정확도 ' + pct(D.acc);
       const st = $('lb-st');
-      if (D.acc < 0.7) { st.className = 'status bad'; st.innerHTML = `<b class="k">“어두우면 불량”으로 배운 AI</b>어두운 조명 이미지의 <strong>${pct(D.flagged)}를 불량</strong>이라고 합니다. 학습 데이터에 어두운 사진이 ${f ? '너무 적습니다' : '한 장도 없습니다'}.`; }
+      if (D.acc < 0.7) { st.className = 'status bad'; st.innerHTML = `<b class="k">“어두우면 불량”으로 배운 AI</b>어두운 조명 이미지의 <strong>${pct(D.flagged)}를 불량</strong>이라고 합니다. 훈련 데이터에 어두운 사진이 ${f ? '너무 적습니다' : '한 장도 없습니다'}.`; }
       else if (D.acc < 0.95) { st.className = 'status mid'; st.innerHTML = `<b class="k">나아지는 중 · 어두운 조명 ${pct(D.acc)}</b>` + (norm && !f ? '밝기 보정만으로도 크게 좋아졌습니다. 어두운 사진을 조금 섞어 보세요.' : '어두운 사진을 조금 더 섞거나 밝기 보정을 켜 보세요.'); }
-      else { st.className = 'status ok'; st.innerHTML = `<b class="k">조명이 달라도 판정 · 어두운 조명 ${pct(D.acc)}</b>` + (norm && !f ? '밝기 보정(전처리)으로 조명 차이를 줄였습니다. 그래도 가장 확실한 것은 다양한 조건의 데이터입니다.' : `학습 데이터의 ${Math.round(f * 100)}%만 어두운 사진이어도 크게 좋아졌습니다. <strong>다양한 조건</strong>을 골고루!`); }
+      else { st.className = 'status ok'; st.innerHTML = `<b class="k">조명이 달라도 판정 · 어두운 조명 ${pct(D.acc)}</b>` + (norm && !f ? '밝기 보정(전처리)으로 조명 차이를 줄였습니다. 그래도 가장 확실한 것은 다양한 조건의 데이터입니다.' : `훈련 데이터의 ${Math.round(f * 100)}%만 어두운 사진이어도 크게 좋아졌습니다. <strong>다양한 조건</strong>을 골고루!`); }
     }
     s.addEventListener('input', update);
     $('lb-norm').addEventListener('click', () => { norm = toggle($('lb-norm')); update(); });

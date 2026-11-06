@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>13주 2차시 · 이미지 인식과 비전 검사 | AI와 데이터 분석</title>
-<meta name="description" content="「AI와 데이터 분석」 13주 2차시 교안: 이미지는 픽셀 숫자 격자, 수작업 특징과 학습된 특징, CNN 필터의 원리, 학습 데이터와 조명 편향, 비전 검사 파이프라인, 가상 이미지 분류 실습">
+<meta name="description" content="「AI와 데이터 분석」 13주 2차시 교안: 이미지는 픽셀 숫자 격자, 수작업 특징과 학습된 특징, CNN 필터의 원리, 훈련 데이터와 조명 편향, 비전 검사 파이프라인, 가상 이미지 분류 실습">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="../../assets/css/slides.css">
 <style>
@@ -460,7 +460,7 @@ print(confusion_matrix(y_test, model.predict(X_test)))</pre>
       </div>
       <div class="feedback" aria-live="polite"></div>
     </div>
-    <div class="q" data-answer="b" data-explain="CNN은 작은 필터를 이미지 전체에 미끄러뜨리며 선·점 같은 특징을 찾고, 그 필터 값을 사람이 아니라 학습 데이터로 정합니다.">
+    <div class="q" data-answer="b" data-explain="CNN은 작은 필터를 이미지 전체에 미끄러뜨리며 선·점 같은 특징을 찾고, 그 필터 값을 사람이 아니라 훈련 데이터로 정합니다.">
       <p class="q-title"><b>Q2.</b> CNN의 필터에 대한 설명으로 옳은 것은?</p>
       <div class="opts">
         <button type="button" data-v="a">사람이 모든 필터 값을 직접 입력해야 한다</button>
@@ -489,7 +489,7 @@ print(confusion_matrix(y_test, model.predict(X_test)))</pre>
       </div>
       <div class="feedback" aria-live="polite"></div>
     </div>
-    <div class="q" data-answer="a" data-explain="AI는 점수를 내고, 몇 점부터 불량으로 볼지는 품질 목표와 비용을 고려해 사람이 정합니다(1주 2차시, 11주). 재검 결과는 다시 학습 데이터가 됩니다.">
+    <div class="q" data-answer="a" data-explain="AI는 점수를 내고, 몇 점부터 불량으로 볼지는 품질 목표와 비용을 고려해 사람이 정합니다(1주 2차시, 11주). 재검 결과는 다시 훈련 데이터가 됩니다.">
       <p class="q-title"><b>Q4.</b> 비전 검사 시스템에서 사람이 맡는 역할로 가장 알맞은 것은?</p>
       <div class="opts">
         <button type="button" data-v="a">판정 기준을 정하고, 애매한 제품을 재검해 라벨을 붙인다</button>

@@ -5,7 +5,7 @@
 # - MAE, RMSE 를 직접 계산하고 scikit-learn 함수 결과와 비교한다 (단위: MPa).
 # - R² 를 “평균으로 찍는 것보다 얼마나 나은가”로 해석한다.
 # - 예측-실제 그래프와 잔차 그래프로 모델이 어디서 틀리는지 찾는다.
-# - 학습용 vs 시험용 오차, 입력 1개 vs 여러 개 모델을 같은 기준으로 비교한다.
+# - 훈련용 vs 시험용 오차, 입력 1개 vs 여러 개 모델을 같은 기준으로 비교한다.
 #
 # **사용 데이터** — `process.csv` (사출 성형 공정 기록, 가상 데이터 494행)
 # - 입력: `pressure`, `thickness`, `humidity`, `speed`, `temp` / 목표: `strength`(인장강도, MPa)
@@ -31,7 +31,7 @@ y = df['strength']
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42)
 model = LinearRegression().fit(X_train, y_train)
-print('학습용', X_train.shape, ' 시험용', X_test.shape)
+print('훈련용', X_train.shape, ' 시험용', X_test.shape)
 
 # %% [markdown]
 # ## 1. 시험용 제품의 오차 보기
@@ -129,8 +129,8 @@ plt.show()
 
 # %% [markdown]
 # ## 6. 여러 모델을 같은 기준으로 비교하기
-# 모든 모델을 **같은 학습용·시험용**으로 나누어 학습·채점합니다.
-# 학습용 오차와 시험용 오차가 비슷하면, 처음 보는 제품에도 비슷하게 통한다는 뜻입니다.
+# 모든 모델을 **같은 훈련용·시험용**으로 나누어 학습·채점합니다.
+# 훈련용 오차와 시험용 오차가 비슷하면, 처음 보는 제품에도 비슷하게 통한다는 뜻입니다.
 
 # %%
 cands = {'압력만': ['pressure'],
@@ -138,12 +138,12 @@ cands = {'압력만': ['pressure'],
          '+온도 특성': features2}
 for name, cols in cands.items():
     m = LinearRegression().fit(X2_train[cols], y_train)
-    p_tr = m.predict(X2_train[cols])    # 학습용 예측
+    p_tr = m.predict(X2_train[cols])    # 훈련용 예측
     p_te = m.predict(X2_test[cols])     # 시험용 예측
     rmse_tr = mean_squared_error(y_train, p_tr) ** 0.5
     rmse_te = mean_squared_error(y_test, p_te) ** 0.5
     r2 = r2_score(y_test, p_te)
-    print(f'{name}: 학습 {rmse_tr:.2f}  시험 {rmse_te:.2f}',
+    print(f'{name}: 훈련 {rmse_tr:.2f}  시험 {rmse_te:.2f}',
           f' R² {r2:.3f}')
 
 # %% [exercise]

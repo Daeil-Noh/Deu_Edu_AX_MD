@@ -17,7 +17,7 @@
     const items = [
       { k: 'over', n: '야간 근무자 때문에 불량이 많다.', a: '야간은 습도도 높았다(61.9% vs 54.1%). 관찰 데이터로 원인을 단정할 수 없다.', f: '야간 불량률(20.3%)이 주간(7.0%)보다 높았고, 야간은 습도도 높았다.' },
       { k: 'over', n: '압력을 120 bar로 올리면 강도가 53.8 MPa가 된다.', a: '관찰 범위(62~97.5 bar) 밖 예측이고, 관계를 인과로 썼다.', f: '관찰 범위 안에서 압력이 높을수록 강도가 높았다.' },
-      { k: 'over', n: '나무 모델의 R²가 0.999로 거의 완벽하다.', a: '학습 데이터 점수다. 같은 모델의 검증 R²는 0.48 — 과적합.', f: '나무 모델(깊이 15)의 검증 R²는 0.48로, 선형 모델(0.83)보다 낮았다.' },
+      { k: 'over', n: '나무 모델의 R²가 0.999로 거의 완벽하다.', a: '훈련 데이터 점수다. 같은 모델의 시험 R²는 0.48 — 과적합.', f: '나무 모델(깊이 15)의 시험 R²는 0.48로, 선형 모델(0.83)보다 낮았다.' },
       { k: 'fine', n: '시험 데이터(99개)에서 평균 절대 오차 1.05 MPa로 강도를 예측했다.', a: '시험 점수, 개수, 단위가 모두 있다. 기준(2.58 MPa)도 함께 쓰면 더 좋다.' },
       { k: 'over', n: '온도는 강도와 관계가 없다(r = -0.11).', a: '상관계수는 직선 관계만 잰다. 210℃ 부근이 꼭대기인 곡선이었다.', f: '온도와 강도는 직선 관계는 약했으나(r = -0.11), 210℃ 부근에서 강도가 가장 높은 곡선 관계를 보였다.' },
       { k: 'over', n: '이 결과는 모든 사출 성형 공장에 적용된다.', a: '한 공장, 평일 30일의 (가상) 데이터로만 확인했다.', f: '이 결과는 한 공장의 30일 기록에서 얻은 것으로, 다른 조건에서는 다시 확인이 필요하다.' },
@@ -63,9 +63,9 @@
   /* ───────── 3) 과적합: 의사결정나무 깊이 ───────── */
   (function overfit() {
     const svg = $('of-plot'); if (!svg) return;
-    // [깊이, 학습 R², 검증 R²] — DecisionTreeRegressor(max_depth=d, random_state=42), 입력 조건 5개
+    // [깊이, 학습 R², 시험 R²] — DecisionTreeRegressor(max_depth=d, random_state=42), 입력 조건 5개
     const TR = [[1, 0.33, 0.303], [2, 0.484, 0.483], [3, 0.606, 0.59], [4, 0.686, 0.507], [5, 0.773, 0.474], [6, 0.833, 0.527], [7, 0.88, 0.572], [8, 0.917, 0.473], [9, 0.945, 0.548], [10, 0.965, 0.445], [11, 0.979, 0.461], [12, 0.989, 0.511], [13, 0.995, 0.525], [14, 0.998, 0.502], [15, 0.999, 0.479]];
-    const LIN = 0.831;    // 14-1 모델 2(선형 회귀 + 온도²)의 검증 R²
+    const LIN = 0.831;    // 14-1 모델 2(선형 회귀 + 온도²)의 시험 R²
     const L = 72, R = 610, T = 20, B = 350;
     const sx = (d) => L + (d - 1) / 14 * (R - L), sy = (v) => B - v * (B - T);
     for (let v = 0; v <= 1.0001; v += 0.2) {
@@ -78,7 +78,7 @@
     el('text', { x: (L + R) / 2, y: B + 46, 'text-anchor': 'middle', class: 'p-lab' }, svg).textContent = '나무의 최대 깊이 (복잡할수록 →)';
     el('text', { x: 16, y: (T + B) / 2, 'text-anchor': 'middle', class: 'p-lab', transform: `rotate(-90 16 ${(T + B) / 2})` }, svg).textContent = 'R² (1에 가까울수록 잘 맞음)';
     el('line', { x1: L, x2: R, y1: sy(LIN), y2: sy(LIN), class: 'p-line2' }, svg);
-    el('text', { x: R - 4, y: sy(LIN) + 18, 'text-anchor': 'end', class: 'p-tick', style: 'font-weight:700' }, svg).textContent = '14-1 선형 모델 2의 검증 R² 0.83';
+    el('text', { x: R - 4, y: sy(LIN) + 18, 'text-anchor': 'end', class: 'p-tick', style: 'font-weight:700' }, svg).textContent = '14-1 선형 모델 2의 시험 R² 0.83';
     const gap = el('path', { fill: 'var(--bad)', 'fill-opacity': 0.1 }, svg);
     const ptr = el('polyline', { fill: 'none', stroke: 'var(--accent)', 'stroke-width': 3, 'stroke-linejoin': 'round' }, svg);
     const pte = el('polyline', { fill: 'none', stroke: 'var(--accent-2)', 'stroke-width': 3, 'stroke-linejoin': 'round' }, svg);
@@ -97,12 +97,12 @@
       now.setAttribute('x1', sx(d)); now.setAttribute('x2', sx(d));
       dtr.setAttribute('cx', sx(d)); dtr.setAttribute('cy', sy(a)); dte.setAttribute('cx', sx(d)); dte.setAttribute('cy', sy(b));
       const right = d > 11;
-      [[ltr, a, '학습'], [lte, b, '검증']].forEach(([t, v, n]) => { t.setAttribute('x', sx(d) + (right ? -12 : 12)); t.setAttribute('text-anchor', right ? 'end' : 'start'); t.setAttribute('y', sy(v) + (n === '학습' ? -10 : 20)); t.textContent = n + ' ' + v.toFixed(3); });
+      [[ltr, a, '훈련'], [lte, b, '시험']].forEach(([t, v, n]) => { t.setAttribute('x', sx(d) + (right ? -12 : 12)); t.setAttribute('text-anchor', right ? 'end' : 'start'); t.setAttribute('y', sy(v) + (n === '훈련' ? -10 : 20)); t.textContent = n + ' ' + v.toFixed(3); });
       $('of-d-o').textContent = d; $('of-tr').textContent = a.toFixed(3); $('of-te').textContent = b.toFixed(3);
       const st = $('of-st'), g = a - b;
-      if (g > 0.15) { st.className = 'status bad'; st.innerHTML = `<b class="k">과적합</b>학습 ${a.toFixed(3)} vs 검증 ${b.toFixed(3)} — 차이 ${g.toFixed(2)}. 학습 데이터를 <strong>외웠다</strong>. 학습 점수를 보고하면 과장.`; }
-      else if (b < 0.55) { st.className = 'status mid'; st.innerHTML = `<b class="k">너무 단순</b>학습·시험 모두 ${b.toFixed(2)} 안팎. 아직 관계를 덜 배웠다.`; }
-      else { st.className = 'status ok'; st.innerHTML = `<b class="k">학습 ≈ 검증</b>차이 ${g.toFixed(2)}로 작다. 그래도 선형 모델 2(0.83)보다 낮아, 보고서에는 <strong>모델 비교 표</strong>로.`; }
+      if (g > 0.15) { st.className = 'status bad'; st.innerHTML = `<b class="k">과적합</b>훈련 ${a.toFixed(3)} vs 시험 ${b.toFixed(3)} — 차이 ${g.toFixed(2)}. 훈련 데이터를 <strong>외웠다</strong>. 훈련 점수를 보고하면 과장.`; }
+      else if (b < 0.55) { st.className = 'status mid'; st.innerHTML = `<b class="k">너무 단순</b>훈련·시험 모두 ${b.toFixed(2)} 안팎. 아직 관계를 덜 배웠다.`; }
+      else { st.className = 'status ok'; st.innerHTML = `<b class="k">훈련 ≈ 시험</b>차이 ${g.toFixed(2)}로 작다. 그래도 선형 모델 2(0.83)보다 낮아, 보고서에는 <strong>모델 비교 표</strong>로.`; }
     }
     s.addEventListener('input', upd);
     upd();
@@ -115,7 +115,7 @@
       { h: '결과 해석', ic: 'target', items: [
         { t: '결과가 분석 질문에 직접 답한다', w: 2, f: '결론 첫 문장을 “질문 → 한 문장 답 + 숫자”로' },
         { t: '관계를 인과로 쓰지 않았다', w: 2, f: '“때문에”, “하면 된다”를 찾아 “관련이 있었다”로' },
-        { t: '성능은 시험 점수 + 기준과 함께', w: 2, f: '학습 점수 대신 검증 MAE·R²와 평균 찍기 기준을 표로' },
+        { t: '성능은 시험 점수 + 기준과 함께', w: 2, f: '훈련 점수 대신 시험 MAE·R²와 평균 찍기 기준을 표로' },
         { t: '관찰 범위 밖 예측·일반화 없음', w: 1, f: '입력 범위를 적고 “이 데이터 범위 안에서”를 붙이기' } ] },
       { h: '데이터·윤리', ic: 'shield', items: [
         { t: '결측·이상값 처리를 개수와 함께 적었다', w: 1, f: '데이터 절에 “무엇을 몇 개 어떻게” 한 줄씩' },
