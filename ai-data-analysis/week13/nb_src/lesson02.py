@@ -122,7 +122,7 @@ X_train, X_test, y_train, y_test = train_test_split(prepare(X), y, test_size=0.2
 
 model = MLPClassifier(hidden_layer_sizes=(128,), max_iter=500, random_state=0)
 model.fit(X_train, y_train)
-print('검증 정확도:', round(model.score(X_test, y_test), 3))
+print('시험 정확도:', round(model.score(X_test, y_test), 3))
 
 # %%
 # 혼동행렬(11주 3차시): 행 = 실제, 열 = 예측
@@ -157,7 +157,7 @@ for flag in [True, False]:        # ← 이 목록을 바꿔 보세요
     use_norm = flag
     Xa, Xb, ya, yb = train_test_split(prepare(X), y, test_size=0.25, random_state=0, stratify=y)
     m = MLPClassifier(hidden_layer_sizes=(128,), max_iter=500, random_state=0).fit(Xa, ya)
-    print('밝기 보정', flag, '→ 검증 정확도', round(m.score(Xb, yb), 3))
+    print('밝기 보정', flag, '→ 시험 정확도', round(m.score(Xb, yb), 3))
 use_norm = True
 
 # %% [markdown]
@@ -170,7 +170,7 @@ n_images = 300                    # ← 바꿔 보기: 600, 1500, 3000
 Xs, ys, _ = make_set(n_images, 110, 210, seed=13)
 Xa, Xb, ya, yb = train_test_split(prepare(Xs), ys, test_size=0.25, random_state=0, stratify=ys)
 m = MLPClassifier(hidden_layer_sizes=(128,), max_iter=500, random_state=0).fit(Xa, ya)
-print(f'이미지 {n_images}장 → 학습 정확도 {m.score(Xa, ya):.3f}, 검증 정확도 {m.score(Xb, yb):.3f}')
+print(f'이미지 {n_images}장 → 학습 정확도 {m.score(Xa, ya):.3f}, 시험 정확도 {m.score(Xb, yb):.3f}')
 
 # %% [markdown]
 # ### 직접 바꿔 보기 ③: 밝은 조명으로만 학습했다면? (1주 3차시: 데이터 편향)

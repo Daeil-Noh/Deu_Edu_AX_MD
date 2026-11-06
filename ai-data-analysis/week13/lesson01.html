@@ -384,8 +384,8 @@ mlp = MLPClassifier(hidden_layer_sizes=(8,),    # 은닉 뉴런 8개
                     learning_rate_init=0.03,    # 보폭
                     max_iter=2000, random_state=0)
 mlp.fit(Xs_train, y_train)                      # 오차 줄이기 반복</pre>
-<pre class="out">로지스틱 회귀(직선) 검증 정확도: 0.467
-신경망(은닉 뉴런 8개) 검증 정확도: 0.933</pre>
+<pre class="out">로지스틱 회귀(직선) 시험 정확도: 0.467
+신경망(은닉 뉴런 8개) 시험 정확도: 0.933</pre>
     </div>
     <div style="display:flex;flex-direction:column;gap:12px">
       <div class="tile" style="padding:14px 18px;gap:6px"><div class="h" style="font-size:20px">hidden_layer_sizes</div><div class="d"><code>(8,)</code> 은닉층 1개·뉴런 8개<br><code>(8, 8)</code> 은닉층 2개·각 8개</div></div>

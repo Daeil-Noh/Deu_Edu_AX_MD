@@ -171,7 +171,7 @@
     <div class="flow" style="align-items:center">
       <div class="stepbox frag show" style="flex:1;border:2px dashed var(--muted)"><span class="ic-badge g lg"><svg class="ic"><use href="#i-chat"/></svg></span><div class="muted" style="font-size:16px;font-weight:700">막연한 질문</div><div class="h">“사출 제품 품질을<br>높이고 싶다”</div><div class="d">품질이 뭘까? 무엇을 재지?<br>데이터는 어디에? 어디까지 하면 성공?</div></div>
       <div class="arrow" style="width:60px;font-size:40px">›</div>
-      <div class="stepbox goal frag" style="flex:1.5;text-align:left;align-items:stretch;padding:22px 26px"><div style="font-size:16px;font-weight:700;opacity:.85">데이터 질문</div><div class="h" style="font-size:22px;line-height:1.45">“process.csv의 공정 조건 5개(온도·압력·속도·습도·두께)로 <u>인장강도(MPa)</u>를 <u>예측</u>할 수 있는가? 평균 오차 <u>2 MPa 이내</u>면 성공.”</div><div class="d" style="font-size:16px">9-2에서 본 직선 회귀의 검증 오차 1.46 MPa → 이 기준이면 <b>성공</b></div></div>
+      <div class="stepbox goal frag" style="flex:1.5;text-align:left;align-items:stretch;padding:22px 26px"><div style="font-size:16px;font-weight:700;opacity:.85">데이터 질문</div><div class="h" style="font-size:22px;line-height:1.45">“process.csv의 공정 조건 5개(온도·압력·속도·습도·두께)로 <u>인장강도(MPa)</u>를 <u>예측</u>할 수 있는가? 평균 오차 <u>2 MPa 이내</u>면 성공.”</div><div class="d" style="font-size:16px">9-2에서 본 직선 회귀의 시험 오차 1.46 MPa → 이 기준이면 <b>성공</b></div></div>
     </div>
     <p class="muted frag" style="margin-top:24px;font-size:21px">무엇을(<strong style="color:var(--text)">목표</strong>) · 무엇으로(<strong style="color:var(--text)">입력</strong>) · 어디서(<strong style="color:var(--text)">출처</strong>) · 어떻게(<strong style="color:var(--text)">유형</strong>) · 어디까지(<strong style="color:var(--text)">기준</strong>) — 이 다섯 칸을 채우는 것이 오늘의 일입니다.</p>
   </div>
@@ -329,7 +329,7 @@
         </select></label>
         <label>③ 데이터 크기 (행 수)<input type="text" id="w-n" placeholder="예: 494" maxlength="20" inputmode="numeric"></label>
         <label class="full">④ 분석 유형<div class="seg" id="w-type"><button type="button" data-v="기술" aria-pressed="false">기술 — 현황 정리</button><button type="button" data-v="진단" aria-pressed="false">진단 — 관계 찾기</button><button type="button" data-v="예측" aria-pressed="false">예측 — 새 값 맞히기</button></div></label>
-        <label class="full">⑤ 성공 기준 — 어디까지 되면 답했다고 할까?<input type="text" id="w-ok" placeholder="예: 검증 데이터 평균 오차 2 MPa 이내" maxlength="80"></label>
+        <label class="full">⑤ 성공 기준 — 어디까지 되면 답했다고 할까?<input type="text" id="w-ok" placeholder="예: 시험 데이터 평균 오차 2 MPa 이내" maxlength="80"></label>
         <div class="full chk"><label><input type="checkbox" id="w-priv"> 개인정보가 없다 (또는 가명처리했다)</label><label><input type="checkbox" id="w-terms"> 이용 조건·허락을 확인했다</label></div>
       </div>
     </div>
@@ -435,7 +435,7 @@
       <div class="opts">
         <button type="button" data-v="a">모델이 잘 맞으면 성공</button>
         <button type="button" data-v="b">최대한 정확하게 예측한다</button>
-        <button type="button" data-v="c">검증 데이터 평균 오차 2 MPa 이내</button>
+        <button type="button" data-v="c">시험 데이터 평균 오차 2 MPa 이내</button>
         <button type="button" data-v="d">AI를 사용하면 성공</button>
       </div>
       <div class="feedback" aria-live="polite"></div>

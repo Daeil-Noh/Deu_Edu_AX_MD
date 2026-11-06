@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>9주 2차시 · 학습 데이터와 검증 데이터 나누기 | AI와 데이터 분석</title>
-<meta name="description" content="「AI와 데이터 분석」 9주 2차시 교안: 검증 데이터를 따로 두는 이유, train_test_split·random_state·나누는 비율, 외운 모델과 과적합 맛보기, 불량 데이터의 stratify">
+<title>9주 2차시 · 학습 데이터와 시험 데이터 나누기 | AI와 데이터 분석</title>
+<meta name="description" content="「AI와 데이터 분석」 9주 2차시 교안: 시험 데이터를 따로 두는 이유, train_test_split·random_state·나누는 비율, 외운 모델과 과적합 맛보기, 불량 데이터의 stratify">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="../../assets/css/slides.css">
 <style>
@@ -67,7 +67,7 @@
 <section class="slide cover" style="flex-direction:row;align-items:center;gap:30px">
   <div style="flex:1">
     <p class="eyebrow">AI와 데이터 분석 · 9주차 2차시</p>
-    <h1 style="font-size:60px">학습 데이터와<br>검증 데이터 나누기</h1>
+    <h1 style="font-size:60px">학습 데이터와<br>시험 데이터 나누기</h1>
     <p class="lead" style="font-size:25px">시험 문제를 미리 보면<br>실력을 알 수 없다</p>
     <div class="author"><b>노대일 교수</b><span>동의대학교 인공지능학과</span><span>daeil.noh@deu.ac.kr</span></div>
     <div class="meta"><span>실습 차시</span><span>직접 해 보기 3개</span></div>
@@ -96,7 +96,7 @@
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(4,1fr)">
       <div class="tile"><span class="ic-badge"><svg class="ic"><use href="#i-shield"/></svg></span><div class="h">왜 나누나</div><div class="d">학습에 쓴 데이터로 채점하면 안 되는 이유를 설명한다</div></div>
-      <div class="tile"><span class="ic-badge"><svg class="ic"><use href="#i-code"/></svg></span><div class="h">train_test_split</div><div class="d">데이터를 학습용·검증용으로 나누는 코드를 실행한다</div></div>
+      <div class="tile"><span class="ic-badge"><svg class="ic"><use href="#i-code"/></svg></span><div class="h">train_test_split</div><div class="d">데이터를 학습용·시험용으로 나누는 코드를 실행한다</div></div>
       <div class="tile"><span class="ic-badge"><svg class="ic"><use href="#i-gauge"/></svg></span><div class="h">비율과 random_state</div><div class="d">7:3·8:2 비율과, 같은 결과를 재현하는 방법을 안다</div></div>
       <div class="tile"><span class="ic-badge o"><svg class="ic"><use href="#i-filter"/></svg></span><div class="h">stratify</div><div class="d">불량이 드문 데이터를 비율을 지켜 나눈다</div></div>
     </div>
@@ -170,7 +170,7 @@ print(mean_absolute_error(y, pred))</pre>
     <div class="flow frag" style="margin-top:22px">
       <div class="stepbox" style="padding:12px 10px;gap:4px"><div class="h" style="font-size:20px;color:var(--accent)">학습 데이터</div><div class="d">공부할 때 보는 문제집<br>→ <code>fit</code>에 넣는다</div></div>
       <div class="arrow">›</div>
-      <div class="stepbox" style="padding:12px 10px;gap:4px;border:2px solid var(--accent-2)"><div class="h" style="font-size:20px;color:var(--accent-2)">검증 데이터</div><div class="d">채점용으로 <b>숨겨 둔</b> 시험지<br>→ 평가에만 쓴다</div></div>
+      <div class="stepbox" style="padding:12px 10px;gap:4px;border:2px solid var(--accent-2)"><div class="h" style="font-size:20px;color:var(--accent-2)">시험 데이터</div><div class="d">채점용으로 <b>숨겨 둔</b> 시험지<br>→ 평가에만 쓴다</div></div>
       <div class="arrow">›</div>
       <div class="stepbox goal" style="padding:12px 10px;gap:4px"><div class="h" style="font-size:20px">진짜 실력</div><div class="d">새 데이터(새 제품)에서<br>얼마나 맞힐지 추정</div></div>
     </div>
@@ -205,7 +205,7 @@ print(mean_absolute_error(y, pred))</pre>
   <div class="body" style="flex-direction:row;align-items:center;gap:36px">
     <div style="flex:1.1">
       <table class="rtable">
-        <thead><tr><th>모델 (공정 조건 5개 → 강도)</th><th>학습 데이터 오차</th><th>검증 데이터 오차</th></tr></thead>
+        <thead><tr><th>모델 (공정 조건 5개 → 강도)</th><th>학습 데이터 오차</th><th>시험 데이터 오차</th></tr></thead>
         <tbody>
           <tr><td><b>외운 모델</b><br><span class="muted" style="font-size:16px">깊이 제한 없는 의사결정나무</span></td><td style="color:var(--accent);font-weight:800">0.00 MPa</td><td style="color:var(--accent-2);font-weight:800">1.93 MPa</td></tr>
           <tr><td><b>단순한 규칙</b><br><span class="muted" style="font-size:16px">직선 회귀</span></td><td style="font-weight:800">1.41 MPa</td><td style="font-weight:800">1.46 MPa</td></tr>
@@ -215,7 +215,7 @@ print(mean_absolute_error(y, pred))</pre>
     </div>
     <div style="flex:1;display:flex;flex-direction:column;gap:14px">
       <div class="tile frag show" style="padding:16px 20px;gap:6px"><div class="h" style="font-size:21px">과적합 (overfitting)</div><div class="d">학습 데이터의 잡음까지 외워서, 학습 점수는 좋은데 <strong style="color:var(--text)">새 데이터 점수는 나쁜</strong> 상태</div></div>
-      <div class="tile frag" style="padding:16px 20px;gap:6px"><div class="h" style="font-size:21px">검증 데이터가 없었다면?</div><div class="d">0.00만 보고 “완벽한 모델”이라 믿었을 것. 차이는 <strong style="color:var(--text)">나눠 봐야만</strong> 보인다</div></div>
+      <div class="tile frag" style="padding:16px 20px;gap:6px"><div class="h" style="font-size:21px">시험 데이터가 없었다면?</div><div class="d">0.00만 보고 “완벽한 모델”이라 믿었을 것. 차이는 <strong style="color:var(--text)">나눠 봐야만</strong> 보인다</div></div>
       <div class="callout frag" style="font-size:17px">왜 생기고 어떻게 막는지는 <strong>11주 의사결정나무</strong>에서 자세히 다룹니다.</div>
     </div>
   </div>
@@ -254,13 +254,13 @@ print(mean_absolute_error(y, pred))</pre>
         <text x="620" y="94" class="t-sub" style="font-size:17px">X_train, y_train → model.fit( )</text>
         <text x="620" y="122" class="t-sub" style="font-size:17px">모델이 보고 규칙을 찾는다</text>
         <rect x="595" y="170" width="400" height="120" rx="18" class="f-acc2s" stroke="var(--accent-2)" stroke-width="2"/>
-        <text x="620" y="212" class="t-acc2" style="font-size:24px">③ 검증 데이터 20% · 99행</text>
+        <text x="620" y="212" class="t-acc2" style="font-size:24px">③ 시험 데이터 20% · 99행</text>
         <text x="620" y="244" class="t-sub" style="font-size:17px">X_test, y_test → 채점에만</text>
         <text x="620" y="272" class="t-sub" style="font-size:17px">학습이 끝날 때까지 모델에게 숨긴다</text>
         <g transform="translate(1020 205) scale(2.6)" style="color:var(--accent-2)"><use href="#i-shield" width="24" height="24"/></g>
       </g>
     </svg>
-    <p class="muted frag" style="margin-top:14px;font-size:19px">이름 정리: scikit-learn은 검증용을 <code>test</code>라 부릅니다. 엄밀히는 모델을 고르는 <b>검증(validation)</b>과 마지막 <b>시험(test)</b>을 따로 두기도 하지만, 이 강의에서는 <strong style="color:var(--text)">따로 떼어 둔 채점용 데이터 = 검증 데이터</strong>로 부릅니다.</p>
+    <p class="muted frag" style="margin-top:14px;font-size:19px">이름 정리: 따로 떼어 둔 채점용 데이터를 영어로 <b>test set</b>, 이 강의에서는 <strong style="color:var(--text)">시험 데이터</strong>라 부릅니다(코드의 <code>X_test</code>·<code>y_test</code>). 설정을 고를 때 한 번 더 떼어 두는 <b>검증(validation) 데이터</b>도 있지만, 이 강의에서는 쓰지 않습니다.</p>
   </div>
   <div class="s-foot"><span>AI와 데이터 분석 · 9주 2차시</span><span class="no"></span></div>
 </section>
@@ -282,13 +282,13 @@ model = DecisionTreeRegressor(random_state=0)
 model.fit(X_train, y_train)          # train으로만 학습
 tr = mae(y_train, model.predict(X_train))
 te = mae(y_test, model.predict(X_test))
-print(round(tr, 2), round(te, 2))    # 학습, 검증 오차</pre>
+print(round(tr, 2), round(te, 2))    # 학습, 시험 오차</pre>
 <pre class="out">(395, 5) (99, 5)
 0.0 1.93</pre>
     </div>
     <div class="ann" style="flex:1;align-content:center">
       <div class="a frag show"><span class="n">1</span><div><b>받는 순서가 정해져 있다.</b> X_train, X_test, y_train, y_test — 순서를 바꿔 쓰면 엉뚱한 데이터가 들어간다</div></div>
-      <div class="a frag"><span class="n">2</span><div><b><code>test_size=0.2</code></b> 검증용 20% → 99행, 학습용 80% → 395행</div></div>
+      <div class="a frag"><span class="n">2</span><div><b><code>test_size=0.2</code></b> 시험용 20% → 99행, 학습용 80% → 395행</div></div>
       <div class="a frag"><span class="n">3</span><div><b><code>random_state=0</code></b> 섞는 방법을 고정하는 번호. 같은 번호면 <strong>몇 번을 실행해도 같은 결과</strong> → 다른 사람도 재현할 수 있다</div></div>
       <div class="a frag"><span class="n">4</span><div><b>fit에는 train만.</b> test는 마지막 채점에만 — 학습 0.00, 검증 1.93</div></div>
     </div>
@@ -306,15 +306,15 @@ print(round(tr, 2), round(te, 2))    # 학습, 검증 오차</pre>
       <div class="ebars">
         <div class="grp"><div class="gh"><span>외운 모델 <span class="muted" style="font-size:14px;font-weight:600">깊이 제한 없는 의사결정나무</span></span></div>
           <div class="row"><span>학습 데이터 오차</span><div class="track"><i id="e-mt" style="background:var(--accent)"></i></div><span class="v" id="e-mt-v">-</span></div>
-          <div class="row"><span>검증 데이터 오차</span><div class="track"><i id="e-mv" style="background:var(--accent-2)"></i></div><span class="v" id="e-mv-v">-</span></div></div>
+          <div class="row"><span>시험 데이터 오차</span><div class="track"><i id="e-mv" style="background:var(--accent-2)"></i></div><span class="v" id="e-mv-v">-</span></div></div>
         <div class="grp"><div class="gh"><span>단순한 규칙 <span class="muted" style="font-size:14px;font-weight:600">직선 회귀</span></span></div>
           <div class="row"><span>학습 데이터 오차</span><div class="track"><i id="e-lt" style="background:var(--accent)"></i></div><span class="v" id="e-lt-v">-</span></div>
-          <div class="row"><span>검증 데이터 오차</span><div class="track"><i id="e-lv" style="background:var(--accent-2)"></i></div><span class="v" id="e-lv-v">-</span></div></div>
+          <div class="row"><span>시험 데이터 오차</span><div class="track"><i id="e-lv" style="background:var(--accent-2)"></i></div><span class="v" id="e-lv-v">-</span></div></div>
       </div>
-      <div><div class="muted" style="font-size:14px;font-weight:700;margin-bottom:4px">외운 모델의 검증 오차 · random_state 0~4 (같은 비율)</div><div class="spread" id="sp-dots"></div><div style="display:flex;justify-content:space-between;font-size:13px;color:var(--muted)"><span>1.5 MPa</span><span>2.2 MPa</span></div></div>
+      <div><div class="muted" style="font-size:14px;font-weight:700;margin-bottom:4px">외운 모델의 시험 오차 · random_state 0~4 (같은 비율)</div><div class="spread" id="sp-dots"></div><div style="display:flex;justify-content:space-between;font-size:13px;color:var(--muted)"><span>1.5 MPa</span><span>2.2 MPa</span></div></div>
     </div>
     <div class="side">
-      <div class="ctrl"><label>검증 데이터 비율 (test_size) <output id="sp-o">0.20</output></label><input id="sp-s" type="range" min="0.1" max="0.5" step="0.05" value="0.2" aria-label="검증 데이터 비율"></div>
+      <div class="ctrl"><label>시험 데이터 비율 (test_size) <output id="sp-o">0.20</output></label><input id="sp-s" type="range" min="0.1" max="0.5" step="0.05" value="0.2" aria-label="시험 데이터 비율"></div>
       <div class="ctrl"><label style="margin-bottom:6px">섞는 번호 (random_state)</label><div class="seg" id="sp-rs"><button type="button" aria-pressed="true">0</button><button type="button" aria-pressed="false">1</button><button type="button" aria-pressed="false">2</button><button type="button" aria-pressed="false">3</button><button type="button" aria-pressed="false">4</button></div></div>
       <div class="callout b" id="sp-msg">-</div>
     </div>
@@ -334,7 +334,7 @@ print(round(tr, 2), round(te, 2))    # 학습, 검증 오차</pre>
     </div>
     <div class="grid g2 frag" style="margin-top:22px;gap:18px">
       <div class="callout b" style="font-size:19px"><svg class="ic"><use href="#i-check"/></svg> 보고서에는 <strong>비율과 random_state를 적는다</strong>. 그래야 누구나 같은 결과를 다시 만들 수 있다.</div>
-      <div class="callout" style="font-size:19px"><svg class="ic"><use href="#i-alert"/></svg> 검증 점수가 마음에 안 든다고 <strong>random_state를 바꿔 가며 좋은 숫자만 고르면</strong> 그것도 커닝이다.</div>
+      <div class="callout" style="font-size:19px"><svg class="ic"><use href="#i-alert"/></svg> 시험 점수가 마음에 안 든다고 <strong>random_state를 바꿔 가며 좋은 숫자만 고르면</strong> 그것도 커닝이다.</div>
     </div>
   </div>
   <div class="s-foot"><span>AI와 데이터 분석 · 9주 2차시</span><span class="no"></span></div>
@@ -354,13 +354,13 @@ print(round(tr, 2), round(te, 2))    # 학습, 검증 오차</pre>
   <div class="demo">
     <div class="plot" style="align-items:stretch;gap:12px;padding:14px">
       <div class="spanel" style="flex:4"><div class="h"><span style="color:var(--accent)">학습 데이터</span><span>불량 <b id="st-trn">-</b> / 395 · <b id="st-trp">-</b></span></div><div class="sgrid" id="st-tr" style="grid-template-columns:repeat(22,1fr)"></div></div>
-      <div class="spanel" style="flex:2.1"><div class="h"><span style="color:var(--accent-2)">검증 데이터</span><span>불량 <b id="st-ten">-</b> / 99</span></div><div class="sgrid" id="st-te" style="grid-template-columns:repeat(10,1fr)"></div><div class="meter" style="margin-top:auto;text-align:center"><div class="lbl">검증 데이터 불량률</div><div class="val o" id="st-tep" style="font-size:34px">-</div></div></div>
+      <div class="spanel" style="flex:2.1"><div class="h"><span style="color:var(--accent-2)">시험 데이터</span><span>불량 <b id="st-ten">-</b> / 99</span></div><div class="sgrid" id="st-te" style="grid-template-columns:repeat(10,1fr)"></div><div class="meter" style="margin-top:auto;text-align:center"><div class="lbl">시험 데이터 불량률</div><div class="val o" id="st-tep" style="font-size:34px">-</div></div></div>
     </div>
     <div class="side">
       <div class="switch" id="st-mode" style="margin:0"><button type="button" data-m="rand" aria-pressed="true">그냥 나누기</button><button type="button" data-m="strat" aria-pressed="false">stratify=y</button></div>
       <button class="btn" id="st-shuf" type="button"><svg class="ic"><use href="#i-reset"/></svg> 다시 섞기 (random_state +1)</button>
       <div class="ctrl" style="padding:8px 14px"><label style="margin-bottom:4px">지금까지 본 검증 불량률 <output id="st-rs">random_state=0</output></label><div class="hist" id="st-hist"></div></div>
-      <div class="callout b" id="st-msg">전체 불량률은 <strong>13.8%</strong>. 검증 데이터 99개에는 불량이 몇 개 들어갈까요?</div>
+      <div class="callout b" id="st-msg">전체 불량률은 <strong>13.8%</strong>. 시험 데이터 99개에는 불량이 몇 개 들어갈까요?</div>
       <div class="legend"><span><i class="dot" style="background:var(--accent-soft);border:1px solid var(--accent)"></i>양품</span><span><i class="dot" style="background:var(--accent-2)"></i>불량</span></div>
     </div>
   </div>
@@ -385,7 +385,7 @@ print(round(y_train.mean(), 3), round(y_test.mean(), 3))</pre>
     </div>
     <div class="ann" style="flex:1;align-content:center">
       <div class="a frag show"><span class="n">1</span><div><b>층화(stratify).</b> 양품 무리와 불량 무리를 <strong>각각</strong> 8:2로 나눠 합친다 → 양쪽 불량률이 전체와 거의 같다</div></div>
-      <div class="a frag"><span class="n">2</span><div><b>언제 쓰나?</b> 분류 문제, 특히 불량·고장처럼 <strong>한 범주가 드물 때</strong>. 검증 데이터에 불량이 거의 없으면 불량을 잘 잡는지 채점조차 못 한다</div></div>
+      <div class="a frag"><span class="n">2</span><div><b>언제 쓰나?</b> 분류 문제, 특히 불량·고장처럼 <strong>한 범주가 드물 때</strong>. 시험 데이터에 불량이 거의 없으면 불량을 잘 잡는지 채점조차 못 한다</div></div>
       <div class="a frag"><span class="n">3</span><div><b>회귀에서는?</b> 정답이 숫자라 보통 쓰지 않는다. 오늘 실습의 강도 예측은 stratify 없이 나눈다</div></div>
     </div>
   </div>
@@ -401,7 +401,7 @@ print(round(y_train.mean(), 3), round(y_test.mean(), 3))</pre>
       <div class="tiles" style="grid-template-columns:1fr 1fr;gap:14px">
         <div class="tile row" style="padding:16px"><span class="ic-badge o"><svg class="ic"><use href="#i-alert"/></svg></span><div><div class="h" style="font-size:20px">전부로 학습·채점</div><div class="d">0.00의 함정 확인</div></div></div>
         <div class="tile row" style="padding:16px"><span class="ic-badge"><svg class="ic"><use href="#i-code"/></svg></span><div><div class="h" style="font-size:20px">train_test_split</div><div class="d">8:2로 나누고 모양 확인</div></div></div>
-        <div class="tile row" style="padding:16px"><span class="ic-badge"><svg class="ic"><use href="#i-gauge"/></svg></span><div><div class="h" style="font-size:20px">학습 vs 검증 오차</div><div class="d">외운 모델과 직선 회귀 비교</div></div></div>
+        <div class="tile row" style="padding:16px"><span class="ic-badge"><svg class="ic"><use href="#i-gauge"/></svg></span><div><div class="h" style="font-size:20px">학습 vs 시험 오차</div><div class="d">외운 모델과 직선 회귀 비교</div></div></div>
         <div class="tile row" style="padding:16px"><span class="ic-badge"><svg class="ic"><use href="#i-filter"/></svg></span><div><div class="h" style="font-size:20px">stratify</div><div class="d">불량률을 지켜 나누기</div></div></div>
       </div>
       <p class="muted" style="margin-top:18px;font-size:19px"><svg class="ic"><use href="#i-hand"/></svg> “직접 바꿔 보기”: test_size · random_state · 나무의 깊이(max_depth) 바꾸기</p>
@@ -425,7 +425,7 @@ print(round(y_train.mean(), 3), round(y_test.mean(), 3))</pre>
       <div class="tile frag"><span class="ic-badge lg"><svg class="ic"><use href="#i-code"/></svg></span><div class="h">train_test_split</div><div style="font-size:21px">보통 <strong>7:3 · 8:2</strong>, <strong>random_state</strong>로 재현할 수 있게</div></div>
       <div class="tile frag"><span class="ic-badge lg o"><svg class="ic"><use href="#i-filter"/></svg></span><div class="h">드문 범주는 stratify</div><div style="font-size:21px">불량 13.8% 같은 데이터는 <strong>비율을 지켜</strong> 나눈다</div></div>
     </div>
-    <p class="muted frag" style="margin-top:22px;font-size:21px">학습 오차와 검증 오차의 <strong style="color:var(--text)">차이가 크면 과적합</strong>을 의심한다 (11주).</p>
+    <p class="muted frag" style="margin-top:22px;font-size:21px">학습 오차와 시험 오차의 <strong style="color:var(--text)">차이가 크면 과적합</strong>을 의심한다 (11주).</p>
   </div>
   <div class="s-foot"><span>AI와 데이터 분석 · 9주 2차시</span><span class="no"></span></div>
 </section>
@@ -436,7 +436,7 @@ print(round(y_train.mean(), 3), round(y_test.mean(), 3))</pre>
   <h2>확인 문제 <span class="muted" style="font-size:22px;font-weight:500">— 보기를 눌러 보세요</span></h2>
   <div class="grid g2">
     <div class="q" data-answer="c" data-explain="모델이 학습 중에 본 적 없는 데이터로 채점해야 새 데이터(새 제품)에서의 실력을 추정할 수 있습니다. 학습 데이터로만 채점하면 외운 모델도 완벽해 보입니다.">
-      <p class="q-title"><b>Q1.</b> 검증 데이터를 따로 떼어 두는 가장 큰 이유는?</p>
+      <p class="q-title"><b>Q1.</b> 시험 데이터를 따로 떼어 두는 가장 큰 이유는?</p>
       <div class="opts">
         <button type="button" data-v="a">학습 속도를 빠르게 하려고</button>
         <button type="button" data-v="b">데이터 파일 크기를 줄이려고</button>
@@ -445,12 +445,12 @@ print(round(y_train.mean(), 3), round(y_test.mean(), 3))</pre>
       </div>
       <div class="feedback" aria-live="polite"></div>
     </div>
-    <div class="q" data-answer="b" data-explain="학습 데이터에서는 완벽한데 검증 데이터에서 크게 나빠지는 것은 학습 데이터를 외운 과적합의 전형적인 신호입니다.">
-      <p class="q-title"><b>Q2.</b> 학습 오차 0.00, 검증 오차 1.93 MPa인 모델의 상태는?</p>
+    <div class="q" data-answer="b" data-explain="학습 데이터에서는 완벽한데 시험 데이터에서 크게 나빠지는 것은 학습 데이터를 외운 과적합의 전형적인 신호입니다.">
+      <p class="q-title"><b>Q2.</b> 학습 오차 0.00, 시험 오차 1.93 MPa인 모델의 상태는?</p>
       <div class="opts">
         <button type="button" data-v="a">완벽하므로 바로 현장에 쓴다</button>
         <button type="button" data-v="b">학습 데이터를 외운 과적합이 의심된다</button>
-        <button type="button" data-v="c">검증 데이터가 잘못되었다</button>
+        <button type="button" data-v="c">시험 데이터가 잘못되었다</button>
         <button type="button" data-v="d">random_state를 바꾸면 해결된다</button>
       </div>
       <div class="feedback" aria-live="polite"></div>
@@ -468,13 +468,13 @@ print(round(y_train.mean(), 3), round(y_test.mean(), 3))</pre>
       <p class="q-title"><b>Q3.</b> <code>random_state=0</code> 을 지정하는 이유는?</p>
       <div class="opts">
         <button type="button" data-v="a">실행할 때마다 같은 방식으로 나뉘어 결과를 재현할 수 있다</button>
-        <button type="button" data-v="b">검증 데이터가 0개가 된다</button>
+        <button type="button" data-v="b">시험 데이터가 0개가 된다</button>
         <button type="button" data-v="c">모델의 오차가 항상 가장 작아진다</button>
         <button type="button" data-v="d">데이터를 섞지 않는다</button>
       </div>
       <div class="feedback" aria-live="polite"></div>
     </div>
-    <div class="q" data-answer="d" data-explain="stratify=y 를 주면 정답(불량 여부)의 비율을 유지한 채 나누므로, 드문 불량이 학습·검증 양쪽에 고르게 들어갑니다.">
+    <div class="q" data-answer="d" data-explain="stratify=y 를 주면 정답(불량 여부)의 비율을 유지한 채 나누므로, 드문 불량이 학습·시험 양쪽에 고르게 들어갑니다.">
       <p class="q-title"><b>Q4.</b> 불량률 13.8%인 데이터를 나눌 때, 양쪽 불량 비율을 비슷하게 맞추는 옵션은?</p>
       <div class="opts">
         <button type="button" data-v="a">test_size=0.5</button>
@@ -507,7 +507,7 @@ print(round(y_train.mean(), 3), round(y_test.mean(), 3))</pre>
 <div class="bar"></div>
 <nav class="controls" aria-label="슬라이드 이동">
   <a href="../">☰ 목록</a>
-  <span class="title">9주 2차시 · 학습 데이터와 검증 데이터 나누기</span>
+  <span class="title">9주 2차시 · 학습 데이터와 시험 데이터 나누기</span>
   <span class="spacer"></span>
   <span class="hint">← → 키 · F 전체화면</span>
   <button type="button" data-prev aria-label="이전">◀</button>

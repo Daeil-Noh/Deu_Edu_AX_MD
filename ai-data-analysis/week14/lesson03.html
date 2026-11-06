@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>14주 3차시 · 결과 해석과 AI 활용 검증 점검 | AI와 데이터 분석</title>
-<meta name="description" content="「AI와 데이터 분석」 14주 3차시 교안: 제출 전 최종 점검 — 질문과 답, 상관과 인과, 과적합과 검증 점수, 데이터 품질·편향·개인정보, AI 결과 검증과 공개, 재현성, 15주 안내">
+<meta name="description" content="「AI와 데이터 분석」 14주 3차시 교안: 제출 전 최종 점검 — 질문과 답, 상관과 인과, 과적합과 시험 점수, 데이터 품질·편향·개인정보, AI 결과 검증과 공개, 재현성, 15주 안내">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="../../assets/css/slides.css">
 <style>
@@ -156,7 +156,7 @@
     <div class="tiles" style="grid-template-columns:repeat(4,1fr);gap:14px">
       <div class="tile frag show" style="padding:16px"><span class="ic-badge"><svg class="ic"><use href="#i-target"/></svg></span><div class="h" style="font-size:20px">질문에 답하나?</div><div class="d">9주 3차시</div></div>
       <div class="tile frag show" style="padding:16px"><span class="ic-badge"><svg class="ic"><use href="#i-link"/></svg></span><div class="h" style="font-size:20px">상관을 인과로?</div><div class="d">7주 3차시</div></div>
-      <div class="tile frag show" style="padding:16px"><span class="ic-badge"><svg class="ic"><use href="#i-trend"/></svg></span><div class="h" style="font-size:20px">과적합·검증 점수</div><div class="d">9~11주</div></div>
+      <div class="tile frag show" style="padding:16px"><span class="ic-badge"><svg class="ic"><use href="#i-trend"/></svg></span><div class="h" style="font-size:20px">과적합·시험 점수</div><div class="d">9~11주</div></div>
       <div class="tile frag" style="padding:16px"><span class="ic-badge"><svg class="ic"><use href="#i-filter"/></svg></span><div class="h" style="font-size:20px">데이터 품질·편향</div><div class="d">1주 3차시, 5주</div></div>
       <div class="tile frag" style="padding:16px"><span class="ic-badge o"><svg class="ic"><use href="#i-user"/></svg></span><div class="h" style="font-size:20px">개인정보·출처</div><div class="d">1주 3차시, 2주 3차시</div></div>
       <div class="tile frag" style="padding:16px"><span class="ic-badge o"><svg class="ic"><use href="#i-sparkles"/></svg></span><div class="h" style="font-size:20px">AI 결과 검증·공개</div><div class="d">4주 3차시, 1주 3차시</div></div>
@@ -372,12 +372,12 @@
       </div>
       <div class="feedback" aria-live="polite"></div>
     </div>
-    <div class="q" data-answer="b" data-explain="학습 R²가 0.999인데 검증 R²가 0.48이면 학습 데이터를 외운 과적합입니다. 보고서에는 검증 점수를 쓰고, 나무 깊이를 줄이는 등 모델을 단순하게 합니다.">
+    <div class="q" data-answer="b" data-explain="학습 R²가 0.999인데 검증 R²가 0.48이면 학습 데이터를 외운 과적합입니다. 보고서에는 시험 점수를 쓰고, 나무 깊이를 줄이는 등 모델을 단순하게 합니다.">
       <p class="q-title"><b>Q2.</b> 나무 모델이 학습 R² 0.999, 검증 R² 0.48이다. 옳은 판단은?</p>
       <div class="opts">
         <button type="button" data-v="a">거의 완벽한 모델이므로 학습 R²를 보고한다.</button>
-        <button type="button" data-v="b">과적합이다. 검증 점수를 보고하고 모델을 단순하게 한다.</button>
-        <button type="button" data-v="c">검증 데이터가 잘못되었으니 지운다.</button>
+        <button type="button" data-v="b">과적합이다. 시험 점수를 보고하고 모델을 단순하게 한다.</button>
+        <button type="button" data-v="c">시험 데이터가 잘못되었으니 지운다.</button>
         <button type="button" data-v="d">두 점수의 평균 0.74를 보고한다.</button>
       </div>
       <div class="feedback" aria-live="polite"></div>

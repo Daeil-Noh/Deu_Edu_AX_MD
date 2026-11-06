@@ -393,16 +393,16 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 model = MLPClassifier(hidden_layer_sizes=(128,), max_iter=500, random_state=0)
 model.fit(X_train, y_train)
-print('검증 정확도:', round(model.score(X_test, y_test), 3))
+print('시험 정확도:', round(model.score(X_test, y_test), 3))
 print(confusion_matrix(y_test, model.predict(X_test)))</pre>
-<pre class="out">검증 정확도: 0.917
+<pre class="out">시험 정확도: 0.917
 [[125   0   0]      ← 실제 정상
  [ 16  95  14]      ← 실제 스크래치
  [  0   1 124]]     ← 실제 얼룩</pre>
     </div>
     <div style="display:flex;flex-direction:column;gap:12px">
       <div class="status mid"><b class="k">어디서 틀렸나?</b>틀린 31장 중 30장이 <strong>스크래치</strong> — 정상(16장)이나 얼룩(14장)으로 판정</div>
-      <div class="status ok"><b class="k">밝기 보정의 힘</b>보정을 끄면 검증 정확도 0.917 → <strong>0.803</strong> (직접 바꿔 보기 ①)</div>
+      <div class="status ok"><b class="k">밝기 보정의 힘</b>보정을 끄면 시험 정확도 0.917 → <strong>0.803</strong> (직접 바꿔 보기 ①)</div>
       <div class="status bad"><b class="k">MLP의 한계</b>MLP는 픽셀 위치마다 따로 배워서, 선이 <strong>다른 위치·방향</strong>에 있으면 약하다 → 실제 비전 검사는 CNN</div>
     </div>
   </div>

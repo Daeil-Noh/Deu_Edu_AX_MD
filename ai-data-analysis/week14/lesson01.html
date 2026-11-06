@@ -169,7 +169,7 @@
       <div class="arrow">›</div>
       <div class="stepbox frag"><span class="ic-badge"><svg class="ic"><use href="#i-chart"/></svg></span><div class="h">탐색</div><div class="d">통계·그룹 비교·<br>그래프<br><b>6~7주</b></div></div>
       <div class="arrow">›</div>
-      <div class="stepbox frag"><span class="ic-badge"><svg class="ic"><use href="#i-trend"/></svg></span><div class="h">모델</div><div class="d">회귀·분류,<br>검증 데이터<br><b>9~11주</b></div></div>
+      <div class="stepbox frag"><span class="ic-badge"><svg class="ic"><use href="#i-trend"/></svg></span><div class="h">모델</div><div class="d">회귀·분류,<br>시험 데이터<br><b>9~11주</b></div></div>
       <div class="arrow">›</div>
       <div class="stepbox frag"><span class="ic-badge"><svg class="ic"><use href="#i-bulb"/></svg></span><div class="h">해석</div><div class="d">숫자를 말로,<br>상관 ≠ 인과<br><b>7·10주</b></div></div>
       <div class="arrow">›</div>
@@ -323,7 +323,7 @@ print('평균으로 찍기 MAE:', round(mean_absolute_error(test[target], base),
 평균으로 찍기 MAE: 2.58 MPa</pre>
     </div>
     <div style="width:330px;display:grid;gap:12px">
-      <div class="tile frag show" style="gap:6px"><div class="muted" style="font-size:16px;font-weight:700">검증 데이터 99개에서 평균 오차</div>
+      <div class="tile frag show" style="gap:6px"><div class="muted" style="font-size:16px;font-weight:700">시험 데이터 99개에서 평균 오차</div>
         <div class="brow"><div class="lbl"><span>평균으로 찍기</span><span>2.58</span></div><div class="track"><i style="width:100%;background:var(--muted);opacity:.5"></i></div></div>
         <div class="brow"><div class="lbl"><span>모델 1</span><span>1.48</span></div><div class="track"><i style="width:57%;background:var(--accent)"></i></div></div>
         <div class="d">MPa · 짧을수록 좋다</div></div>
@@ -338,7 +338,7 @@ print('평균으로 찍기 MAE:', round(mean_absolute_error(test[target], base),
   <div class="s-head"><span class="sec">③ 모델·해석 · 직접 해 보기 3</span></div>
   <h2>모델이 어디서 틀리는지 보고 고치기 <svg class="ic" style="color:var(--accent);font-size:30px"><use href="#i-hand"/></svg></h2>
   <div class="demo" style="grid-template-columns:1fr 340px">
-    <div class="plot"><svg id="md-plot" viewBox="0 0 700 420" aria-label="검증 데이터의 실제 강도와 예측 강도, 온도 구간별 평균 잔차"></svg></div>
+    <div class="plot"><svg id="md-plot" viewBox="0 0 700 420" aria-label="시험 데이터의 실제 강도와 예측 강도, 온도 구간별 평균 잔차"></svg></div>
     <div class="side">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
         <button class="btn ghost mbtn" type="button" data-m="1" aria-pressed="true">모델 1<br><small style="font-weight:600">조건 5개</small></button>
@@ -352,7 +352,7 @@ print('평균으로 찍기 MAE:', round(mean_absolute_error(test[target], base),
       <div class="ask" style="font-size:14.5px"><div class="k"><svg class="ic"><use href="#i-sparkles"/></svg> AI에게 물은 것</div><q>잔차가 온도 양 끝에서 음수야. 곡선을 반영하려면?</q> → “온도 제곱 열 추가”</div>
     </div>
   </div>
-  <div class="s-foot"><span>AI와 데이터 분석 · 14주 1차시 · 검증 데이터 99개 · 온도² = (온도 − 210)²</span><span class="no"></span></div>
+  <div class="s-foot"><span>AI와 데이터 분석 · 14주 1차시 · 시험 데이터 99개 · 온도² = (온도 − 210)²</span><span class="no"></span></div>
 </section>
 
 <!-- 14. 해석 데모 -->
@@ -456,7 +456,7 @@ print('평균으로 찍기 MAE:', round(mean_absolute_error(test[target], base),
   <div class="body">
     <div class="tiles" style="grid-template-columns:repeat(3,1fr)">
       <div class="tile frag show"><span class="ic-badge lg"><svg class="ic"><use href="#i-map"/></svg></span><div class="h">한 흐름으로</div><div style="font-size:21px">질문 → 정리 → 탐색 → 모델 → 해석 → 한계. 이 순서가 <strong>보고서의 뼈대</strong></div></div>
-      <div class="tile frag"><span class="ic-badge lg"><svg class="ic"><use href="#i-chart"/></svg></span><div class="h">숫자는 그림으로 확인</div><div style="font-size:21px">r = -0.11의 온도도 <strong>곡선</strong>이었다. 점수는 <strong>검증 데이터</strong>로, 기준과 비교해서</div></div>
+      <div class="tile frag"><span class="ic-badge lg"><svg class="ic"><use href="#i-chart"/></svg></span><div class="h">숫자는 그림으로 확인</div><div style="font-size:21px">r = -0.11의 온도도 <strong>곡선</strong>이었다. 점수는 <strong>시험 데이터</strong>로, 기준과 비교해서</div></div>
       <div class="tile frag"><span class="ic-badge lg o"><svg class="ic"><use href="#i-sparkles"/></svg></span><div class="h">AI는 조수, 확인은 나</div><div style="font-size:21px">물은 것과 확인한 것을 <strong>단계마다 기록</strong> → 그대로 AI 활용 내역</div></div>
     </div>
   </div>
@@ -478,11 +478,11 @@ print('평균으로 찍기 MAE:', round(mean_absolute_error(test[target], base),
       </div>
       <div class="feedback" aria-live="polite"></div>
     </div>
-    <div class="q" data-answer="b" data-explain="학습 데이터 점수는 모델이 이미 본 데이터라 좋게 나옵니다. 처음 보는 검증 데이터의 점수를, 평균으로 찍기 같은 기준과 함께 보고합니다.">
+    <div class="q" data-answer="b" data-explain="학습 데이터 점수는 모델이 이미 본 데이터라 좋게 나옵니다. 처음 보는 시험 데이터의 점수를, 평균으로 찍기 같은 기준과 함께 보고합니다.">
       <p class="q-title"><b>Q2.</b> 보고서에 모델 성능으로 적어야 할 숫자는?</p>
       <div class="opts">
         <button type="button" data-v="a">가장 높게 나온 학습 데이터 R²</button>
-        <button type="button" data-v="b">검증 데이터의 MAE·R²와 기준(평균 찍기)의 오차</button>
+        <button type="button" data-v="b">시험 데이터의 MAE·R²와 기준(평균 찍기)의 오차</button>
         <button type="button" data-v="c">random_state를 여러 번 바꿔 가장 좋았던 값 하나</button>
         <button type="button" data-v="d">AI가 알려 준 일반적인 정확도</button>
       </div>
