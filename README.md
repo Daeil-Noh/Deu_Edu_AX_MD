@@ -2,11 +2,13 @@
 
 동의대학교 인공지능학과 공통 AI 교과 온라인 교안 (GitHub Pages로 제공)
 
-| 폴더 | 교과 | 대상 |
-|---|---|---|
-| [`ai-data-analysis/`](ai-data-analysis/) | AI와 데이터 분석 | 이공계열 2학년 |
-| [`genai-practice/`](genai-practice/) | 생성형AI 활용 실무 | 2학년 (학과 공통) |
-| `assets/` | 두 교과가 함께 쓰는 스타일(CSS)·스크립트(JS) | — |
+**교안 웹사이트: https://daeil-noh.github.io/Deu_Edu_AX_MD/**
+
+| 교과 | 대상 | 강의 바로가기 | 폴더 |
+|---|---|---|---|
+| AI와 데이터 분석 | 이공계열 2학년 | [강의 목록 열기](https://daeil-noh.github.io/Deu_Edu_AX_MD/ai-data-analysis/) | [`ai-data-analysis/`](ai-data-analysis/) |
+| 생성형AI 활용 실무 | 2학년 (학과 공통) | [강의 목록 열기](https://daeil-noh.github.io/Deu_Edu_AX_MD/genai-practice/) | [`genai-practice/`](genai-practice/) |
+| 공통 스타일(CSS)·스크립트(JS) | — | — | `assets/` |
 
 ## 구조
 
